@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>张依楠 · Yinan Zhang — Data × Product</title>
+<meta name="description" content="张依楠 (Nicola) 的个人作品集网站 — 数据 × 产品复合型，香港大学信息系统与分析 + 翻译双主修">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ 开屏动画 (3 段) ============ -->
+<div id="splash" class="splash">
+  <div class="splash-stage">
+    <span class="splash-text" data-phase="1">Hi</span>
+    <span class="splash-text" data-phase="2">你好</span>
+    <span class="splash-text splash-text-long" data-phase="3">
+      <span class="sl-line">我的名字叫</span>
+      <span class="sl-name">张依楠，</span>
+      <span class="sl-line">很开心你愿意花时间了解我</span>
+      <span class="sl-divider"></span>
+      <span class="sl-line sl-en">My name is Zhang Yinan</span>
+      <span class="sl-line sl-en">glad you took the time to know me</span>
+    </span>
+  </div>
+</div>
+
+<!-- ============ 顶部导航 + 语言切换 ============ -->
+<header class="topbar">
+  <span class="logo-spacer"></span>
+  <nav class="nav">
+    <a href="#hero" data-nav><span data-lang="zh">首页</span><span data-lang="en">Home</span></a>
+    <a href="#ask" data-nav><span data-lang="zh">问问我</span><span data-lang="en">Ask me</span></a>
+    <a href="#education" data-nav><span data-lang="zh">教育背景</span><span data-lang="en">Education</span></a>
+    <a href="#experience" data-nav><span data-lang="zh">实习经历</span><span data-lang="en">Experience</span></a>
+    <a href="#projects" data-nav><span data-lang="zh">项目经历</span><span data-lang="en">Projects</span></a>
+    <a href="#skills" data-nav><span data-lang="zh">技能</span><span data-lang="en">Skills</span></a>
+    <a href="#activities" data-nav><span data-lang="zh">课外活动</span><span data-lang="en">Activities</span></a>
+    <a href="#contact" data-nav><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a>
+  </nav>
+  <button id="langToggle" class="lang-toggle" aria-label="Toggle language">
+    <span class="lang-zh">中</span><span class="lang-sep">/</span><span class="lang-en">EN</span>
+  </button>
+</header>
+
+<main>
+
+<!-- ============ Hero ============ -->
+<section id="hero" class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <span class="status-chip">
+        <span class="dot"></span>
+        <span data-lang="zh">香港大学 · 大三在读 · 正在寻找实习机会</span>
+        <span data-lang="en">HKU · Year 3 · Looking for internship opportunities</span>
+      </span>
+      <p class="hero-greet">
+        <span data-lang="zh">你好，我是</span>
+        <span data-lang="en">Hello, I'm</span>
+      </p>
+      <h1 class="hero-name">
+        <span data-lang="zh">张依楠</span>
+        <span data-lang="en">Zhang Yinan</span>
+      </h1>
+      <p class="hero-tags-label">
+        <span data-lang="zh">我的关键词</span><span data-lang="en">My Keywords</span>
+      </p>
+      <div class="hero-tags">
+        <span class="tag"><em data-lang="zh">数据分析</em><em data-lang="en">Data Analytics</em></span>
+        <span class="tag"><em data-lang="zh">产品</em><em data-lang="en">Product</em></span>
+        <span class="tag"><em data-lang="zh">商业分析</em><em data-lang="en">Business Analytics</em></span>
+        <span class="tag"><em data-lang="zh">AI</em><em data-lang="en">AI</em></span>
+        <span class="tag"><em data-lang="zh">信息系统</em><em data-lang="en">Information Systems</em></span>
+        <span class="tag"><em data-lang="zh">中英翻译</em><em data-lang="en">CN-EN Translation</em></span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <figure class="hero-photo">
+        <img src="assets/photos/hero.jpg" alt="Zhang Yinan headshot">
+      </figure>
+    </div>
+  </div>
+
+  <a class="scroll-down" href="#ask">
+    <svg viewBox="0 0 40 60" width="32" height="48"><path d="M20 5 V50 M10 38 L20 52 L30 38" stroke="#1A1A1A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span data-lang="zh">往下看</span><span data-lang="en">Scroll</span>
+  </a>
+</section>
+
+<!-- ============ Ask Me Anything · AI 模拟 ============ -->
+<section id="ask" class="ask-section">
+  <div class="section-head">
+    <h2><span data-lang="zh">问问我 🤖</span><span data-lang="en">Ask me anything 🤖</span></h2>
+    <p class="section-sub">
+      <span data-lang="zh">这是一个模拟 AI 对话框 —— 点下方任一关键词填入，再按发送，我就会回复你。</span>
+      <span data-lang="en">A mock AI chat — pick a chip below to fill the box, then hit send for a reply.</span>
+    </p>
+  </div>
+
+  <div class="ai-box">
+    <div class="ai-output" id="aiOutput">
+      <p class="ai-placeholder" data-lang="zh">👋 嗨，先点下面任一关键词，再选 Search 或 Think，最后按右边的发送按钮 →</p>
+      <p class="ai-placeholder" data-lang="en">👋 Pick a chip below, choose Search or Think, then hit send →</p>
+    </div>
+
+    <div class="ai-chips">
+      <button class="chip" data-q="edu">
+        <span data-lang="zh">你的教育背景是什么</span><span data-lang="en">What's your education background?</span>
+      </button>
+      <button class="chip" data-q="intern">
+        <span data-lang="zh">介绍一下你的实习经历</span><span data-lang="en">Tell me about your internships</span>
+      </button>
+      <button class="chip" data-q="activity">
+        <span data-lang="zh">你有什么课外活动吗</span><span data-lang="en">Any extracurricular activities?</span>
+      </button>
+      <button class="chip" data-q="project">
+        <span data-lang="zh">你做过什么项目</span><span data-lang="en">What projects have you done?</span>
+      </button>
+      <button class="chip" data-q="strength">
+        <span data-lang="zh">你的核心优势是什么</span><span data-lang="en">What's your core strength?</span>
+      </button>
+    </div>
+
+    <div class="ai-input">
+      <button class="ai-pill ai-pill-search" id="aiModeSearch" type="button" title="Search mode">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+        Search
+      </button>
+      <button class="ai-pill ai-pill-think" id="aiModeThink" type="button" title="Think mode">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6m-5 4h4M12 2a7 7 0 00-4 12.7V16a2 2 0 002 2h4a2 2 0 002-2v-1.3A7 7 0 0012 2z"/></svg>
+        Think
+      </button>
+      <input type="text" id="aiInput" placeholder="" autocomplete="off" readonly>
+      <button class="ai-send" id="aiSend" aria-label="send">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </button>
+    </div>
+    <p class="ai-disclaimer">
+      <span data-lang="zh">* 这是基于固定提示词的本地模拟，不会真的调用大模型 API。点关键词填入，再按发送按钮即可。</span>
+      <span data-lang="en">* Local simulation with predefined answers — no real LLM API call. Pick a chip, then click send.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ Education ============ -->
+<section id="education" class="section">
+  <div class="section-head">
+    <h2><span data-lang="zh">教育背景</span><span data-lang="en">Education</span></h2>
+    <svg class="head-squiggle" viewBox="0 0 120 8" preserveAspectRatio="none"><path d="M2 4 Q15 1 30 4 T58 4 T86 4 T118 4" stroke="#F97316" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+  </div>
+
+  <article class="edu-card">
+    <img class="edu-img" src="assets/photos/hku.jpg" alt="HKU campus">
+    <div class="edu-body">
+      <div class="edu-head">
+        <h3>
+          <span data-lang="zh">香港大学</span>
+          <span data-lang="en">The University of Hong Kong</span>
+        </h3>
+        <span class="edu-degree-badge">
+          <span data-lang="zh">本科</span>
+          <span data-lang="en">Undergraduate</span>
+        </span>
+        <span class="edu-date-pill">2023.09 — 2027.06</span>
+      </div>
+      <p class="edu-meta">
+        <span class="edu-qs-pill">QS #11</span>
+        <span data-lang="zh">文学学士 · 双主修</span>
+        <span data-lang="en">Double Major</span>
+      </p>
+      <div class="edu-meta-2">
+        <span><strong><span data-lang="zh">专业 1：</span><span data-lang="en">Major 1: </span></strong><span data-lang="zh">信息系统与分析</span><span data-lang="en">Information Systems &amp; Analytics</span></span>
+        <span><strong><span data-lang="zh">专业 2：</span><span data-lang="en">Major 2: </span></strong><span data-lang="zh">翻译</span><span data-lang="en">Translation</span></span>
+        <span><strong>GPA：</strong>3.36 / 4.30</span>
+      </div>
+      <p class="edu-courses">
+        <strong><span data-lang="zh">相关课程：</span><span data-lang="en">Coursework: </span></strong>
+        <span class="pill"><span data-lang="zh">商业分析</span><span data-lang="en">Business Analytics</span></span>
+        <span class="pill"><span data-lang="zh">信息系统分析与设计</span><span data-lang="en">IS Analysis &amp; Design</span></span>
+        <span class="pill"><span data-lang="zh">信息系统管理</span><span data-lang="en">IS Management</span></span>
+        <span class="pill"><span data-lang="zh">统计分析</span><span data-lang="en">Statistical Analysis</span></span>
+        <span class="pill"><span data-lang="zh">中英笔译及口译</span><span data-lang="en">EN-CN Translation</span></span>
+      </p>
+    </div>
+  </article>
+</section>
+
+<!-- ============ Experience ============ -->
+<section id="experience" class="section">
+  <div class="section-head">
+    <h2><span data-lang="zh">实习经历</span><span data-lang="en">Internship Experience</span></h2>
+    <svg class="head-squiggle" viewBox="0 0 120 8" preserveAspectRatio="none"><path d="M2 4 Q15 1 30 4 T58 4 T86 4 T118 4" stroke="#F97316" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+  </div>
+
+  <article class="exp-card">
+    <div class="card-photo">
+      <img src="assets/photos/hp-badge.jpg" alt="Hutchison Ports staff badge">
+    </div>
+    <div class="exp-body">
+      <div class="exp-head">
+        <h3><span data-lang="zh">和记港口集团有限公司</span><span data-lang="en">Hutchison Port Holdings Limited</span></h3>
+        <span class="exp-date">2025.06 – 2025.08 · <span data-lang="zh">香港</span><span data-lang="en">Hong Kong</span></span>
+      </div>
+      <p class="exp-role">
+        <span data-lang="zh">产品开发与实施实习生（信息技术部）</span>
+        <span data-lang="en">Product Development &amp; Implementation Intern (IT Dept.)</span>
+      </p>
+      <ul class="exp-list">
+        <li>
+          <strong><span data-lang="zh">产品迭代与业务理解：</span><span data-lang="en">Product Iteration &amp; Business Logic: </span></strong>
+          <span data-lang="zh">参与第 91-93 次系统迭代，深度掌握 nGen、OMS 等港口核心信息系统；熟悉船舶创建至装卸货的全流程运作机制。</span>
+          <span data-lang="en">Joined Sprint 91-93; gained deep proficiency in core port systems (nGen, OMS) and the end-to-end vessel-to-discharge workflow.</span>
+        </li>
+        <li>
+          <strong><span data-lang="zh">流程自动化：</span><span data-lang="en">Process Automation: </span></strong>
+          <span data-lang="zh">使用 Verification Tool 编写 API 请求并设计堆场区块工作流，实现堆场数据的自动更新。</span>
+          <span data-lang="en">Wrote API requests via Verification Tool and designed yard-block workflows for automated yard-planning updates.</span>
+        </li>
+        <li>
+          <strong><span data-lang="zh">协作可视化：</span><span data-lang="en">Visualization &amp; Collaboration: </span></strong>
+          <span data-lang="zh">用 Draw.io 绘制 Gate Grounding 工作流图，提升跨部门沟通效率。</span>
+          <span data-lang="en">Mapped "Gate Grounding" workflows in Draw.io to align cross-functional teams.</span>
+        </li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="exp-card">
+    <div class="exp-body exp-body-full">
+      <div class="exp-head">
+        <h3><span data-lang="zh">上海安运人通科技有限公司</span><span data-lang="en">Shanghai Anyun Rentong Technology Co., Ltd.</span></h3>
+        <span class="exp-date">2024.12 – 2025.01 · <span data-lang="zh">上海</span><span data-lang="en">Shanghai</span></span>
+      </div>
+      <p class="exp-role">
+        <span data-lang="zh">项目经理助理实习生</span>
+        <span data-lang="en">Project Manager Assistant Intern</span>
+      </p>
+      <ul class="exp-list">
+        <li>
+          <strong><span data-lang="zh">需求分析与建模：</span><span data-lang="en">Requirements &amp; Modeling: </span></strong>
+          <span data-lang="zh">参与梅北码头智能安防系统开发，使用 UML + Draw.io 绘制用例图、类图、序列图，完成系统底层逻辑设计。</span>
+          <span data-lang="en">Contributed to the "Meibei Terminal Intelligent Security System"; conducted system-level design (use case, class, sequence) via UML + Draw.io.</span>
+        </li>
+        <li>
+          <strong><span data-lang="zh">UX 优化与项目管理：</span><span data-lang="en">UX &amp; PM: </span></strong>
+          <span data-lang="zh">提出用户界面个性化优化建议，制作 Excel 甘特图监控项目进度，确保初期计划按时交付。</span>
+          <span data-lang="en">Proposed personalized UX improvements; tracked milestones in Excel Gantt charts to ensure on-time delivery.</span>
+        </li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- ============ Projects (按时间倒序：AIGC → NYC → Airfare) ============ -->
+<section id="projects" class="section">
+  <div class="section-head">
+    <h2><span data-lang="zh">项目经历</span><span data-lang="en">Projects</span></h2>
+    <svg class="head-squiggle" viewBox="0 0 120 8" preserveAspectRatio="none"><path d="M2 4 Q15 1 30 4 T58 4 T86 4 T118 4" stroke="#F97316" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+  </div>
+
+  <article class="proj-card">
+    <div class="card-photo">
+      <img src="assets/photos/aigc.png" alt="AIGC ECO-DATA GRID final image">
+    </div>
+    <div class="proj-body">
+      <h3><span data-lang="zh">AIGC 视觉化项目</span><span data-lang="en">AIGC Visualization · Environmental Monitoring</span></h3>
+      <span class="proj-date">2025.12</span>
+      <div class="proj-tags">
+        <span class="proj-tag"><span class="pt-ic">🤖</span> Gemini-2.5-flash-image</span>
+        <span class="proj-tag"><span class="pt-ic">✨</span><span data-lang="zh">提示词工程</span><span data-lang="en">Prompt Engineering</span></span>
+        <span class="proj-tag"><span class="pt-ic">🌱</span><span data-lang="zh">可持续主题</span><span data-lang="en">Sustainability</span></span>
+      </div>
+      <ul class="proj-list">
+        <li><strong><span data-lang="zh">提示词工程：</span><span data-lang="en">Prompt Engineering: </span></strong>
+          <span data-lang="zh">以"环境监测与可持续性"为主题，独立完成三轮提示词迭代。</span>
+          <span data-lang="en">Themed "Environmental Monitoring &amp; Sustainability"; ran 3 rounds of prompt iteration.</span>
+        </li>
+        <li><strong><span data-lang="zh">迭代优化：</span><span data-lang="en">Iteration: </span></strong>
+          <span data-lang="zh">从基础主题构建，到引入交互界面与传感器逻辑，最终去冗余指令实现画面精简化。</span>
+          <span data-lang="en">From basic themes to interactive UI + sensor logic; streamlined instructions for clarity.</span>
+        </li>
+        <li><strong><span data-lang="zh">输出：</span><span data-lang="en">Output: </span></strong>
+          <span data-lang="zh">产出高逻辑性的"ECO-DATA GRID"视觉方案。</span>
+          <span data-lang="en">Delivered the high-logic "ECO-DATA GRID" visual solution.</span>
+        </li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="proj-card">
+    <div class="proj-media">
+      <div class="card-photo carousel" data-carousel>
+        <div class="carousel-track">
+          <img class="carousel-slide active" src="assets/photos/nyc-map.png" alt="NYC Kepler.gl 3D map">
+          <img class="carousel-slide" src="assets/photos/nyc-charts.png" alt="NYC charts overview">
+          <img class="carousel-slide" src="assets/photos/nyc-streets.png" alt="NYC top 20 dangerous streets">
+          <img class="carousel-slide" src="assets/photos/nyc-hourly.png" alt="NYC 24-hour crash pattern">
+        </div>
+        <button class="carousel-prev" aria-label="prev">‹</button>
+        <button class="carousel-next" aria-label="next">›</button>
+        <span class="carousel-counter"><span class="cur">1</span>/<span class="total">4</span></span>
+      </div>
+      <a class="proj-link proj-link-below" href="https://www.youtube.com/watch?v=Wo7qT7D9jEk" target="_blank" rel="noopener">
+        ▶ <span data-lang="zh">观看 5 分钟项目视频</span><span data-lang="en">Watch the 5-min video</span> ↗
+      </a>
+    </div>
+    <div class="proj-body">
+      <h3><span data-lang="zh">纽约市交通安全大数据分析</span><span data-lang="en">NYC Traffic Safety · Big Data Analysis</span></h3>
+      <span class="proj-date">2025.11 — 2025.12</span>
+      <div class="proj-tags">
+        <span class="proj-tag"><span class="pt-ic">🗺️</span> Kepler.gl</span>
+        <span class="proj-tag"><span class="pt-ic">📊</span> Tableau</span>
+        <span class="proj-tag"><span class="pt-ic">🎬</span> Premiere Pro</span>
+        <span class="proj-tag"><span class="pt-ic">🎞️</span><span data-lang="zh">剪映</span><span data-lang="en">CapCut</span></span>
+      </div>
+      <ul class="proj-list">
+        <li><strong><span data-lang="zh">多维空间分析：</span><span data-lang="en">Spatial Modeling: </span></strong>
+          <span data-lang="zh">用 Kepler.gl 对 200 万+ 起事故数据 3D 聚类，识别事故高发路口及"周五晚高峰"时空特征。</span>
+          <span data-lang="en">3D-clustered 2M+ accident records with Kepler.gl; surfaced high-risk intersections and "Friday rush hour" patterns.</span>
+        </li>
+        <li><strong><span data-lang="zh">业务逻辑可视化：</span><span data-lang="en">Behavior × Injury: </span></strong>
+          <span data-lang="zh">在 Tableau 量化驾驶行为与伤害相关性，识别摩托车 84.2% 伤害率及卡车工作日独特节律。</span>
+          <span data-lang="en">Quantified driving-injury correlation in Tableau — 84.2% motorcycle injury rate, unique weekday truck patterns.</span>
+        </li>
+        <li><strong><span data-lang="zh">数据叙事：</span><span data-lang="en">Data Storytelling: </span></strong>
+          <span data-lang="zh">用 PR + 剪映把图表剪成 5 分钟商业叙事视频。</span>
+          <span data-lang="en">Cut a 5-min business-narrative video in PR + CapCut.</span>
+        </li>
+        <li><strong><span data-lang="zh">产品化输出：</span><span data-lang="en">Strategy: </span></strong>
+          <span data-lang="zh">提出"弹性通勤 + 分时段精准执法"等 4 项数据驱动建议。</span>
+          <span data-lang="en">4 data-driven recommendations including "Flexible Commuting Systems".</span>
+        </li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="proj-card">
+    <div class="card-photo">
+      <img src="assets/photos/r-code.png" alt="R code for airfare prediction">
+    </div>
+    <div class="proj-body">
+      <h3><span data-lang="zh">航空票价预测模型分析</span><span data-lang="en">Airfare Prediction Model Analysis</span></h3>
+      <span class="proj-date">2025.09 — 2025.12</span>
+      <div class="proj-tags">
+        <span class="proj-tag"><span class="pt-ic">📈</span> R</span>
+        <span class="proj-tag"><span class="pt-ic">🌳</span> CART</span>
+        <span class="proj-tag"><span class="pt-ic">📐</span><span data-lang="zh">线性 / 逻辑回归</span><span data-lang="en">Linear / Logistic</span></span>
+        <span class="proj-tag"><span class="pt-ic">🔍</span><span data-lang="zh">特征工程</span><span data-lang="en">Feature Engineering</span></span>
+      </div>
+      <ul class="proj-list">
+        <li><strong><span data-lang="zh">建模与算法选型：</span><span data-lang="en">Algorithm Selection: </span></strong>
+          <span data-lang="zh">在 R 中对大规模航旅数据做特征工程，横向比对线性回归、逻辑回归、CART 决策树。</span>
+          <span data-lang="en">Feature-engineered large-scale travel data in R; benchmarked Linear, Logistic, and CART models.</span>
+        </li>
+        <li><strong><span data-lang="zh">模型优化：</span><span data-lang="en">Optimization: </span></strong>
+          <span data-lang="zh">剪枝后 CART 模型解释力翻倍，绝对误差降低 25%+。</span>
+          <span data-lang="en">Pruned CART doubled explanatory power and cut absolute error by 25%+.</span>
+        </li>
+        <li><strong><span data-lang="zh">价格动因挖掘：</span><span data-lang="en">Driver Analysis: </span></strong>
+          <span data-lang="zh">量化航司、舱位、航线对定价的贡献度。</span>
+          <span data-lang="en">Quantified airline, cabin, and route contributions to pricing.</span>
+        </li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- ============ Skills ============ -->
+<section id="skills" class="section">
+  <div class="section-head">
+    <h2><span data-lang="zh">技能</span><span data-lang="en">Skills</span></h2>
+    <svg class="head-squiggle" viewBox="0 0 120 8" preserveAspectRatio="none"><path d="M2 4 Q15 1 30 4 T58 4 T86 4 T118 4" stroke="#F97316" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+  </div>
+
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h4>🌏 <span data-lang="zh">语言能力</span><span data-lang="en">Languages</span></h4>
+      <ul>
+        <li><span data-lang="zh">中文（母语）</span><span data-lang="en">Mandarin (Native)</span></li>
+        <li>English · IELTS 7.0</li>
+        <li><span data-lang="zh">粤语（基础）</span><span data-lang="en">Cantonese (Elementary)</span></li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <h4>📊 <span data-lang="zh">数据分析 / 可视化</span><span data-lang="en">Data &amp; Analytics</span></h4>
+      <ul class="tool-grid">
+        <li class="tool-item"><span class="tool-ic" style="--bg:#F2C811;--fg:#1A1A1A">⬛</span><span class="tool-name">Power BI</span></li>
+        <li class="tool-item"><span class="tool-ic" style="--bg:#1E6FA8;--fg:#fff">📊</span><span class="tool-name">Tableau</span></li>
+        <li class="tool-item"><span class="tool-ic" style="--bg:#276DC3;--fg:#fff">R</span><span class="tool-name">R</span></li>
+        <li class="tool-item"><span class="tool-ic" style="--bg:#107C41;--fg:#fff">📑</span><span class="tool-name">Excel</span></li>
+        <li class="tool-item"><span class="tool-ic" style="--bg:#0A1F44;--fg:#7BD3F7">🌐</span><span class="tool-name">Kepler.gl</span></li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <h4>🎨 <span data-lang="zh">产品设计 / 视频</span><span data-lang="en">Design &amp; Video</span></h4>
+      <ul class="tool-grid">
+        <li class="tool-item"><span class="tool-ic" style="--bg:#F08705;--fg:#fff">📐</span><span class="tool-name">Draw.io</span></li>
+        <li class="tool-item"><span class="tool-ic" style="--bg:#0ACF83;--fg:#fff">🎨</span><span class="tool-name">Figma</span></li>
+        <li class="tool-item"><span class="tool-ic" style="--bg:#1FB6FF;--fg:#fff">📱</span><span class="tool-name">Marvel App</span></li>
+        <li class="tool-item"><span class="tool-ic" style="--bg:#3B5BA9;--fg:#fff">✏️</span><span class="tool-name">SmartDraw</span></li>
+        <li class="tool-item"><span class="tool-ic" style="--bg:#00C4CC;--fg:#fff">🖌️</span><span class="tool-name">Canva</span></li>
+        <li class="tool-item"><span class="tool-ic" style="--bg:#1A1A1A;--fg:#fff">🧩</span><span class="tool-name">UML</span></li>
+        <li class="tool-item"><span class="tool-ic" style="--bg:#9999FF;--fg:#1A1A1A">🎬</span><span class="tool-name">Premiere Pro</span></li>
+        <li class="tool-item"><span class="tool-ic" style="--bg:#FF4040;--fg:#fff">🎞️</span><span class="tool-name"><span data-lang="zh">剪映</span><span data-lang="en">CapCut</span></span></li>
+      </ul>
+    </div>
+    <div class="skill-card skill-card-cert">
+      <h4>🏅 <span data-lang="zh">专业认证</span><span data-lang="en">Certifications</span></h4>
+      <div class="cert-row">
+        <img class="cert-img" src="assets/photos/mos-cert.png" alt="Microsoft Office Specialist Expert Certificate">
+        <div class="cert-info">
+          <div class="cert-name">
+            <span data-lang="zh">微软 MOS 认证专家（大师级）</span>
+            <span data-lang="en">Microsoft Office Specialist · Expert (Master)</span>
+          </div>
+          <div class="cert-meta">
+            <span class="cert-badge">EXPERT</span>
+            <span class="cert-issuer">
+              <span data-lang="zh">由 Microsoft 颁发</span>
+              <span data-lang="en">Issued by Microsoft</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Activities ============ -->
+<section id="activities" class="section">
+  <div class="section-head">
+    <h2><span data-lang="zh">课外活动</span><span data-lang="en">Extracurricular Activities</span></h2>
+    <svg class="head-squiggle" viewBox="0 0 120 8" preserveAspectRatio="none"><path d="M2 4 Q15 1 30 4 T58 4 T86 4 T118 4" stroke="#F97316" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+  </div>
+
+  <article class="exp-card">
+    <div class="card-photo carousel" data-carousel>
+      <div class="carousel-track">
+        <img class="carousel-slide active" src="assets/photos/mpf-solo.jpg" alt="MPF forum solo">
+        <img class="carousel-slide" src="assets/photos/mpf-group.jpg" alt="MPF volunteers group">
+      </div>
+      <button class="carousel-prev" aria-label="prev">‹</button>
+      <button class="carousel-next" aria-label="next">›</button>
+      <span class="carousel-counter"><span class="cur">1</span>/<span class="total">2</span></span>
+    </div>
+    <div class="exp-body">
+      <div class="exp-head">
+        <h3><span data-lang="zh">第九届海丝港口合作论坛 · 志愿者</span><span data-lang="en">9th Maritime Silk Road Port Cooperation Forum · Volunteer</span></h3>
+        <span class="exp-date">2025.05 · <span data-lang="zh">浙江宁波</span><span data-lang="en">Ningbo</span></span>
+      </div>
+      <ul class="exp-list">
+        <li>
+          <span data-lang="zh">负责活动标牌及港口参观稿件的英文笔译，为外宾提供口译支持，促进跨文化交流。</span>
+          <span data-lang="en">Translated event signage and tour scripts; provided live interpretation for international guests.</span>
+        </li>
+        <li>
+          <span data-lang="zh">在宁波北仑第三集装箱码头参观环节提供英文讲解并实时答疑。</span>
+          <span data-lang="en">Delivered English on-site briefings during the Beilun No.3 Container Terminal tour.</span>
+        </li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="exp-card">
+    <div class="exp-body exp-body-full">
+      <div class="exp-head">
+        <h3><span data-lang="zh">香港大学文学院 · 学生学术顾问</span><span data-lang="en">HKU Faculty of Arts · Student Academic Advisor</span></h3>
+        <span class="exp-date">2024.04 – 2025.05 · <span data-lang="zh">香港</span><span data-lang="en">Hong Kong</span></span>
+      </div>
+      <ul class="exp-list">
+        <li>
+          <span data-lang="zh">协助大一学生适应大学生活，覆盖课程选择、师生沟通、学术工具与职业探索。</span>
+          <span data-lang="en">Mentored freshmen on course selection, faculty communication, academic tools, and career exploration.</span>
+        </li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- ============ Contact ============ -->
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <h2 class="contact-title">
+      <span data-lang="zh">一起聊聊？✦</span>
+      <span data-lang="en">Let's chat ✦</span>
+    </h2>
+    <p class="contact-sub">
+      <span data-lang="zh">如果你正在寻找具备<strong>数据分析能力</strong>与<strong>产品思维</strong>的年轻人，欢迎随时联系我，期待加入你的团队！</span>
+      <span data-lang="en">If you're looking for a young talent with <strong>data analytics skills</strong> and <strong>product thinking</strong>, feel free to reach out — I'd love to join your team!</span>
+    </p>
+
+    <div class="contact-grid">
+      <a class="contact-item" href="mailto:nicola_zhangyinan@163.com">
+        <span class="ci-label">Email</span>
+        <span class="ci-value">nicola_zhangyinan@163.com</span>
+      </a>
+      <button class="contact-item phone-reveal" id="phoneReveal" type="button">
+        <span class="ci-label"><span data-lang="zh">手机 / 微信</span><span data-lang="en">Phone / WeChat</span></span>
+        <span class="ci-value" id="phoneValue">
+          <span data-lang="zh">点击显示 →</span><span data-lang="en">Click to reveal →</span>
+        </span>
+      </button>
+      <div class="contact-item">
+        <span class="ci-label"><span data-lang="zh">所在地</span><span data-lang="en">Location</span></span>
+        <span class="ci-value"><span data-lang="zh">浙江宁波 / 香港</span><span data-lang="en">Ningbo / Hong Kong</span></span>
+      </div>
+    </div>
+
+    <div class="contact-cta">
+      <a class="btn btn-primary" href="assets/resumes/ZhangYinan-CN.pdf" download>📄 <span data-lang="zh">下载简历 (中)</span><span data-lang="en">Resume (CN)</span></a>
+      <a class="btn" href="assets/resumes/ZhangYinan-EN.pdf" download>📄 <span data-lang="zh">下载简历 (英)</span><span data-lang="en">Resume (EN)</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>© 张依楠 · Zhang Yinan · Nicola</p>
+</footer>
+
+<!-- 灯箱 -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="close">✕</button>
+  <img id="lbImg" src="" alt="">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
