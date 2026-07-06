@@ -317,7 +317,7 @@ html[data-lang="zh"] .hero-name {
 
 .scroll-down {
   position: absolute;
-  bottom: 8px; left: 50%;
+  bottom: 8px; left: 50%; right: auto;
   transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 4px;
   font-size: 13px;
@@ -326,7 +326,7 @@ html[data-lang="zh"] .hero-name {
   animation: bob 1.6s ease-in-out infinite;
   letter-spacing: 0.05em;
 }
-@keyframes bob { 0%,100% { transform: translate(-50%,0); } 50% { transform: translate(-50%, 6px); } }
+@keyframes bob { 0%,100% { transform: translate(-50%,0); } 50% { transform: translate(-50%,6px); } }
 
 @media (max-width: 900px) {
   .hero { padding-left: 32px; padding-right: 32px; }
@@ -1422,3 +1422,892 @@ html[data-lang="en"] .ec-en { display: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* ================================================================
+   2026-07 内容更新 · 新增板块样式（沿用原浅色主题设计语言）
+   ================================================================ */
+
+/* ---- Hero 简介 + 快速数据 ---- */
+.hero-bio {
+  font-size: clamp(15px, 1.3vw, 17px);
+  color: var(--ink-soft);
+  line-height: 1.9;
+  max-width: 520px;
+  margin-bottom: 26px;
+}
+.hero-bio b { color: var(--ink); font-weight: 800; }
+.hero-stats {
+  display: flex; flex-wrap: wrap;
+  gap: 14px 32px;
+  padding-top: 24px;
+  border-top: 1.5px solid var(--line);
+}
+.hstat { display: flex; flex-direction: column; gap: 2px; }
+.hstat-num { font-size: 30px; font-weight: 800; line-height: 1; color: var(--ink); }
+.hstat-label { font-size: 12.5px; color: #888; font-weight: 600; letter-spacing: 0.02em; }
+
+/* ---- 照片占位（等待真实照片替换） ---- */
+.photo-slot {
+  display: flex; align-items: center; justify-content: center;
+  background: repeating-linear-gradient(45deg, #FFF7EF, #FFF7EF 12px, #FFEFDD 12px, #FFEFDD 24px);
+  border: 2px dashed var(--ink) !important;
+  border-radius: 12px;
+  position: relative; overflow: hidden;
+}
+.card-photo.photo-slot { aspect-ratio: 4 / 3; box-shadow: var(--shadow-sm); }
+.photo-slot .ps-inner { display: flex; flex-direction: column; align-items: center; gap: 7px; text-align: center; padding: 14px; }
+.photo-slot .ps-ic { font-size: 30px; line-height: 1; }
+.photo-slot .ps-label { font-size: 12.5px; font-weight: 700; color: var(--ink); letter-spacing: 0.04em; }
+.photo-slot .ps-file {
+  font-size: 10.5px; color: #999;
+  background: #fff; border: 1.5px solid var(--line);
+  padding: 2px 9px; border-radius: 999px;
+}
+
+/* ---- 兴趣爱好 ---- */
+.hobby-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.hobby-card {
+  display: flex; flex-direction: column;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s, box-shadow .2s;
+}
+.hobby-card:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow); }
+.hobby-photo { width: 100%; }
+.hobby-photo.photo-slot {
+  aspect-ratio: 16 / 10;
+  border: none !important;
+  border-bottom: 2px dashed var(--ink) !important;
+  border-radius: 0;
+  box-shadow: none;
+}
+.hobby-photo > img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; cursor: zoom-in; }
+.hobby-text { padding: 20px 22px 24px; }
+.hobby-text h3 { font-size: 18px; font-weight: 800; display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.hobby-text p { font-size: 14.5px; line-height: 1.85; color: var(--ink-soft); }
+.hobby-note { text-align: center; margin-top: 28px; font-size: 13.5px; color: #999; }
+@media (max-width: 720px) { .hobby-grid { grid-template-columns: 1fr; } }
+
+/* ---- 真实工具 Logo ---- */
+.tool-logo { width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0; display: block; }
+
+/* ================================================================
+   v3 增补：单屏适配 / 打字机开屏 / 思维链菜单 / 官方 Logo
+   ================================================================ */
+
+/* ---- 1) 每一屏在默认位置放下全部内容 ---- */
+.hero { padding-top: 28px; padding-bottom: 72px; min-height: calc(100vh - 70px); }
+.hero-grid { min-height: unset; gap: 48px; }
+.hero-name { font-size: clamp(52px, 7.5vw, 104px); }
+html[data-lang="zh"] .hero-name { margin-bottom: 22px; }
+.status-chip { margin-bottom: 20px; }
+.hero-greet { margin-bottom: 6px; font-size: clamp(19px, 1.6vw, 24px); }
+.hero-bio { margin-bottom: 20px; line-height: 1.8; }
+.hero-photo { width: clamp(230px, 23vw, 310px); }
+.scroll-down { bottom: 10px; }
+.section, .ask-section, .contact-section { padding: 40px 48px 48px; }
+.section-head { margin-bottom: 26px; }
+.edu-card, .exp-card, .proj-card { padding: 22px; margin-bottom: 18px; }
+.exp-card { grid-template-columns: 230px 1fr; gap: 26px; }
+.exp-card .card-photo, .exp-card .carousel { width: 230px; }
+.proj-card { grid-template-columns: 260px 1fr; gap: 26px; }
+.proj-card .card-photo, .proj-card .carousel, .proj-card .proj-media { width: 260px; }
+.exp-list li, .proj-list li { font-size: 14px; line-height: 1.7; }
+.exp-list, .proj-list { gap: 8px; }
+.proj-tags { margin-bottom: 12px; }
+.exp-role { margin-bottom: 10px; }
+@media (max-width: 720px) {
+  .exp-card, .proj-card { grid-template-columns: 1fr; }
+  .exp-card .card-photo, .exp-card .carousel,
+  .proj-card .card-photo, .proj-card .carousel, .proj-card .proj-media { width: 100%; max-width: 340px; margin: 0 auto; }
+}
+
+/* 兴趣爱好：桌面 4 列一排放下 */
+.hobby-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.hobby-photo.photo-slot, .hobby-photo > img { aspect-ratio: 4 / 3; }
+.hobby-text { padding: 14px 16px 18px; }
+.hobby-text h3 { font-size: 15.5px; margin-bottom: 8px; }
+.hobby-text p { font-size: 13px; line-height: 1.75; }
+.hobby-note { margin-top: 20px; }
+@media (max-width: 1024px) { .hobby-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .hobby-grid { grid-template-columns: 1fr; } }
+
+/* ---- 2) 打字机开屏 ---- */
+.splash-type { max-width: 960px; text-align: center; padding: 0 24px; }
+.st-line {
+  font-weight: 800;
+  font-size: clamp(30px, 4.4vw, 58px);
+  line-height: 1.55;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+  min-height: 1.55em;
+}
+.st-line.st-en {
+  font-size: clamp(15px, 2vw, 24px);
+  color: var(--ink-soft);
+  font-weight: 500;
+  margin-top: 16px;
+}
+.st-name { color: var(--orange); }
+.st-caret {
+  display: inline-block;
+  width: 0.09em; min-width: 3px;
+  height: 1em;
+  background: var(--orange);
+  margin-left: 5px;
+  vertical-align: -0.12em;
+  animation: blinkCaret 0.8s steps(2) infinite;
+}
+@keyframes blinkCaret { 50% { opacity: 0; } }
+.splash { cursor: pointer; }
+.st-skip {
+  position: absolute;
+  bottom: 28px; right: 36px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #999;
+}
+
+/* ---- 3) 思维链长度菜单 ---- */
+.ai-depth { position: relative; flex-shrink: 0; }
+.ai-depth-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 14px;
+  font-size: 13px; font-weight: 700;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  background: #fff;
+  transition: transform .15s, box-shadow .15s;
+  white-space: nowrap;
+}
+.ai-depth-btn:hover { transform: translate(-1px, -1px); box-shadow: var(--shadow-sm); }
+.ai-depth-btn .adb-bulb { color: var(--orange); flex-shrink: 0; }
+.ai-depth-btn.has-choice { background: #FFF3E8; border-color: var(--orange); }
+.ai-depth-menu {
+  position: absolute;
+  bottom: calc(100% + 10px); left: 0;
+  min-width: 360px;
+  z-index: 60;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 6px;
+}
+.ai-depth-opt {
+  display: flex; align-items: center; gap: 14px;
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 9px;
+  text-align: left;
+  font-size: 13.5px;
+  transition: background .12s;
+}
+.ai-depth-opt:hover { background: #FFF3E8; }
+.ai-depth-opt .ado-name { font-weight: 700; color: var(--ink); white-space: nowrap; }
+.ai-depth-opt .ado-desc { margin-left: auto; color: #999; font-size: 12px; text-align: right; }
+.ai-depth-opt .ado-check { width: 16px; color: var(--green); font-weight: 800; visibility: hidden; flex-shrink: 0; }
+.ai-depth-opt.selected { background: #EAF6EF; }
+.ai-depth-opt.selected .ado-check { visibility: visible; }
+.ai-depth-opt.selected:hover { background: #DFF2E7; }
+@media (max-width: 720px) {
+  .ai-depth-menu { min-width: 270px; }
+  .ai-depth-opt .ado-desc { display: none; }
+}
+
+/* ---- 4) 官方工具 Logo（img 与内联 svg 通用） ---- */
+.tool-logo { width: 38px; height: 38px; border-radius: 8px; flex-shrink: 0; object-fit: contain; display: block; }
+
+/* ---- v3.1 微调：实习/项目区压缩到单屏内 ---- */
+.edu-card, .exp-card, .proj-card { padding: 18px; margin-bottom: 14px; }
+.exp-head h3 { font-size: 19px; }
+.proj-body h3 { font-size: 19px; }
+.proj-card { grid-template-columns: 220px 1fr; }
+.proj-card .card-photo, .proj-card .carousel, .proj-card .proj-media { width: 220px; }
+.proj-list { gap: 7px; margin-bottom: 10px; }
+.proj-list li { font-size: 13.5px; line-height: 1.65; }
+.proj-date { margin-bottom: 6px; }
+.proj-tags { margin-bottom: 10px; }
+.proj-link-below { padding: 8px 12px; font-size: 13px; }
+
+/* ---- v3.2 项目区最终压缩 ---- */
+.section-head { margin-bottom: 18px; }
+.section-head h2 { font-size: clamp(30px, 3.4vw, 42px); }
+.proj-card { grid-template-columns: 200px 1fr; }
+.proj-card .card-photo, .proj-card .carousel, .proj-card .proj-media { width: 200px; }
+.proj-media { gap: 10px; }
+
+/* ---- v3.3 收尾：全区上下留白统一收紧 ---- */
+.section, .ask-section, .contact-section { padding: 28px 44px 32px; }
+.edu-card, .exp-card, .proj-card { padding: 16px; margin-bottom: 12px; }
+.proj-list li { line-height: 1.62; }
+.proj-tags { margin-bottom: 8px; }
+
+/* ---- v3.4 图标统一内边距：logo 不贴边 ---- */
+.tool-logo { padding: 3px; }
+
+/* ================================================================
+   v4：首页照片轮播 / 技能图标重排 / 结语补全
+   ================================================================ */
+
+/* ---- 首页照片轮播 ---- */
+.hero-carousel { width: clamp(320px, 42vw, 480px); }
+.hero-carousel .carousel-track {
+  aspect-ratio: 4 / 3;
+  border: 5px solid #fff;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.hero-carousel .carousel-slide { cursor: zoom-in; }
+.carousel-dots {
+  position: absolute; bottom: 12px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 7px; z-index: 4;
+}
+.carousel-dots button {
+  width: 7px; height: 7px; padding: 0;
+  border-radius: 999px;
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(0,0,0,.2);
+  transition: width .2s, background .2s;
+}
+.carousel-dots button.active { width: 20px; background: var(--orange); border-color: var(--orange); }
+@media (max-width: 720px) {
+  .hero-carousel { width: 100%; max-width: 420px; margin: 0 auto; }
+}
+
+/* ---- 技能：图标在上、名称在下的方形磁贴 ---- */
+.tool-grid {
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 10px;
+}
+.tool-item {
+  flex-direction: column;
+  align-items: center; justify-content: flex-start;
+  gap: 9px;
+  padding: 14px 6px 11px;
+  background: #FAFAF7;
+  border: 1.5px solid var(--line) !important;
+  text-align: center;
+}
+.tool-item:hover { transform: translateY(-3px); border-color: var(--ink) !important; box-shadow: var(--shadow-sm); }
+.tool-logo { width: 36px; height: 36px; padding: 2px; }
+.tool-name {
+  flex: none;
+  font-size: 11.5px; font-weight: 600;
+  line-height: 1.25; letter-spacing: 0;
+  color: var(--ink);
+}
+
+/* ---- 结语：相册条 / 署名 / 回到顶部 ---- */
+.thanks-strip {
+  display: flex; justify-content: center; flex-wrap: wrap;
+  gap: 14px; margin: 30px 0 24px;
+}
+.thanks-strip img {
+  width: 132px; height: 96px;
+  object-fit: cover;
+  border: 4px solid #fff;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s;
+}
+.thanks-strip img:nth-child(odd) { transform: rotate(-2.4deg); }
+.thanks-strip img:nth-child(even) { transform: rotate(2.4deg); }
+.thanks-strip img:hover { transform: rotate(0) scale(1.06); position: relative; z-index: 2; }
+.thanks-ps {
+  max-width: 560px; margin: 0 auto 26px;
+  font-size: 14px; color: var(--ink-soft); line-height: 1.8;
+}
+.thanks-sign { margin-bottom: 22px; }
+.thanks-sign .ts-name {
+  display: block;
+  font-size: 20px; font-weight: 800; letter-spacing: 0.01em;
+  color: var(--ink);
+}
+.thanks-sign .ts-meta { display: block; font-size: 13px; color: #999; margin-top: 4px; }
+.thanks-top {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 22px;
+  font-size: 14px; font-weight: 700;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  transition: transform .15s, box-shadow .15s, background .15s, color .15s;
+}
+.thanks-top:hover { transform: translate(-2px,-2px); background: var(--ink); color: #fff; box-shadow: 4px 4px 0 var(--orange); }
+.thanks-top .tt-arrow { font-weight: 800; }
+
+/* ---- v4.1：技能磁贴固定 5 列（数据=5，设计=5+2）；结语不再放照片 ---- */
+/* 固定 5 列（数据=5，设计=5+2）；只有真·手机窄屏才降到 3 列 */
+.tool-grid { grid-template-columns: repeat(5, 1fr) !important; }
+@media (max-width: 560px) { .tool-grid { grid-template-columns: repeat(3, 1fr) !important; } }
+
+/* ---- 去过 App：竖屏手机截图轮播 ---- */
+.proj-card .quguo-carousel { width: 142px; align-self: center; margin: 0 auto; }
+.quguo-carousel .carousel-track {
+  aspect-ratio: 506 / 1100;
+  border: 3px solid #fff;
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+  background: #F3EEE7;
+  overflow: hidden;
+}
+.quguo-carousel .carousel-slide { border-radius: 16px; }
+.quguo-carousel .carousel-prev { left: -12px; width: 30px; height: 30px; }
+.quguo-carousel .carousel-next { right: -12px; width: 30px; height: 30px; }
+.quguo-carousel .carousel-dots { bottom: 8px; }
+.quguo-carousel .carousel-dots button { width: 6px; height: 6px; }
+.quguo-carousel .carousel-dots button.active { width: 16px; }
+
+/* ---- v4.2：去过手机截图收窄，项目区回到单屏 ---- */
+.proj-card .quguo-carousel { width: 118px; }
+#projects .proj-card { padding: 14px; }
+#projects { padding-top: 22px; padding-bottom: 24px; }
+
+/* ================================================================
+   v4.3：项目日期间距 / 技能磁贴居中对称 / 开屏不可跳过
+   ================================================================ */
+
+/* 1) 项目卡：收紧标题-日期-标签之间的行距（去掉日期继承的多余行高） */
+.proj-body h3 { line-height: 1.25; margin-bottom: 6px; }
+.proj-date { line-height: 1; margin-bottom: 12px; }
+
+/* 2) 技能磁贴：改用居中 flex —— 每行 5 个，末行自动居中（左右对称，不再 5+2 靠左） */
+.tool-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.tool-item { flex: 0 0 calc((100% - 42px) / 5); }
+@media (max-width: 560px) { .tool-item { flex: 0 0 calc((100% - 22px) / 3); } }
+
+/* 3) 开屏动画不可点击跳过 */
+.splash { cursor: default; }
+
+/* ================================================================
+   v4.4：3D 翻转问候开屏 / 设计卡 4+3
+   ================================================================ */
+
+/* ---- 开屏：3D 多语言问候 ---- */
+.splash { perspective: 1300px; cursor: default; }
+.hello-stage {
+  transform-style: preserve-3d;
+  transition: transform .35s cubic-bezier(.22, 1, .36, 1);
+  will-change: transform;
+}
+.hello-word {
+  display: inline-block;
+  font-size: clamp(64px, 15vw, 200px);
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  transform-origin: 50% 62%;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+.hello-word.hello-accent { color: var(--orange); }
+.hello-word.flip-in  { animation: helloIn .58s cubic-bezier(.16, .84, .3, 1) both; }
+.hello-word.flip-out { animation: helloOut .36s cubic-bezier(.6, 0, .5, 1) both; }
+@keyframes helloIn {
+  0%   { opacity: 0; transform: rotateX(-90deg) translateY(0.24em) scale(.96); }
+  100% { opacity: 1; transform: rotateX(0deg) translateY(0) scale(1); }
+}
+@keyframes helloOut {
+  0%   { opacity: 1; transform: rotateX(0deg) translateY(0); }
+  100% { opacity: 0; transform: rotateX(72deg) translateY(-0.18em); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hello-word.flip-in, .hello-word.flip-out { animation-duration: .01s; }
+  .hello-stage { transition: none; }
+}
+
+/* ---- 技能：设计/视频卡改为 上4下3（该卡磁贴每行 4 个） ---- */
+#skills .skills-grid .skill-card:nth-child(3) .tool-item {
+  flex: 0 0 calc((100% - 33px) / 4);
+}
+
+/* ================================================================
+   v4.5：3D 充气光泽手写体 hello 开屏（蓝色果冻质感 + 闪光 + 天空）
+   ================================================================ */
+.splash-hello { background: linear-gradient(165deg, #cfe4ff 0%, #e6f1ff 48%, #f5faff 100%); overflow: hidden; }
+.hello-sky {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(120% 80% at 28% -10%, rgba(255,255,255,.85), transparent 55%),
+    radial-gradient(70% 60% at 82% 15%, rgba(150,190,255,.5), transparent 70%),
+    radial-gradient(90% 70% at 60% 112%, rgba(120,165,245,.35), transparent 65%);
+}
+.hello-sky::after {
+  content: ""; position: absolute; inset: -20%;
+  background: repeating-linear-gradient(115deg, rgba(255,255,255,0) 0 62px, rgba(255,255,255,.12) 62px 66px);
+  mix-blend-mode: screen; opacity: .55;
+}
+.splash-hello .hello-stage {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .3s cubic-bezier(.22, 1, .36, 1);
+  will-change: transform;
+}
+.hello-wrap {
+  position: relative;
+  width: min(90vw, 880px);
+  animation: helloFloat 5.5s ease-in-out infinite;
+  will-change: transform;
+}
+.hello-svg { width: 100%; height: auto; display: block; overflow: visible; opacity: 0; transform: scale(.82); }
+.splash-hello.hl-in .hello-svg { animation: helloEnter 1s cubic-bezier(.18, .9, .28, 1) forwards; }
+@keyframes helloEnter {
+  0%   { opacity: 0; transform: scale(.8) translateY(18px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes helloFloat {
+  0%, 100% { transform: translateY(0) rotate(-1.1deg); }
+  50%      { transform: translateY(-16px) rotate(1.1deg); }
+}
+.hl-spark {
+  position: absolute; left: var(--x); top: var(--y);
+  width: var(--s); height: var(--s);
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  clip-path: polygon(50% 0, 57% 43%, 100% 50%, 57% 57%, 50% 100%, 43% 57%, 0 50%, 43% 43%);
+  filter: drop-shadow(0 0 6px rgba(255,255,255,.95));
+  opacity: 0;
+}
+.splash-hello.hl-in .hl-spark { animation: twinkle 2.6s ease-in-out infinite; animation-delay: var(--d); }
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: translate(-50%,-50%) scale(0) rotate(0); }
+  50%      { opacity: 1; transform: translate(-50%,-50%) scale(1) rotate(18deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hello-wrap { animation: none; }
+  .splash-hello .hello-stage { transition: none; }
+}
+
+/* ================================================================
+   v4.6：真·充气管 hello —— 单笔画路径 + 三层描边 + 一笔写出
+   ================================================================ */
+.hello-line { width: 100%; height: auto; display: block; overflow: visible; }
+
+/* 三层描边共用同一路径（pathLength=1 便于画线动画） */
+.hl-stroke {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.splash-hello.hl-in .hl-stroke { animation: helloDraw 2.5s cubic-bezier(.45, .05, .35, 1) .15s forwards; }
+@keyframes helloDraw { to { stroke-dashoffset: 0; } }
+
+/* 底：投在天空上的柔和落影 */
+.hl-cast  { stroke: #4a76d8; stroke-width: 54; opacity: .32; transform: translateY(20px); }
+/* 中：管身 —— 上浅下深的垂直渐变，撑出圆管体积 */
+.hl-base  { stroke: url(#hlTube); stroke-width: 52; }
+/* 顶：白色高光带 —— 沿管顶偏移，微模糊，形成充气光泽 */
+.hl-gloss { stroke: rgba(255,255,255,.92); stroke-width: 13; transform: translateY(-12px); }
+
+/* 闪光换成细长四角镜头星 */
+.hl-spark {
+  clip-path: polygon(50% 0, 54.5% 45.5%, 100% 50%, 54.5% 54.5%, 50% 100%, 45.5% 54.5%, 0 50%, 45.5% 45.5%);
+  filter: drop-shadow(0 0 8px rgba(255,255,255,1));
+}
+/* v4.6b：管径与高光比例修正 */
+.hl-cast  { stroke-width: 46; }
+.hl-base  { stroke-width: 44; }
+.hl-gloss { stroke-width: 11; opacity: .85; transform: translateY(-10px); }
+/* v4.6c：加粗管径 + 高光收敛，蓝色更饱满 */
+.hl-cast  { stroke-width: 56; opacity: .3; }
+.hl-base  { stroke-width: 53; }
+.hl-gloss { stroke-width: 12; opacity: .68; transform: translateY(-11px); }
+/* v4.6d：三明治截面着色 —— 平涂管身 + 下沿深蓝 + 顶部白色高光带 */
+.hl-base  { stroke: #9DBAF6; stroke-width: 53; }
+.hl-under { stroke: #6787EC; stroke-width: 46; opacity: .85; transform: translateY(8px); }
+.hl-gloss { stroke: #ffffff; stroke-width: 10; opacity: .9; transform: translateY(-13px); }
+/* v4.6e：回到渐变管身方案（最接近参考图），去掉 under 层，高光收窄变脆 */
+.hl-under { display: none; }
+.hl-base  { stroke: url(#hlTube); stroke-width: 53; }
+.hl-gloss { stroke: #ffffff; stroke-width: 10; opacity: .8; transform: translateY(-12px); }
+
+/* ================================================================
+   v5：技能三模块重排 / 兴趣三卡（拼豆·乐高·脱口秀）
+   ================================================================ */
+
+/* 技能：语言能力横排通栏在上，两张工具卡并排在下 */
+#skills .skills-grid .skill-card:first-child { grid-column: 1 / -1; padding: 20px 26px; }
+#skills .skills-grid .skill-card:first-child h4 { margin-bottom: 12px; }
+#skills .skills-grid .skill-card:first-child ul {
+  display: flex; flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 8px 24px;
+}
+#skills .skills-grid .skill-card:first-child ul li {
+  border-bottom: none;
+  padding: 6px 18px;
+  background: #FAFAF7;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  font-weight: 600;
+}
+@media (max-width: 720px) {
+  #skills .skills-grid .skill-card:first-child ul { flex-direction: column; gap: 8px; }
+}
+
+/* 兴趣：3 列 */
+.hobby-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 900px) { .hobby-grid { grid-template-columns: 1fr; } }
+.hobby-text h3 { font-size: 17px; }
+.hobby-text p { font-size: 13.5px; }
+
+/* 兴趣卡内的照片轮播（脱口秀双图） */
+.hobby-card .carousel { width: 100%; }
+.hobby-card .carousel-track {
+  aspect-ratio: 4 / 3;
+  border: none;
+  border-radius: 0;
+  background: #EFEAE2;
+}
+.hobby-card .carousel-prev, .hobby-card .carousel-next { width: 30px; height: 30px; }
+.hobby-card .carousel-prev { left: 8px; }
+.hobby-card .carousel-next { right: 8px; }
+.hobby-card .carousel-dots { bottom: 8px; }
+
+/* ================================================================
+   v5.1：技能卡高度贴合内容 / 结语紧凑化 / 兴趣卡只留标题
+   ================================================================ */
+
+/* 技能：两张工具卡不再拉伸等高，高度贴合内容（消除数据卡下方空白） */
+.skills-grid { align-items: start; }
+
+/* 结语：不再占满一屏，改为紧凑收尾段（消除底部大片空白） */
+#contact.contact-section {
+  min-height: unset;
+  padding: 88px 44px 96px;
+}
+#contact.contact-section::before,
+#contact.contact-section::after { content: none; }
+
+/* 兴趣卡：删除文字介绍后，标题居中、留白收紧 */
+.hobby-text { padding: 14px 16px 16px; }
+.hobby-text h3 { margin-bottom: 0; justify-content: center; }
+
+/* ================================================================
+   v5.2：技能「一个板块一行」全宽堆叠 / 兴趣图注 / 结语再收紧
+   ================================================================ */
+
+/* 技能：三个模块各占一整行，工具磁贴固定尺寸、单行左对齐 */
+.skills-grid { grid-template-columns: 1fr; gap: 16px; }
+.skills-grid .skill-card { grid-column: auto; padding: 20px 26px; }
+#skills .tool-grid { justify-content: flex-start; gap: 12px; }
+#skills .tool-item { flex: 0 0 92px !important; }
+
+/* 兴趣卡：标题下的一行小图注 */
+.hobby-text { padding: 14px 16px 16px; text-align: center; }
+.hobby-text h3 { margin-bottom: 4px; }
+.hobby-cap { font-size: 12.5px; color: var(--ink-soft); line-height: 1.5; }
+
+/* 结语：去掉「回到开头」后，段落与页脚更贴合 */
+#contact.contact-section { padding: 96px 44px 80px; }
+
+/* ================================================================
+   v5.3：技能重做 —— 横向「分类标签 + 工具小胶囊」，紧凑不留白
+   ================================================================ */
+.skills-grid { grid-template-columns: 1fr; gap: 14px; }
+
+/* 每个模块：一整行，左边分类名，右边工具流式排开 */
+.skills-grid .skill-card {
+  grid-column: auto;
+  display: flex; align-items: center; gap: 26px;
+  padding: 18px 26px;
+}
+.skills-grid .skill-card:hover { transform: none; box-shadow: var(--shadow-sm); }
+.skills-grid .skill-card h4 {
+  flex: 0 0 168px;
+  margin-bottom: 0;
+  font-size: 16px; line-height: 1.3;
+}
+
+/* 工具容器（含语言卡的 ul）：右侧横向流式，左对齐 */
+#skills .tool-grid,
+#skills .skills-grid .skill-card:first-child ul {
+  flex: 1 1 auto;
+  display: flex; flex-wrap: wrap;
+  justify-content: flex-start; align-items: center;
+  gap: 10px;
+}
+
+/* 工具胶囊：图标 + 名称 横排 */
+#skills .tool-item {
+  flex: 0 0 auto !important;
+  flex-direction: row; align-items: center; gap: 8px;
+  padding: 7px 15px 7px 9px;
+  background: #FAFAF8;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+}
+#skills .tool-item:hover { transform: translateY(-2px); border-color: var(--ink); box-shadow: var(--shadow-sm); }
+#skills .tool-logo { width: 24px; height: 24px; padding: 0; border-radius: 6px; }
+#skills .tool-name { flex: none; font-size: 13.5px; font-weight: 600; }
+
+/* 语言胶囊：与工具胶囊同款尺寸 */
+#skills .skills-grid .skill-card:first-child ul li {
+  padding: 8px 16px;
+  font-size: 13.5px;
+}
+
+@media (max-width: 720px) {
+  .skills-grid .skill-card { flex-direction: column; align-items: stretch; gap: 12px; }
+  .skills-grid .skill-card h4 { flex: none; }
+}
+
+/* ================================================================
+   v5.4：问问我 chips 居中 / 去过手机放大 / 技能设计行一行放下
+   ================================================================ */
+
+/* 1) 问问我 5 个关键词居中（末行自动居中，不再上4下1靠左） */
+.ai-chips { justify-content: center; }
+
+/* 2) 去过 App：手机截图放大到可读尺寸，卡片纵向居中 */
+#projects .proj-card:nth-of-type(1) { grid-template-columns: 220px 1fr; align-items: center; }
+#projects .proj-card:nth-of-type(1) .quguo-carousel { width: 200px; }
+
+/* 3) 技能工具胶囊整体收紧，让「产品设计/视频」7 个一行放下（剪映不再单独换行） */
+.skills-grid .skill-card { gap: 20px; padding: 16px 22px; }
+.skills-grid .skill-card h4 { flex: 0 0 150px; font-size: 15.5px; }
+#skills .tool-grid, #skills .skills-grid .skill-card:first-child ul { gap: 8px; }
+#skills .tool-item { padding: 6px 12px 6px 8px; gap: 7px; }
+#skills .tool-logo { width: 22px; height: 22px; }
+#skills .tool-name { font-size: 13px; }
+/* v5.4b：问问我 chips 限宽 → 3 上 2 下居中（更协调） */
+.ai-chips { max-width: 500px; margin-left: auto; margin-right: auto; }
+
+/* ================================================================
+   v5.5：语言胶囊统一 / SAA 图完整 / 项目图尺寸调整 / 5 选项一排
+   ================================================================ */
+
+/* 1) 语言能力胶囊 = 工具胶囊同款尺寸（去掉更宽/更大间距的观感） */
+#skills .skills-grid .skill-card:first-child ul { gap: 8px; }
+#skills .skills-grid .skill-card:first-child ul li { padding: 6px 14px; font-size: 13px; }
+
+/* 2) SAA 委任邮件：完整显示，不裁上下 */
+#activities .exp-card:nth-of-type(2) .card-photo > img {
+  aspect-ratio: 1206 / 994;
+  height: auto;
+  object-fit: contain;
+  background: #fff;
+}
+
+/* 3) 项目图：纽约与实习经历同宽(230)，「去过」手机缩小到 150 */
+#projects .proj-card { grid-template-columns: 230px 1fr; }
+#projects .proj-card .card-photo,
+#projects .proj-card .carousel,
+#projects .proj-card .proj-media { width: 230px; }
+#projects .proj-card:nth-of-type(1) { grid-template-columns: 230px 1fr; align-items: center; }
+#projects .proj-card:nth-of-type(1) .quguo-carousel { width: 150px; }
+
+/* 4) 问问我：对话框拉宽 + 5 个关键词一排居中 */
+.ai-box { max-width: 980px; }
+.ai-chips { max-width: none; }
+
+/* ================================================================
+   v5.6：对话框固定宽 / 语言卡统一 / 图文垂直居中 / 去过还原 / 灯箱切换
+   ================================================================ */
+
+/* 1) 问问我对话框固定宽度 —— 出现回答时不再变宽 */
+.ai-box { width: min(920px, 100%); max-width: none; align-self: center; }
+.ai-output, .ai-a, .ai-q { max-width: 100%; overflow-wrap: anywhere; word-break: break-word; }
+
+/* 2) 语言能力卡与其余两卡完全一致（内边距一致 + 标题真正垂直居中） */
+#skills .skills-grid .skill-card:first-child { padding: 16px 22px; }
+#skills .skills-grid .skill-card:first-child h4 { margin-bottom: 0; }
+
+/* 3) & 5) 实习 / 项目卡：图片与文字整体垂直居中 */
+.exp-card { align-items: center; }
+.exp-card .card-photo, .exp-card .carousel { align-self: center; }
+#projects .proj-card { align-items: center; }
+#projects .proj-card .card-photo, #projects .proj-card .carousel, #projects .proj-card .proj-media { align-self: center; }
+
+/* 6) 「去过」还原为原来的小图，贴合列宽、不再空旷 */
+#projects .proj-card:nth-of-type(1) { grid-template-columns: 148px 1fr; align-items: center; }
+#projects .proj-card:nth-of-type(1) .quguo-carousel { width: 132px; }
+
+/* 4) 灯箱左右切换按钮 + 计数 */
+.lb-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 52px; height: 52px; border-radius: 50%;
+  background: rgba(255,255,255,0.92); color: #1A1A1A;
+  font-size: 30px; font-weight: 700; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 2;
+  transition: transform .15s, background .15s;
+}
+.lb-nav:hover { background: #fff; transform: translateY(-50%) scale(1.08); }
+.lb-prev { left: 24px; }
+.lb-next { right: 24px; }
+.lb-counter {
+  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+  padding: 5px 16px; border-radius: 999px;
+  background: rgba(0,0,0,0.55); color: #fff;
+  font-size: 14px; font-weight: 600; letter-spacing: .04em;
+}
+@media (max-width: 720px) { .lb-nav { width: 42px; height: 42px; font-size: 24px; } .lb-prev { left: 10px; } .lb-next { right: 10px; } }
+
+/* ================================================================
+   v5.7：问问我 chips 左对齐 / 项目卡两列同宽 + 顶部对齐
+   ================================================================ */
+
+/* 1) 5 个关键词左对齐 */
+.ai-chips { justify-content: flex-start; }
+
+/* 2) 项目卡：两张卡左列同宽(150)，图片填满列、图与文都从顶部对齐
+      —— 标题跨卡对齐、纽约文字不再偏上 */
+#projects .proj-card { align-items: flex-start; grid-template-columns: 150px 1fr; gap: 28px; }
+#projects .proj-card .card-photo,
+#projects .proj-card .carousel,
+#projects .proj-card .proj-media { width: 150px; align-self: flex-start; }
+#projects .proj-card:nth-of-type(1) { grid-template-columns: 150px 1fr; align-items: flex-start; }
+#projects .proj-card:nth-of-type(1) .quguo-carousel { width: 150px; margin: 0; }
+
+/* ================================================================
+   v5.8：对话框加高（宽不变） / 项目卡排版对齐实习卡
+   ================================================================ */
+
+/* 1) 问问我对话框：输出区加高，整体更「长」不再扁（宽度仍固定 920） */
+.ai-output { min-height: 250px; }
+
+/* 2) 项目卡 = 实习卡排版：两列同宽、图片填满列、图与文顶部对齐、标题+日期同一行 */
+#projects .proj-card { grid-template-columns: 170px 1fr; gap: 26px; align-items: flex-start; }
+#projects .proj-card .card-photo,
+#projects .proj-card .carousel,
+#projects .proj-card .proj-media { width: 170px; align-self: flex-start; }
+#projects .proj-card:nth-of-type(1) { grid-template-columns: 170px 1fr; align-items: flex-start; }
+#projects .proj-card:nth-of-type(1) .quguo-carousel { width: 170px; margin: 0; }
+/* 标题 + 日期同一行（复用实习卡的 exp-head） */
+#projects .proj-body .exp-head { margin-bottom: 10px; }
+#projects .proj-date { margin: 0; }
+
+/* ================================================================
+   v5.9：① 开屏打字机「整行预排 + 逐字点亮」防卡顿字符样式
+          ② 项目卡完全对标实习卡（同列宽 230 · 垂直居中 · 同字号）
+             —— 纽约卡不再「太靠上」
+   ================================================================ */
+
+/* ① 打字机字符：先以 opacity:0 占位（布局一次定死、不重排），逐个点亮 */
+.st-char { opacity: 0; transition: opacity .1s linear; }
+.st-char.on { opacity: 1; }
+
+/* ② 两张项目卡 = 实习卡：左列同为 230、gap 26、图文整体垂直居中 */
+#projects .proj-card {
+  grid-template-columns: 230px 1fr;
+  gap: 26px;
+  align-items: center;          /* 关键：与实习卡一致，纽约内容不再顶在上方 */
+}
+#projects .proj-card .card-photo,
+#projects .proj-card .carousel,
+#projects .proj-card .proj-media {
+  width: 230px;
+  align-self: center;
+}
+#projects .proj-card .proj-media .card-photo,
+#projects .proj-card .proj-media .carousel { width: 100%; }
+
+/* 纽约卡：横向地图铺满 230 列 —— 视觉与实习卡照片一致 */
+#projects .proj-card:nth-of-type(2) { grid-template-columns: 230px 1fr; align-items: center; }
+
+/* 「去过」竖屏手机截图：在 230 列内水平居中，保持竖屏比例 */
+#projects .proj-card:nth-of-type(1) { grid-template-columns: 230px 1fr; align-items: center; }
+#projects .proj-card:nth-of-type(1) .quguo-carousel { width: 162px; margin: 0 auto; }
+
+/* 字体排版对标实习卡：标题 20 / 日期橙 14（去掉等宽体）/ 标题·日期同一行 */
+#projects .proj-body .exp-head { margin-bottom: 8px; align-items: baseline; }
+#projects .proj-body .exp-head h3 { font-size: 20px; font-weight: 700; margin-bottom: 0; }
+#projects .proj-date {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--orange);
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+/* ================================================================
+   v6.0：② 纽约卡文字整体下移一点  ③「去过」手机截图缩小、消除文字旁空白
+   ================================================================ */
+
+/* ③「去过」竖屏截图太高 → 文字上下出现大片空白。缩小截图，使其高度≈文字高度 */
+#projects .proj-card:nth-of-type(1) .quguo-carousel { width: 124px; margin: 0 auto; }
+
+/* ② 纽约卡：标题原本略高于地图顶部，往下挪一点，让文字落在地图纵向范围内 */
+#projects .proj-card:nth-of-type(2) .proj-body { padding-top: 22px; }
+
+/* ================================================================
+   v6.1：项目卡 —— ① 标题与技术标签间距加大  ② 两张卡标题纵向对齐
+   ================================================================ */
+
+/* ② 两卡正文都顶部对齐 + 同样的上内边距 → 两个标题落在同一高度（对齐）；
+      图片仍纵向居中，保持平衡 */
+#projects .proj-card { align-items: flex-start; }
+#projects .proj-card .card-photo,
+#projects .proj-card .carousel,
+#projects .proj-card .proj-media,
+#projects .proj-card .quguo-carousel { align-self: center; }
+#projects .proj-card .proj-body { padding-top: 22px; }
+
+/* ① 标题（含日期）与下方技术标签之间的间距加大 */
+#projects .proj-body .exp-head { margin-bottom: 18px; }
+
+/* ================================================================
+   v6.2：项目卡正文不要太靠右 —— 收窄左侧图片列，文字整体左移；两卡仍对齐
+   ================================================================ */
+
+/* 左列由 230 收窄到 165：文字起点从 ~272 左移到 ~207，且两卡列宽一致 → 文字对齐 */
+#projects .proj-card,
+#projects .proj-card:nth-of-type(1),
+#projects .proj-card:nth-of-type(2) { grid-template-columns: 165px 1fr; gap: 26px; }
+
+#projects .proj-card .card-photo,
+#projects .proj-card .carousel,
+#projects .proj-card .proj-media { width: 165px; }
+
+/* 纽约地图铺满 165 列 */
+#projects .proj-card:nth-of-type(2) .card-photo,
+#projects .proj-card:nth-of-type(2) .carousel,
+#projects .proj-card:nth-of-type(2) .proj-media { width: 165px; }
+
+/* 「去过」竖屏手机保持 124，在 165 列内居中 */
+#projects .proj-card:nth-of-type(1) .quguo-carousel { width: 124px; margin: 0 auto; }
+
+/* 列变窄后，「观看视频」按钮在 165 宽里会折行 → 缩小字号让它回到一行 */
+#projects .proj-card:nth-of-type(2) .proj-link-below {
+  font-size: 11px;
+  padding: 8px 6px;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+/* ================================================================
+   v6.3：Hero 状态胶囊「HKU · Double Major … Translation」不换行
+   ================================================================ */
+.status-chip { white-space: nowrap; }
+/* 窄屏放不下时才允许换行，避免溢出 */
+@media (max-width: 700px) { .status-chip { white-space: normal; } }
+
+/* ================================================================
+   v6.4：① Scroll 箭头右移到「关键词与照片之间」的空隙
+          ② 项目详情字号/行高与实习详情完全一致（14px / 1.7）
+   ================================================================ */
+.scroll-down { left: 52%; }
+#projects .proj-list li { font-size: 14px; line-height: 1.7; }
+
+/* v6.5：英文关键词更宽 → 英文版 Scroll 箭头再右移，落在英文关键词与照片之间的空隙 */
+html[data-lang="en"] .scroll-down { left: 54.5%; }
+
+/* v6.6：Scroll 提示离底部太近，被浏览器底部 UI 挡住 → 抬高，确保「Scroll / 往下看」始终可见 */
+.scroll-down { bottom: 40px; }

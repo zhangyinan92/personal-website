@@ -7,24 +7,17 @@
 <meta name="description" content="张依楠 (Nicola) 的个人作品集网站 — 数据 × 产品复合型，香港大学信息系统与分析 + 翻译双主修">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20260703zb">
 </head>
 <body>
 
 <!-- ============ 开屏动画 (3 段) ============ -->
 <div id="splash" class="splash">
-  <div class="splash-stage">
-    <span class="splash-text" data-phase="1">Hi</span>
-    <span class="splash-text" data-phase="2">你好</span>
-    <span class="splash-text splash-text-long" data-phase="3">
-      <span class="sl-line">我的名字叫</span>
-      <span class="sl-name">张依楠，</span>
-      <span class="sl-line">很开心你愿意花时间了解我</span>
-      <span class="sl-divider"></span>
-      <span class="sl-line sl-en">My name is Zhang Yinan</span>
-      <span class="sl-line sl-en">glad you took the time to know me</span>
-    </span>
+  <div class="splash-type">
+    <p class="st-line"></p>
+    <p class="st-line"></p>
+    <p class="st-line st-en"></p>
   </div>
 </div>
 
@@ -35,11 +28,12 @@
     <a href="#hero" data-nav><span data-lang="zh">首页</span><span data-lang="en">Home</span></a>
     <a href="#ask" data-nav><span data-lang="zh">问问我</span><span data-lang="en">Ask me</span></a>
     <a href="#education" data-nav><span data-lang="zh">教育背景</span><span data-lang="en">Education</span></a>
-    <a href="#experience" data-nav><span data-lang="zh">实习经历</span><span data-lang="en">Experience</span></a>
+    <a href="#experience" data-nav><span data-lang="zh">实习经历</span><span data-lang="en">Internships</span></a>
     <a href="#projects" data-nav><span data-lang="zh">项目经历</span><span data-lang="en">Projects</span></a>
     <a href="#skills" data-nav><span data-lang="zh">技能</span><span data-lang="en">Skills</span></a>
     <a href="#activities" data-nav><span data-lang="zh">课外活动</span><span data-lang="en">Activities</span></a>
-    <a href="#contact" data-nav><span data-lang="zh">联系</span><span data-lang="en">Contact</span></a>
+    <a href="#interests" data-nav><span data-lang="zh">兴趣爱好</span><span data-lang="en">Interests</span></a>
+    <a href="#contact" data-nav><span data-lang="zh">结语</span><span data-lang="en">Thanks</span></a>
   </nav>
   <button id="langToggle" class="lang-toggle" aria-label="Toggle language">
     <span class="lang-zh">中</span><span class="lang-sep">/</span><span class="lang-en">EN</span>
@@ -54,8 +48,8 @@
     <div class="hero-left">
       <span class="status-chip">
         <span class="dot"></span>
-        <span data-lang="zh">香港大学 · 大三在读 · 正在寻找实习机会</span>
-        <span data-lang="en">HKU · Year 3 · Looking for internship opportunities</span>
+        <span data-lang="zh">香港大学 · 信息系统与分析 × 翻译 双主修</span>
+        <span data-lang="en">HKU · Double Major in Information Systems and Analytics &amp; Translation</span>
       </span>
       <p class="hero-greet">
         <span data-lang="zh">你好，我是</span>
@@ -65,6 +59,10 @@
         <span data-lang="zh">张依楠</span>
         <span data-lang="en">Zhang Yinan</span>
       </h1>
+      <p class="hero-bio">
+        <span data-lang="zh">用<b>数据</b>讲故事，用<b>产品思维</b>拆解复杂问题，也在<b>中英</b>之间自由切换。</span>
+        <span data-lang="en">I tell stories with <b>data</b>, break down complex problems with <b>product thinking</b>, and move freely between <b>Chinese &amp; English</b>.</span>
+      </p>
       <p class="hero-tags-label">
         <span data-lang="zh">我的关键词</span><span data-lang="en">My Keywords</span>
       </p>
@@ -79,8 +77,17 @@
     </div>
 
     <div class="hero-right">
-      <figure class="hero-photo">
-        <img src="assets/photos/hero.jpg" alt="Zhang Yinan headshot">
+      <figure class="hero-photo hero-carousel carousel" data-carousel>
+        <div class="carousel-track">
+          <img class="carousel-slide active" src="assets/photos/hero-1.jpg?v=2" alt="张依楠 · 海边">
+          <img class="carousel-slide" src="assets/photos/hero-2.jpg?v=2" alt="张依楠 · 展览">
+          <img class="carousel-slide" src="assets/photos/hero-3.jpg?v=2" alt="张依楠 · 老城门前">
+          <img class="carousel-slide" src="assets/photos/hero-4.jpg?v=2" alt="张依楠 · 香港街头">
+          <img class="carousel-slide" src="assets/photos/hero-5.jpg?v=2" alt="张依楠 · 大头贴">
+        </div>
+        <button class="carousel-prev" aria-label="上一张">‹</button>
+        <button class="carousel-next" aria-label="下一张">›</button>
+        <div class="carousel-dots" aria-hidden="true"></div>
       </figure>
     </div>
   </div>
@@ -96,15 +103,15 @@
   <div class="section-head">
     <h2><span data-lang="zh">问问我 🤖</span><span data-lang="en">Ask me anything 🤖</span></h2>
     <p class="section-sub">
-      <span data-lang="zh">这是一个模拟 AI 对话框 —— 点下方任一关键词填入，再按发送，我就会回复你。</span>
-      <span data-lang="en">A mock AI chat — pick a chip below to fill the box, then hit send for a reply.</span>
+      <span data-lang="zh">这是一个模拟 AI 对话框 —— 快来问我问题吧，我在这儿等你 👇</span>
+      <span data-lang="en">A mock AI chat — go ahead, ask me anything, I'm all ears 👇</span>
     </p>
   </div>
 
   <div class="ai-box">
     <div class="ai-output" id="aiOutput">
-      <p class="ai-placeholder" data-lang="zh">👋 嗨，先点下面任一关键词，再选 Search 或 Think，最后按右边的发送按钮 →</p>
-      <p class="ai-placeholder" data-lang="en">👋 Pick a chip below, choose Search or Think, then hit send →</p>
+      <p class="ai-placeholder" data-lang="zh">👋 嗨，先点下面任一关键词，再点 💡 思维链长度 选一个档位，最后按右边的发送按钮 →</p>
+      <p class="ai-placeholder" data-lang="en">👋 Pick a chip below, tap 💡 Thinking depth to choose a level, then hit send →</p>
     </div>
 
     <div class="ai-chips">
@@ -126,14 +133,25 @@
     </div>
 
     <div class="ai-input">
-      <button class="ai-pill ai-pill-search" id="aiModeSearch" type="button" title="Search mode">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
-        Search
-      </button>
-      <button class="ai-pill ai-pill-think" id="aiModeThink" type="button" title="Think mode">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6m-5 4h4M12 2a7 7 0 00-4 12.7V16a2 2 0 002 2h4a2 2 0 002-2v-1.3A7 7 0 0012 2z"/></svg>
-        Think
-      </button>
+      <div class="ai-depth" id="aiDepth">
+        <button class="ai-depth-btn" id="aiDepthBtn" type="button" aria-haspopup="menu" aria-expanded="false">
+          <svg class="adb-bulb" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6m-5 4h4M12 2a7 7 0 00-4 12.7V16a2 2 0 002 2h4a2 2 0 002-2v-1.3A7 7 0 0012 2z"/></svg>
+          <span id="aiDepthLabel"><span data-lang="zh">思维链长度</span><span data-lang="en">Thinking depth</span></span>
+          <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+        </button>
+        <div class="ai-depth-menu" id="aiDepthMenu" role="menu" hidden>
+          <button class="ai-depth-opt" data-mode="think" type="button" role="menuitemradio">
+            <span class="ado-name">💡 <span data-lang="zh">默认</span><span data-lang="en">Default</span></span>
+            <span class="ado-desc"><span data-lang="zh">依赖模型默认行为 · 简洁回答</span><span data-lang="en">Model default · brief reply</span></span>
+            <span class="ado-check">✓</span>
+          </button>
+          <button class="ai-depth-opt" data-mode="search" type="button" role="menuitemradio">
+            <span class="ado-name">🧠 <span data-lang="zh">穷究</span><span data-lang="en">Ultrathink</span></span>
+            <span class="ado-desc"><span data-lang="zh">超高强度推理 · 完整详细回答</span><span data-lang="en">Deepest reasoning · full reply</span></span>
+            <span class="ado-check">✓</span>
+          </button>
+        </div>
+      </div>
       <input type="text" id="aiInput" placeholder="" autocomplete="off" readonly>
       <button class="ai-send" id="aiSend" aria-label="send">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
@@ -192,9 +210,42 @@
 <!-- ============ Experience ============ -->
 <section id="experience" class="section">
   <div class="section-head">
-    <h2><span data-lang="zh">实习经历</span><span data-lang="en">Internship Experience</span></h2>
+    <h2><span data-lang="zh">实习经历</span><span data-lang="en">Internships</span></h2>
     <svg class="head-squiggle" viewBox="0 0 120 8" preserveAspectRatio="none"><path d="M2 4 Q15 1 30 4 T58 4 T86 4 T118 4" stroke="#F97316" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
   </div>
+
+  <article class="exp-card">
+    <div class="card-photo">
+      <img src="assets/photos/nanjing-wangyan.jpg" alt="南京网眼 · WEBEYE 办公室">
+    </div>
+    <div class="exp-body">
+      <div class="exp-head">
+        <h3><span data-lang="zh">南京网眼信息技术有限公司</span><span data-lang="en">Nanjing Webeye Information Technology Co., Ltd.</span></h3>
+        <span class="exp-date">2026.05 – <span data-lang="zh">至今</span><span data-lang="en">Present</span> · <span data-lang="zh">南京</span><span data-lang="en">Nanjing</span></span>
+      </div>
+      <p class="exp-role">
+        <span data-lang="zh">AI 产品经理实习生（效率产品组）</span>
+        <span data-lang="en">AI Product Manager Intern (Efficiency Product Group)</span>
+      </p>
+      <ul class="exp-list">
+        <li>
+          <strong><span data-lang="zh">从一张白纸做出 AI Studio：</span><span data-lang="en">Built AI Studio from a blank page: </span></strong>
+          <span data-lang="zh">在「剧多多」短剧平台上，我主导了全新 AI Studio 模块的端到端设计，从零推进到能落地——独立交付了 3 份高保真 Demo 和 1 份 PRD。</span>
+          <span data-lang="en">On the "Juduoduo" short-drama platform, I led the end-to-end design of a brand-new AI Studio module, driving it from zero to launch-ready — independently delivering 3 high-fidelity demos and 1 PRD.</span>
+        </li>
+        <li>
+          <strong><span data-lang="zh">把创意封装成工具：</span><span data-lang="en">Packaged creativity into tools: </span></strong>
+          <span data-lang="zh">和技术团队一起，把 4 类核心「短剧创作 Skill」打磨成可复用的能力，让编剧的灵感能一键落地。</span>
+          <span data-lang="en">Working with the engineering team, I refined 4 core "short-drama creation Skills" into reusable capabilities, letting screenwriters turn inspiration into results with a single click.</span>
+        </li>
+        <li>
+          <strong><span data-lang="zh">正在被真实用户使用：</span><span data-lang="en">Now in the hands of real users: </span></strong>
+          <span data-lang="zh">方案现在跑在导演 / 编剧的灰度测试里，通过后就会面向全公司上线——第一次看着自己想的产品被真人用起来，很上头。</span>
+          <span data-lang="en">The scheme is currently running in a gray-scale test with directors/screenwriters; once it passes, it rolls out company-wide. Watching something I envisioned actually get used by real people for the first time was a total rush.</span>
+        </li>
+      </ul>
+    </div>
+  </article>
 
   <article class="exp-card">
     <div class="card-photo">
@@ -211,51 +262,26 @@
       </p>
       <ul class="exp-list">
         <li>
-          <strong><span data-lang="zh">产品迭代与业务理解：</span><span data-lang="en">Product Iteration &amp; Business Logic: </span></strong>
-          <span data-lang="zh">参与第 91-93 次系统迭代，深度掌握 nGen、OMS 等港口核心信息系统；熟悉船舶创建至装卸货的全流程运作机制。</span>
-          <span data-lang="en">Joined Sprint 91-93; gained deep proficiency in core port systems (nGen, OMS) and the end-to-end vessel-to-discharge workflow.</span>
+          <strong><span data-lang="zh">读懂一整座港口：</span><span data-lang="en">Understood an entire port: </span></strong>
+          <span data-lang="zh">跟着团队做了第 91–93 次系统迭代，从船舶创建到装卸货全流程，第一次真切理解 nGen、OMS 这些港口「大脑」到底是怎么运转的。</span>
+          <span data-lang="en">I joined the team for system iterations 91–93, covering the full flow from vessel creation to cargo loading/unloading — really grasping for the first time how port "brains" like nGen and OMS actually work.</span>
         </li>
         <li>
-          <strong><span data-lang="zh">流程自动化：</span><span data-lang="en">Process Automation: </span></strong>
-          <span data-lang="zh">使用 Verification Tool 编写 API 请求并设计堆场区块工作流，实现堆场数据的自动更新。</span>
-          <span data-lang="en">Wrote API requests via Verification Tool and designed yard-block workflows for automated yard-planning updates.</span>
+          <strong><span data-lang="zh">让数据自己更新：</span><span data-lang="en">Let the data update itself: </span></strong>
+          <span data-lang="zh">用 Verification Tool 写 API 请求、设计堆场区块工作流，把原本要手动维护的堆场数据变成了自动更新。</span>
+          <span data-lang="en">Using the Verification Tool, I wrote API requests and designed yard-block workflows, turning yard data that used to be maintained by hand into something that updates automatically.</span>
         </li>
         <li>
-          <strong><span data-lang="zh">协作可视化：</span><span data-lang="en">Visualization &amp; Collaboration: </span></strong>
-          <span data-lang="zh">用 Draw.io 绘制 Gate Grounding 工作流图，提升跨部门沟通效率。</span>
-          <span data-lang="en">Mapped "Gate Grounding" workflows in Draw.io to align cross-functional teams.</span>
-        </li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="exp-card">
-    <div class="exp-body exp-body-full">
-      <div class="exp-head">
-        <h3><span data-lang="zh">上海安运人通科技有限公司</span><span data-lang="en">Shanghai Anyun Rentong Technology Co., Ltd.</span></h3>
-        <span class="exp-date">2024.12 – 2025.01 · <span data-lang="zh">上海</span><span data-lang="en">Shanghai</span></span>
-      </div>
-      <p class="exp-role">
-        <span data-lang="zh">项目经理助理实习生</span>
-        <span data-lang="en">Project Manager Assistant Intern</span>
-      </p>
-      <ul class="exp-list">
-        <li>
-          <strong><span data-lang="zh">需求分析与建模：</span><span data-lang="en">Requirements &amp; Modeling: </span></strong>
-          <span data-lang="zh">参与梅北码头智能安防系统开发，使用 UML + Draw.io 绘制用例图、类图、序列图，完成系统底层逻辑设计。</span>
-          <span data-lang="en">Contributed to the "Meibei Terminal Intelligent Security System"; conducted system-level design (use case, class, sequence) via UML + Draw.io.</span>
-        </li>
-        <li>
-          <strong><span data-lang="zh">UX 优化与项目管理：</span><span data-lang="en">UX &amp; PM: </span></strong>
-          <span data-lang="zh">提出用户界面个性化优化建议，制作 Excel 甘特图监控项目进度，确保初期计划按时交付。</span>
-          <span data-lang="en">Proposed personalized UX improvements; tracked milestones in Excel Gantt charts to ensure on-time delivery.</span>
+          <strong><span data-lang="zh">把复杂讲简单：</span><span data-lang="en">Made the complex simple: </span></strong>
+          <span data-lang="zh">用 Draw.io 把 Gate Grounding 流程画成一张图，跨部门开会时大家终于能「看着同一张图说话」，沟通顺了不少。</span>
+          <span data-lang="en">With Draw.io, I turned the Gate Grounding process into a single diagram, so in cross-department meetings everyone could finally "talk while looking at the same picture" — communication got a lot smoother.</span>
         </li>
       </ul>
     </div>
   </article>
 </section>
 
-<!-- ============ Projects (按时间倒序：AIGC → NYC → Airfare) ============ -->
+<!-- ============ Projects (按时间倒序：去过App → NYC) ============ -->
 <section id="projects" class="section">
   <div class="section-head">
     <h2><span data-lang="zh">项目经历</span><span data-lang="en">Projects</span></h2>
@@ -263,29 +289,34 @@
   </div>
 
   <article class="proj-card">
-    <div class="card-photo">
-      <img src="assets/photos/aigc.png" alt="AIGC ECO-DATA GRID final image">
+    <div class="card-photo carousel quguo-carousel" data-carousel>
+      <div class="carousel-track">
+        <img class="carousel-slide active" src="assets/photos/quguo-1.jpg?v=1" alt="去过 · App Store 上架">
+        <img class="carousel-slide" src="assets/photos/quguo-2.jpg?v=1" alt="去过 · 世界地图">
+        <img class="carousel-slide" src="assets/photos/quguo-3.jpg?v=1" alt="去过 · 足迹统计">
+        <img class="carousel-slide" src="assets/photos/quguo-4.jpg?v=1" alt="去过 · 成就印章">
+      </div>
+      <button class="carousel-prev" aria-label="上一张">‹</button>
+      <button class="carousel-next" aria-label="下一张">›</button>
+      <div class="carousel-dots" aria-hidden="true"></div>
     </div>
     <div class="proj-body">
-      <h3><span data-lang="zh">AIGC 视觉化项目</span><span data-lang="en">AIGC Visualization · Environmental Monitoring</span></h3>
-      <span class="proj-date">2025.12</span>
-      <div class="proj-tags">
-        <span class="proj-tag"><span class="pt-ic">🤖</span> Gemini-2.5-flash-image</span>
-        <span class="proj-tag"><span class="pt-ic">✨</span><span data-lang="zh">提示词工程</span><span data-lang="en">Prompt Engineering</span></span>
-        <span class="proj-tag"><span class="pt-ic">🌱</span><span data-lang="zh">可持续主题</span><span data-lang="en">Sustainability</span></span>
+      <div class="exp-head">
+        <h3><span data-lang="zh">「去过」· 旅行记录 App</span><span data-lang="en">「去过」· Travel-Log App</span></h3>
+        <span class="proj-date">2026.06 · <span data-lang="zh">已上线 App Store &amp; 华为应用市场</span><span data-lang="en">Live on App Store &amp; Huawei AppGallery</span></span>
       </div>
       <ul class="proj-list">
-        <li><strong><span data-lang="zh">提示词工程：</span><span data-lang="en">Prompt Engineering: </span></strong>
-          <span data-lang="zh">以"环境监测与可持续性"为主题，独立完成三轮提示词迭代。</span>
-          <span data-lang="en">Themed "Environmental Monitoring &amp; Sustainability"; ran 3 rounds of prompt iteration.</span>
+        <li><strong><span data-lang="zh">差异化定位：</span><span data-lang="en">Differentiated Positioning: </span></strong>
+          <span data-lang="zh">市面上的足迹 App 都依赖定位，可小时候还没有手机的那些旅行，也是我们真真实实走过的地方——它们不该在地图上缺席。于是有了「去过」——无需定位、手动标记、把所有旅行记忆都收进地图，还用 11 枚成就印章把「探索世界」变成一场游戏。</span>
+          <span data-lang="en">Footprint apps all lean on GPS — but the trips we took as kids, before we had phones, deserve a spot on the map too. So I made 「去过」: no positioning needed, mark places by hand, gather every travel memory onto one map, with 11 achievement stamps that turn exploring the world into a game.</span>
         </li>
-        <li><strong><span data-lang="zh">迭代优化：</span><span data-lang="en">Iteration: </span></strong>
-          <span data-lang="zh">从基础主题构建，到引入交互界面与传感器逻辑，最终去冗余指令实现画面精简化。</span>
-          <span data-lang="en">From basic themes to interactive UI + sensor logic; streamlined instructions for clarity.</span>
+        <li><strong><span data-lang="zh">一个人写完三端：</span><span data-lang="en">Three platforms, one person: </span></strong>
+          <span data-lang="zh">产品、UX、前端、原生壳全是我自己啃下来的——Vite + Tailwind + Leaflet 搭 PWA 内核，Capacitor 跨端封装，再用 Swift / Kotlin 双端原生桥打通触觉反馈和相册保存。</span>
+          <span data-lang="en">Product, UX, front-end, and native shells were all made by me — a PWA core built with Vite + Tailwind + Leaflet, cross-platform packaging via Capacitor, plus Swift/Kotlin native bridges to wire up haptic feedback and photo-album saving on both platforms.</span>
         </li>
-        <li><strong><span data-lang="zh">输出：</span><span data-lang="en">Output: </span></strong>
-          <span data-lang="zh">产出高逻辑性的"ECO-DATA GRID"视觉方案。</span>
-          <span data-lang="en">Delivered the high-logic "ECO-DATA GRID" visual solution.</span>
+        <li><strong><span data-lang="zh">冷启动的小成绩：</span><span data-lang="en">Early traction. </span></strong>
+          <span data-lang="zh">App Store 上架 2 天累计 40 次下载、单日转化率最高 80%；华为应用市场首日详情页转化 66.67%；两端卸载率都是 0%——第一批用户，一个都没走。</span>
+          <span data-lang="en">40 downloads in the first two days on the App Store (peak daily conversion 80%), a 66.67% first-day product-page conversion on Huawei AppGallery, and a 0% uninstall rate on both — every early user stuck around.</span>
         </li>
       </ul>
     </div>
@@ -309,60 +340,22 @@
       </a>
     </div>
     <div class="proj-body">
-      <h3><span data-lang="zh">纽约市交通安全大数据分析</span><span data-lang="en">NYC Traffic Safety · Big Data Analysis</span></h3>
-      <span class="proj-date">2025.11 — 2025.12</span>
-      <div class="proj-tags">
-        <span class="proj-tag"><span class="pt-ic">🗺️</span> Kepler.gl</span>
-        <span class="proj-tag"><span class="pt-ic">📊</span> Tableau</span>
-        <span class="proj-tag"><span class="pt-ic">🎬</span> Premiere Pro</span>
-        <span class="proj-tag"><span class="pt-ic">🎞️</span><span data-lang="zh">剪映</span><span data-lang="en">CapCut</span></span>
+      <div class="exp-head">
+        <h3><span data-lang="zh">纽约市交通安全大数据分析</span><span data-lang="en">NYC Traffic Safety · Big Data Analysis</span></h3>
+        <span class="proj-date">2025.11 — 2025.12</span>
       </div>
       <ul class="proj-list">
-        <li><strong><span data-lang="zh">多维空间分析：</span><span data-lang="en">Spatial Modeling: </span></strong>
-          <span data-lang="zh">用 Kepler.gl 对 200 万+ 起事故数据 3D 聚类，识别事故高发路口及"周五晚高峰"时空特征。</span>
-          <span data-lang="en">3D-clustered 2M+ accident records with Kepler.gl; surfaced high-risk intersections and "Friday rush hour" patterns.</span>
+        <li><strong><span data-lang="zh">在 200 万条数据里找规律：</span><span data-lang="en">Finding patterns in 2M records: </span></strong>
+          <span data-lang="zh">用 Kepler.gl 给 200 万+ 起交通事故做 3D 空间聚类，那些反复亮起的危险路口和"周五晚高峰"的时刻，一下子就浮出了水面。</span>
+          <span data-lang="en">Using Kepler.gl, I ran 3D spatial clustering on 2M+ traffic accidents, and the repeatedly-flaring danger intersections and the "Friday evening rush" moments quickly surfaced.</span>
         </li>
-        <li><strong><span data-lang="zh">业务逻辑可视化：</span><span data-lang="en">Behavior × Injury: </span></strong>
-          <span data-lang="zh">在 Tableau 量化驾驶行为与伤害相关性，识别摩托车 84.2% 伤害率及卡车工作日独特节律。</span>
-          <span data-lang="en">Quantified driving-injury correlation in Tableau — 84.2% motorcycle injury rate, unique weekday truck patterns.</span>
+        <li><strong><span data-lang="zh">让数字说人话：</span><span data-lang="en">Making numbers speak: </span></strong>
+          <span data-lang="zh">在 Tableau 里把驾驶行为和伤害程度对上号——摩托车 84.2% 的高伤害率、大卡车工作日独特的事故节律，都被清楚量化出来。</span>
+          <span data-lang="en">In Tableau I matched driving behavior to injury severity — an 84.2% motorcycle injury rate and trucks' distinct weekday rhythm both came out crisp and quantified.</span>
         </li>
-        <li><strong><span data-lang="zh">数据叙事：</span><span data-lang="en">Data Storytelling: </span></strong>
-          <span data-lang="zh">用 PR + 剪映把图表剪成 5 分钟商业叙事视频。</span>
-          <span data-lang="en">Cut a 5-min business-narrative video in PR + CapCut.</span>
-        </li>
-        <li><strong><span data-lang="zh">产品化输出：</span><span data-lang="en">Strategy: </span></strong>
-          <span data-lang="zh">提出"弹性通勤 + 分时段精准执法"等 4 项数据驱动建议。</span>
-          <span data-lang="en">4 data-driven recommendations including "Flexible Commuting Systems".</span>
-        </li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="proj-card">
-    <div class="card-photo">
-      <img src="assets/photos/r-code.png" alt="R code for airfare prediction">
-    </div>
-    <div class="proj-body">
-      <h3><span data-lang="zh">航空票价预测模型分析</span><span data-lang="en">Airfare Prediction Model Analysis</span></h3>
-      <span class="proj-date">2025.09 — 2025.12</span>
-      <div class="proj-tags">
-        <span class="proj-tag"><span class="pt-ic">📈</span> R</span>
-        <span class="proj-tag"><span class="pt-ic">🌳</span> CART</span>
-        <span class="proj-tag"><span class="pt-ic">📐</span><span data-lang="zh">线性 / 逻辑回归</span><span data-lang="en">Linear / Logistic</span></span>
-        <span class="proj-tag"><span class="pt-ic">🔍</span><span data-lang="zh">特征工程</span><span data-lang="en">Feature Engineering</span></span>
-      </div>
-      <ul class="proj-list">
-        <li><strong><span data-lang="zh">建模与算法选型：</span><span data-lang="en">Algorithm Selection: </span></strong>
-          <span data-lang="zh">在 R 中对大规模航旅数据做特征工程，横向比对线性回归、逻辑回归、CART 决策树。</span>
-          <span data-lang="en">Feature-engineered large-scale travel data in R; benchmarked Linear, Logistic, and CART models.</span>
-        </li>
-        <li><strong><span data-lang="zh">模型优化：</span><span data-lang="en">Optimization: </span></strong>
-          <span data-lang="zh">剪枝后 CART 模型解释力翻倍，绝对误差降低 25%+。</span>
-          <span data-lang="en">Pruned CART doubled explanatory power and cut absolute error by 25%+.</span>
-        </li>
-        <li><strong><span data-lang="zh">价格动因挖掘：</span><span data-lang="en">Driver Analysis: </span></strong>
-          <span data-lang="zh">量化航司、舱位、航线对定价的贡献度。</span>
-          <span data-lang="en">Quantified airline, cabin, and route contributions to pricing.</span>
+        <li><strong><span data-lang="zh">剪成一个 5 分钟的故事：</span><span data-lang="en">Cut into a 5-min story: </span></strong>
+          <span data-lang="zh">用 Premiere Pro + 剪映把图表剪成一支有起承转合的汇报视频，让复杂的时空规律变成大家看得懂的决策依据。</span>
+          <span data-lang="en">Edited the charts into a proper narrative video with Premiere Pro + CapCut, turning complex space-time patterns into something a decision-maker can actually follow.</span>
         </li>
       </ul>
     </div>
@@ -386,46 +379,62 @@
       </ul>
     </div>
     <div class="skill-card">
-      <h4>📊 <span data-lang="zh">数据分析 / 可视化</span><span data-lang="en">Data &amp; Analytics</span></h4>
+      <h4>📊 <span data-lang="zh">数据分析 / 可视化</span><span data-lang="en">Data Analysis &amp; Visualization</span></h4>
       <ul class="tool-grid">
-        <li class="tool-item"><span class="tool-ic" style="--bg:#F2C811;--fg:#1A1A1A">⬛</span><span class="tool-name">Power BI</span></li>
-        <li class="tool-item"><span class="tool-ic" style="--bg:#1E6FA8;--fg:#fff">📊</span><span class="tool-name">Tableau</span></li>
-        <li class="tool-item"><span class="tool-ic" style="--bg:#276DC3;--fg:#fff">R</span><span class="tool-name">R</span></li>
-        <li class="tool-item"><span class="tool-ic" style="--bg:#107C41;--fg:#fff">📑</span><span class="tool-name">Excel</span></li>
-        <li class="tool-item"><span class="tool-ic" style="--bg:#0A1F44;--fg:#7BD3F7">🌐</span><span class="tool-name">Kepler.gl</span></li>
+        <li class="tool-item">
+          <img class="tool-logo" src="assets/icons/powerbi.svg" alt="Power BI">
+          <span class="tool-name">Power BI</span>
+        </li>
+        <li class="tool-item">
+          <img class="tool-logo" src="assets/icons/tableau.svg" alt="Tableau">
+          <span class="tool-name">Tableau</span>
+        </li>
+        <li class="tool-item">
+          <img class="tool-logo" src="assets/icons/r.svg" alt="R">
+          <span class="tool-name">R</span>
+        </li>
+        <li class="tool-item">
+          <img class="tool-logo" src="assets/icons/excel.svg" alt="Excel">
+          <span class="tool-name">Excel</span>
+        </li>
+        <li class="tool-item">
+          <svg class="tool-logo" viewBox="0 0 48 48" role="img" aria-label="Kepler.gl"><path d="M18 9 33 24 18 39 3 24z" fill="#4E596E"/><path d="M30 9 45 24 30 39 15 24z" fill="#4FB1CE"/></svg>
+          <span class="tool-name">Kepler.gl</span>
+        </li>
       </ul>
     </div>
     <div class="skill-card">
-      <h4>🎨 <span data-lang="zh">产品设计 / 视频</span><span data-lang="en">Design &amp; Video</span></h4>
+      <h4>🎨 <span data-lang="zh">产品设计 / 视频</span><span data-lang="en">Design &amp; Video Tools</span></h4>
       <ul class="tool-grid">
-        <li class="tool-item"><span class="tool-ic" style="--bg:#F08705;--fg:#fff">📐</span><span class="tool-name">Draw.io</span></li>
-        <li class="tool-item"><span class="tool-ic" style="--bg:#0ACF83;--fg:#fff">🎨</span><span class="tool-name">Figma</span></li>
-        <li class="tool-item"><span class="tool-ic" style="--bg:#1FB6FF;--fg:#fff">📱</span><span class="tool-name">Marvel App</span></li>
-        <li class="tool-item"><span class="tool-ic" style="--bg:#3B5BA9;--fg:#fff">✏️</span><span class="tool-name">SmartDraw</span></li>
-        <li class="tool-item"><span class="tool-ic" style="--bg:#00C4CC;--fg:#fff">🖌️</span><span class="tool-name">Canva</span></li>
-        <li class="tool-item"><span class="tool-ic" style="--bg:#1A1A1A;--fg:#fff">🧩</span><span class="tool-name">UML</span></li>
-        <li class="tool-item"><span class="tool-ic" style="--bg:#9999FF;--fg:#1A1A1A">🎬</span><span class="tool-name">Premiere Pro</span></li>
-        <li class="tool-item"><span class="tool-ic" style="--bg:#FF4040;--fg:#fff">🎞️</span><span class="tool-name"><span data-lang="zh">剪映</span><span data-lang="en">CapCut</span></span></li>
+        <li class="tool-item">
+          <svg class="tool-logo" viewBox="0 0 48 48" role="img" aria-label="Draw.io"><rect width="48" height="48" rx="9" fill="#F08705"/><path d="M24 17v5M24 22 13 30M24 22l11 8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/><rect x="18" y="8" width="12" height="10" rx="2.5" fill="#fff"/><rect x="7" y="30" width="12" height="10" rx="2.5" fill="#fff"/><rect x="29" y="30" width="12" height="10" rx="2.5" fill="#fff"/></svg>
+          <span class="tool-name">Draw.io</span>
+        </li>
+        <li class="tool-item">
+          <img class="tool-logo" src="assets/icons/figma.svg" alt="Figma">
+          <span class="tool-name">Figma</span>
+        </li>
+        <li class="tool-item">
+          <img class="tool-logo" src="assets/icons/marvel.svg" alt="Marvel App">
+          <span class="tool-name">Marvel App</span>
+        </li>
+        <li class="tool-item">
+          <svg class="tool-logo" viewBox="0 0 48 48" role="img" aria-label="SmartDraw"><defs><linearGradient id="lgSd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#54B8F0"/><stop offset="1" stop-color="#1D5FC2"/></linearGradient></defs><path d="M21 7 7 24l14 17" fill="none" stroke="url(#lgSd)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M27 7l14 17-14 17" fill="none" stroke="url(#lgSd)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="tool-name">SmartDraw</span>
+        </li>
+        <li class="tool-item">
+          <svg class="tool-logo" viewBox="0 0 48 48" role="img" aria-label="Canva"><defs><linearGradient id="lgCv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00C4CC"/><stop offset=".5" stop-color="#3E5FDB"/><stop offset="1" stop-color="#7D2AE8"/></linearGradient></defs><rect width="48" height="48" rx="10" fill="url(#lgCv)"/><text x="24" y="29.5" text-anchor="middle" font-family="'Brush Script MT','Snell Roundhand','Segoe Script',cursive" font-size="15" font-style="italic" font-weight="600" fill="#fff">Canva</text></svg>
+          <span class="tool-name">Canva</span>
+        </li>
+        <li class="tool-item">
+          <svg class="tool-logo" viewBox="0 0 48 48" role="img" aria-label="Premiere Pro"><rect width="48" height="48" rx="10" fill="#00005B"/><text x="24" y="33.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#9999FF">Pr</text></svg>
+          <span class="tool-name">Premiere Pro</span>
+        </li>
+        <li class="tool-item">
+          <svg class="tool-logo" viewBox="0 0 48 48" role="img" aria-label="剪映 CapCut"><defs><path id="ccX" d="M14 11 H34 L14 37 H34 Z" fill="none" stroke-width="4.4" stroke-linejoin="round" stroke-linecap="round"/></defs><rect width="48" height="48" rx="10" fill="#0B0B12"/><use href="#ccX" stroke="#26F4EE" transform="translate(-1.7,-1.4)"/><use href="#ccX" stroke="#FE2C55" transform="translate(1.7,1.4)"/><use href="#ccX" stroke="#ffffff"/></svg>
+          <span class="tool-name"><span data-lang="zh">剪映</span><span data-lang="en">CapCut</span></span>
+        </li>
       </ul>
-    </div>
-    <div class="skill-card skill-card-cert">
-      <h4>🏅 <span data-lang="zh">专业认证</span><span data-lang="en">Certifications</span></h4>
-      <div class="cert-row">
-        <img class="cert-img" src="assets/photos/mos-cert.png" alt="Microsoft Office Specialist Expert Certificate">
-        <div class="cert-info">
-          <div class="cert-name">
-            <span data-lang="zh">微软 MOS 认证专家（大师级）</span>
-            <span data-lang="en">Microsoft Office Specialist · Expert (Master)</span>
-          </div>
-          <div class="cert-meta">
-            <span class="cert-badge">EXPERT</span>
-            <span class="cert-issuer">
-              <span data-lang="zh">由 Microsoft 颁发</span>
-              <span data-lang="en">Issued by Microsoft</span>
-            </span>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -449,71 +458,106 @@
     </div>
     <div class="exp-body">
       <div class="exp-head">
-        <h3><span data-lang="zh">第九届海丝港口合作论坛 · 志愿者</span><span data-lang="en">9th Maritime Silk Road Port Cooperation Forum · Volunteer</span></h3>
+        <h3><span data-lang="zh">第九届海丝港口合作论坛 · 志愿者</span><span data-lang="en">9th Maritime Silk Road Ports International Cooperation Forum · Volunteer</span></h3>
         <span class="exp-date">2025.05 · <span data-lang="zh">浙江宁波</span><span data-lang="en">Ningbo</span></span>
       </div>
       <ul class="exp-list">
         <li>
-          <span data-lang="zh">负责活动标牌及港口参观稿件的英文笔译，为外宾提供口译支持，促进跨文化交流。</span>
-          <span data-lang="en">Translated event signage and tour scripts; provided live interpretation for international guests.</span>
+          <span data-lang="zh">给活动标牌和港口参观稿件做英文笔译，还临场为外宾做口译——在中英之间来回切换的那种紧张又兴奋，到现在都记得。</span>
+          <span data-lang="en">I still remember the tension and excitement of switching back and forth between Chinese and English—I did the English translation of the event signs and port visit materials, and I also provided on-the-spot interpretation for foreign guests.</span>
         </li>
         <li>
-          <span data-lang="zh">在宁波北仑第三集装箱码头参观环节提供英文讲解并实时答疑。</span>
-          <span data-lang="en">Delivered English on-site briefings during the Beilun No.3 Container Terminal tour.</span>
+          <span data-lang="zh">在宁波北仑第三集装箱码头的参观环节，我用英文现场讲解、实时答疑，看着外宾点头的那一刻特别有成就感。</span>
+          <span data-lang="en">During the Beilun No.3 Container Terminal visit I gave English briefings and fielded questions on the spot — the moment a guest nodded along felt genuinely rewarding.</span>
         </li>
       </ul>
     </div>
   </article>
 
   <article class="exp-card">
-    <div class="exp-body exp-body-full">
+    <div class="card-photo">
+      <img src="assets/photos/saa-email.jpg" alt="港大文学院 SAA 学术顾问委任邮件">
+    </div>
+    <div class="exp-body">
       <div class="exp-head">
         <h3><span data-lang="zh">香港大学文学院 · 学生学术顾问</span><span data-lang="en">HKU Faculty of Arts · Student Academic Advisor</span></h3>
         <span class="exp-date">2024.04 – 2025.05 · <span data-lang="zh">香港</span><span data-lang="en">Hong Kong</span></span>
       </div>
       <ul class="exp-list">
         <li>
-          <span data-lang="zh">协助大一学生适应大学生活，覆盖课程选择、师生沟通、学术工具与职业探索。</span>
-          <span data-lang="en">Mentored freshmen on course selection, faculty communication, academic tools, and career exploration.</span>
+          <span data-lang="zh">一对一带教 5 名文学院大一新生，从选课规划到师生沟通、从学习方法到生活适应，做他们大一那年的「第一联系人」。</span>
+          <span data-lang="en">Mentored 5 first-year Arts students one-on-one — from course planning to talking with professors, from study habits to settling in — as their go-to "first contact" through freshman year.</span>
+        </li>
+        <li>
+          <span data-lang="zh">在港大对外开放项目里，独立带着约 30 名香港本地中学生逛校园，讲学院设置、申请路径和大学生活，把「过来人」的经验一股脑分享给他们。</span>
+          <span data-lang="en">In the University of Hong Kong's open house program, I led a group of about 30 local secondary school students on a campus tour—introducing them to the university's faculties, admission pathways, and student life, and sharing everything I'd learned from my own experience.</span>
         </li>
       </ul>
     </div>
   </article>
 </section>
 
+<!-- ============ Interests / Hobbies ============ -->
+<section id="interests" class="section">
+  <div class="section-head">
+    <h2><span data-lang="zh">工作之外的我 ✦</span><span data-lang="en">Beyond Work ✦</span></h2>
+    <svg class="head-squiggle" viewBox="0 0 120 8" preserveAspectRatio="none"><path d="M2 4 Q15 1 30 4 T58 4 T86 4 T118 4" stroke="#F97316" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+    <p class="section-sub">
+      <span data-lang="zh">关掉编辑器之后，我把时间花在这些地方。</span>
+      <span data-lang="en">Work is only part of the story — here's the rest of me.</span>
+    </p>
+  </div>
+
+  <div class="hobby-grid">
+    <article class="hobby-card">
+      <div class="hobby-photo">
+        <img src="assets/photos/hobby-pindou.jpg" alt="拼豆作品 · 像素小布丁挂件">
+      </div>
+      <div class="hobby-text">
+        <h3>🧩 <span data-lang="zh">拼豆</span><span data-lang="en">Perler Beads</span></h3>
+        <p class="hobby-cap"><span data-lang="zh">一颗颗珠子拼出的小治愈</span><span data-lang="en">Bead by bead, my little therapy</span></p>
+      </div>
+    </article>
+
+    <article class="hobby-card">
+      <div class="hobby-photo">
+        <img src="assets/photos/hobby-lego.jpg" alt="乐高作品 · 浅蓝色 Vespa 摩托车">
+      </div>
+      <div class="hobby-text">
+        <h3>🧱 <span data-lang="zh">乐高</span><span data-lang="en">LEGO</span></h3>
+        <p class="hobby-cap"><span data-lang="zh">书桌上停着的浅蓝 Vespa</span><span data-lang="en">A pale-blue Vespa on my desk</span></p>
+      </div>
+    </article>
+
+    <article class="hobby-card">
+      <div class="hobby-photo carousel hobby-carousel" data-carousel>
+        <div class="carousel-track">
+          <img class="carousel-slide active" src="assets/photos/hobby-standup-1.jpg" alt="脱口秀现场 · 小剧场">
+          <img class="carousel-slide" src="assets/photos/hobby-standup-2.jpg" alt="脱口秀现场 · 剧院专场">
+        </div>
+        <button class="carousel-prev" aria-label="上一张">‹</button>
+        <button class="carousel-next" aria-label="下一张">›</button>
+        <div class="carousel-dots" aria-hidden="true"></div>
+      </div>
+      <div class="hobby-text">
+        <h3>🎤 <span data-lang="zh">脱口秀</span><span data-lang="en">Stand-up Comedy</span></h3>
+        <p class="hobby-cap"><span data-lang="zh">笑声是我给生活的充电方式</span><span data-lang="en">Laughter is how I recharge</span></p>
+      </div>
+    </article>
+  </div>
+</section>
+
 <!-- ============ Contact ============ -->
 <section id="contact" class="contact-section">
   <div class="contact-inner">
     <h2 class="contact-title">
-      <span data-lang="zh">一起聊聊？✦</span>
-      <span data-lang="en">Let's chat ✦</span>
+      <span data-lang="zh">谢谢你的浏览 ✦</span>
+      <span data-lang="en">Thank you for stopping by ✦</span>
     </h2>
     <p class="contact-sub">
-      <span data-lang="zh">如果你正在寻找具备<strong>数据分析能力</strong>与<strong>产品思维</strong>的年轻人，欢迎随时联系我，期待加入你的团队！</span>
-      <span data-lang="en">If you're looking for a young talent with <strong>data analytics skills</strong> and <strong>product thinking</strong>, feel free to reach out — I'd love to join your team!</span>
+      <span data-lang="zh">能让你花时间看到这里，我很开心。希望这些文字和照片，让你认识了一个屏幕之外、更立体的我 😊</span>
+      <span data-lang="en">I'm really glad you spent the time to make it all the way here. I hope these words and photos gave you a fuller, more rounded picture of me 😊</span>
     </p>
-
-    <div class="contact-grid">
-      <a class="contact-item" href="mailto:nicola_zhangyinan@163.com">
-        <span class="ci-label">Email</span>
-        <span class="ci-value">nicola_zhangyinan@163.com</span>
-      </a>
-      <button class="contact-item phone-reveal" id="phoneReveal" type="button">
-        <span class="ci-label"><span data-lang="zh">手机 / 微信</span><span data-lang="en">Phone / WeChat</span></span>
-        <span class="ci-value" id="phoneValue">
-          <span data-lang="zh">点击显示 →</span><span data-lang="en">Click to reveal →</span>
-        </span>
-      </button>
-      <div class="contact-item">
-        <span class="ci-label"><span data-lang="zh">所在地</span><span data-lang="en">Location</span></span>
-        <span class="ci-value"><span data-lang="zh">浙江宁波 / 香港</span><span data-lang="en">Ningbo / Hong Kong</span></span>
-      </div>
-    </div>
-
-    <div class="contact-cta">
-      <a class="btn btn-primary" href="assets/resumes/ZhangYinan-CN.pdf" download>📄 <span data-lang="zh">下载简历 (中)</span><span data-lang="en">Resume (CN)</span></a>
-      <a class="btn" href="assets/resumes/ZhangYinan-EN.pdf" download>📄 <span data-lang="zh">下载简历 (英)</span><span data-lang="en">Resume (EN)</span></a>
-    </div>
   </div>
 </section>
 
@@ -526,9 +570,12 @@
 <!-- 灯箱 -->
 <div id="lightbox" class="lightbox" aria-hidden="true">
   <button class="lb-close" id="lbClose" aria-label="close">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="上一张">‹</button>
   <img id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="下一张">›</button>
+  <span class="lb-counter" id="lbCounter"></span>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js?v=20260703zb"></script>
 </body>
 </html>
