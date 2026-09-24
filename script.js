@@ -106,7 +106,7 @@
   /* ---------- 3. 预设答复 (Search 详细版 / Think 简短版 · 中英) ---------- */
   const ANSWERS = {
     edu: {
-      qLabel: { zh: '你的教育背景是什么？', en: "What's your educational background?" },
+      qLabel: { zh: '你的教育背景是什么', en: "What's your educational background" },
       a: {
         think: {
           zh: '我现在在香港大学读大四，双主修了信息系统与分析和翻译，平时也很喜欢折腾 AI 工具，像 Claude Code、Gemini、ChatGPT 我都玩过一轮。',
@@ -132,7 +132,7 @@
       }
     },
     activity: {
-      qLabel: { zh: '你有什么课外活动吗？', en: 'What extracurricular activities have you done?' },
+      qLabel: { zh: '你有什么课外活动吗', en: 'What extracurricular activities have you done' },
       a: {
         think: {
           zh: '我课外主要做过两件事：一个是在海丝港口合作论坛做志愿者，负责中英笔译和口译；另一个是在港大文学院做学生学术顾问，帮大一新生适应大学生活。',
@@ -145,7 +145,7 @@
       }
     },
     project: {
-      qLabel: { zh: '你做过什么项目？', en: 'What projects have you worked on?' },
+      qLabel: { zh: '你做过什么项目', en: 'What projects have you worked on' },
       a: {
         think: {
           zh: '我最近做了三个项目：一个是已经上线 App Store 和华为应用市场的「去过」旅行记录 App，从产品到代码都是我一个人完成的；一个是用 Kepler.gl + Tableau 做的纽约交通安全大数据分析；还有一个是用 R 做的航空票价预测建模。一个偏产品落地，两个偏数据分析。',
@@ -158,7 +158,7 @@
       }
     },
     strength: {
-      qLabel: { zh: '你的核心优势是什么？', en: "What is your core strength?" },
+      qLabel: { zh: '你的核心优势是什么', en: "What is your core strength" },
       a: {
         think: {
           zh: '我最大的优势是"语言 + 数据 + 产品 + AI"的复合能力：既是翻译与信息分析双主修，能做数据建模和跨文化沟通；又能用 AI 工具从 0 到 1 把产品真的做出来、推上线——我已经独立上线过一个 App 和这个网站。',
