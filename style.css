@@ -1726,7 +1726,7 @@ html[data-lang="zh"] .hero-name { margin-bottom: 22px; }
   transition: background .12s;
 }
 .ai-depth-opt:hover { background: #FFF3E8; }
-.ai-depth-opt .ado-name { font-weight: 700; color: var(--ink); white-space: nowrap; }
+.ai-depth-opt .ado-name { font-weight: 700; color: var(--ink); white-space: nowrap; min-width: 100px; }
 .ai-depth-opt .ado-desc { margin-left: 0; color: #999; font-size: 12px; text-align: left; flex: 1; }
 .ai-depth-opt .ado-check { width: 16px; color: var(--green); font-weight: 800; visibility: hidden; flex-shrink: 0; }
 .ai-depth-opt.selected { background: #EAF6EF; }
