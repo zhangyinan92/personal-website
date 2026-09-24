@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260703zb">
+<link rel="stylesheet" href="style.css?v=20260924j">
 </head>
 <body>
 
@@ -60,8 +60,8 @@
         <span data-lang="en">Zhang Yinan</span>
       </h1>
       <p class="hero-bio">
-        <span data-lang="zh">用<b>数据</b>讲故事，用<b>产品思维</b>拆解复杂问题，也在<b>中英</b>之间自由切换。</span>
-        <span data-lang="en">I tell stories with <b>data</b>, break down complex problems with <b>product thinking</b>, and move freely between <b>Chinese &amp; English</b>.</span>
+        <span data-lang="zh">用 <b>AI</b> 探索边界，用<b>数据</b>讲故事，用<b>产品思维</b>拆解复杂问题，也在<b>中英</b>之间自由切换。</span>
+        <span data-lang="en">I explore new frontiers with <b>AI</b>, tell stories with <b>data</b>, break down complex problems with <b>product thinking</b>, and move freely between <b>Chinese &amp; English</b>.</span>
       </p>
       <p class="hero-tags-label">
         <span data-lang="zh">我的关键词</span><span data-lang="en">My Keywords</span>
@@ -87,7 +87,7 @@
         </div>
         <button class="carousel-prev" aria-label="上一张">‹</button>
         <button class="carousel-next" aria-label="下一张">›</button>
-        <div class="carousel-dots" aria-hidden="true"></div>
+        <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
       </figure>
     </div>
   </div>
@@ -154,7 +154,9 @@
       </div>
       <input type="text" id="aiInput" placeholder="" autocomplete="off" readonly>
       <button class="ai-send" id="aiSend" aria-label="send">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        <svg class="ai-send-icon ai-send-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        <svg class="ai-send-icon ai-send-pause" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+        <svg class="ai-send-icon ai-send-play" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
       </button>
     </div>
     <p class="ai-disclaimer">
@@ -172,7 +174,7 @@
   </div>
 
   <article class="edu-card">
-    <img class="edu-img" src="assets/photos/hku.jpg" alt="HKU campus">
+    <img class="edu-img" src="assets/photos/hku-2.jpg" alt="张依楠 · 香港大学校门前">
     <div class="edu-body">
       <div class="edu-head">
         <h3>
@@ -201,6 +203,8 @@
         <span class="pill"><span data-lang="zh">信息系统分析与设计</span><span data-lang="en">IS Analysis &amp; Design</span></span>
         <span class="pill"><span data-lang="zh">信息系统管理</span><span data-lang="en">IS Management</span></span>
         <span class="pill"><span data-lang="zh">统计分析</span><span data-lang="en">Statistical Analysis</span></span>
+        <span class="pill"><span data-lang="zh">数据库管理</span><span data-lang="en">Database Management</span></span>
+        <span class="pill"><span data-lang="zh">数字创新</span><span data-lang="en">Digital Innovation</span></span>
         <span class="pill"><span data-lang="zh">中英笔译及口译</span><span data-lang="en">EN-CN Translation</span></span>
       </p>
     </div>
@@ -215,41 +219,45 @@
   </div>
 
   <article class="exp-card">
-    <div class="card-photo">
-      <img src="assets/photos/nanjing-wangyan.jpg" alt="南京网眼 · WEBEYE 办公室">
+    <div class="card-photo carousel" data-carousel>
+      <div class="carousel-track">
+        <img class="carousel-slide active" src="assets/photos/nanjing-wangyan.jpg" alt="南京环石 · WEBEYE 办公室">
+        <img class="carousel-slide" src="assets/photos/nanjing-wangyan-2.jpg" alt="南京环石 · WEBEYE 数据艺术装置前">
+      </div>
+      <button class="carousel-prev" aria-label="上一张">‹</button>
+      <button class="carousel-next" aria-label="下一张">›</button>
+      <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
     </div>
     <div class="exp-body">
       <div class="exp-head">
-        <h3><span data-lang="zh">南京网眼信息技术有限公司</span><span data-lang="en">Nanjing Webeye Information Technology Co., Ltd.</span></h3>
-        <span class="exp-date">2026.05 – <span data-lang="zh">至今</span><span data-lang="en">Present</span> · <span data-lang="zh">南京</span><span data-lang="en">Nanjing</span></span>
+        <h3><span data-lang="zh">南京环石网络技术有限公司（网眼）</span><span data-lang="en">Nanjing Huanshi Network Technology Co., Ltd. (WEBEYE)</span></h3>
+        <span class="exp-date">2026.05 – 2026.07 · <span data-lang="zh">南京</span><span data-lang="en">Nanjing</span></span>
       </div>
       <p class="exp-role">
-        <span data-lang="zh">AI 产品经理实习生（效率产品组）</span>
-        <span data-lang="en">AI Product Manager Intern (Efficiency Product Group)</span>
+        <span data-lang="zh">AI 产品实习生</span>
+        <span data-lang="en">AI Product Intern</span>
       </p>
-      <ul class="exp-list">
-        <li>
-          <strong><span data-lang="zh">从一张白纸做出 AI Studio：</span><span data-lang="en">Built AI Studio from a blank page: </span></strong>
-          <span data-lang="zh">在「剧多多」短剧平台上，我主导了全新 AI Studio 模块的端到端设计，从零推进到能落地——独立交付了 3 份高保真 Demo 和 1 份 PRD。</span>
-          <span data-lang="en">On the "Juduoduo" short-drama platform, I led the end-to-end design of a brand-new AI Studio module, driving it from zero to launch-ready — independently delivering 3 high-fidelity demos and 1 PRD.</span>
-        </li>
-        <li>
-          <strong><span data-lang="zh">把创意封装成工具：</span><span data-lang="en">Packaged creativity into tools: </span></strong>
-          <span data-lang="zh">和技术团队一起，把 4 类核心「短剧创作 Skill」打磨成可复用的能力，让编剧的灵感能一键落地。</span>
-          <span data-lang="en">Working with the engineering team, I refined 4 core "short-drama creation Skills" into reusable capabilities, letting screenwriters turn inspiration into results with a single click.</span>
-        </li>
-        <li>
-          <strong><span data-lang="zh">正在被真实用户使用：</span><span data-lang="en">Now in the hands of real users: </span></strong>
-          <span data-lang="zh">方案现在跑在导演 / 编剧的灰度测试里，通过后就会面向全公司上线——第一次看着自己想的产品被真人用起来，很上头。</span>
-          <span data-lang="en">The scheme is currently running in a gray-scale test with directors/screenwriters; once it passes, it rolls out company-wide. Watching something I envisioned actually get used by real people for the first time was a total rush.</span>
-        </li>
-      </ul>
+      <p class="card-tagline">
+        <span data-lang="zh">第一段真正扎根 AI 产品岗位的实习——从零主导 <b>AI Studio 模块</b>落地。</span>
+        <span data-lang="en">My first true AI product internship — led <b>AI Studio</b> from zero to launch.</span>
+      </p>
+      <div class="card-stats">
+        <span class="card-stat"><span class="cs-ic">🚀</span><span data-lang="zh">10 位导演 + 10 位编剧灰度测试中</span><span data-lang="en">Piloting with 10 directors + 10 screenwriters</span></span>
+        <span class="card-stat"><span class="cs-ic">⏱</span><span data-lang="zh">一键导出提示词 · 每位导演每天省 ~30 分钟</span><span data-lang="en">1-click prompt export · ~30 min/day saved per director</span></span>
+        <span class="card-stat"><span class="cs-ic">📋</span><span data-lang="zh">多维度表格 · 16 个导演团队生产力数据自动化</span><span data-lang="en">Multidimensional table · productivity data automated across 16 director teams</span></span>
+      </div>
     </div>
   </article>
 
   <article class="exp-card">
-    <div class="card-photo">
-      <img src="assets/photos/hp-badge.jpg" alt="Hutchison Ports staff badge">
+    <div class="card-photo carousel" data-carousel>
+      <div class="carousel-track">
+        <img class="carousel-slide active" src="assets/photos/hp-badge.jpg" alt="Hutchison Ports staff badge">
+        <img class="carousel-slide" src="assets/photos/hp-office.jpg" alt="Hutchison Ports IT 部门">
+      </div>
+      <button class="carousel-prev" aria-label="上一张">‹</button>
+      <button class="carousel-next" aria-label="下一张">›</button>
+      <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
     </div>
     <div class="exp-body">
       <div class="exp-head">
@@ -260,23 +268,15 @@
         <span data-lang="zh">产品开发与实施实习生（信息技术部）</span>
         <span data-lang="en">Product Development &amp; Implementation Intern (IT Dept.)</span>
       </p>
-      <ul class="exp-list">
-        <li>
-          <strong><span data-lang="zh">读懂一整座港口：</span><span data-lang="en">Understood an entire port: </span></strong>
-          <span data-lang="zh">跟着团队做了第 91–93 次系统迭代，从船舶创建到装卸货全流程，第一次真切理解 nGen、OMS 这些港口「大脑」到底是怎么运转的。</span>
-          <span data-lang="en">I joined the team for system iterations 91–93, covering the full flow from vessel creation to cargo loading/unloading — really grasping for the first time how port "brains" like nGen and OMS actually work.</span>
-        </li>
-        <li>
-          <strong><span data-lang="zh">让数据自己更新：</span><span data-lang="en">Let the data update itself: </span></strong>
-          <span data-lang="zh">用 Verification Tool 写 API 请求、设计堆场区块工作流，把原本要手动维护的堆场数据变成了自动更新。</span>
-          <span data-lang="en">Using the Verification Tool, I wrote API requests and designed yard-block workflows, turning yard data that used to be maintained by hand into something that updates automatically.</span>
-        </li>
-        <li>
-          <strong><span data-lang="zh">把复杂讲简单：</span><span data-lang="en">Made the complex simple: </span></strong>
-          <span data-lang="zh">用 Draw.io 把 Gate Grounding 流程画成一张图，跨部门开会时大家终于能「看着同一张图说话」，沟通顺了不少。</span>
-          <span data-lang="en">With Draw.io, I turned the Gate Grounding process into a single diagram, so in cross-department meetings everyone could finally "talk while looking at the same picture" — communication got a lot smoother.</span>
-        </li>
-      </ul>
+      <p class="card-tagline">
+        <span data-lang="zh">一个暑假，摸透一座港口的<b>核心信息系统</b>。</span>
+        <span data-lang="en">One summer, one port's <b>core information systems</b> demystified.</span>
+      </p>
+      <div class="card-stats">
+        <span class="card-stat"><span class="cs-ic">🚢</span><span data-lang="zh">Sprint 91–93 · nGen + OMS 核心迭代</span><span data-lang="en">Sprints 91–93 · nGen + OMS core iterations</span></span>
+        <span class="card-stat"><span class="cs-ic">🔧</span><span data-lang="zh">API 请求 · 堆场数据自动更新</span><span data-lang="en">API requests · automated yard-data updates</span></span>
+        <span class="card-stat"><span class="cs-ic">📐</span><span data-lang="zh">Draw.io · Gate Grounding 流程图</span><span data-lang="en">Draw.io · Gate Grounding workflow diagram</span></span>
+      </div>
     </div>
   </article>
 </section>
@@ -298,27 +298,22 @@
       </div>
       <button class="carousel-prev" aria-label="上一张">‹</button>
       <button class="carousel-next" aria-label="下一张">›</button>
-      <div class="carousel-dots" aria-hidden="true"></div>
+      <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
     </div>
     <div class="proj-body">
       <div class="exp-head">
         <h3><span data-lang="zh">「去过」· 旅行记录 App</span><span data-lang="en">「去过」· Travel-Log App</span></h3>
         <span class="proj-date">2026.06 · <span data-lang="zh">已上线 App Store &amp; 华为应用市场</span><span data-lang="en">Live on App Store &amp; Huawei AppGallery</span></span>
       </div>
-      <ul class="proj-list">
-        <li><strong><span data-lang="zh">差异化定位：</span><span data-lang="en">Differentiated Positioning: </span></strong>
-          <span data-lang="zh">市面上的足迹 App 都依赖定位，可小时候还没有手机的那些旅行，也是我们真真实实走过的地方——它们不该在地图上缺席。于是有了「去过」——无需定位、手动标记、把所有旅行记忆都收进地图，还用 11 枚成就印章把「探索世界」变成一场游戏。</span>
-          <span data-lang="en">Footprint apps all lean on GPS — but the trips we took as kids, before we had phones, deserve a spot on the map too. So I made 「去过」: no positioning needed, mark places by hand, gather every travel memory onto one map, with 11 achievement stamps that turn exploring the world into a game.</span>
-        </li>
-        <li><strong><span data-lang="zh">一个人写完三端：</span><span data-lang="en">Three platforms, one person: </span></strong>
-          <span data-lang="zh">产品、UX、前端、原生壳全是我自己啃下来的——Vite + Tailwind + Leaflet 搭 PWA 内核，Capacitor 跨端封装，再用 Swift / Kotlin 双端原生桥打通触觉反馈和相册保存。</span>
-          <span data-lang="en">Product, UX, front-end, and native shells were all made by me — a PWA core built with Vite + Tailwind + Leaflet, cross-platform packaging via Capacitor, plus Swift/Kotlin native bridges to wire up haptic feedback and photo-album saving on both platforms.</span>
-        </li>
-        <li><strong><span data-lang="zh">冷启动的小成绩：</span><span data-lang="en">Early traction. </span></strong>
-          <span data-lang="zh">App Store 上架 2 天累计 40 次下载、单日转化率最高 80%；华为应用市场首日详情页转化 66.67%；两端卸载率都是 0%——第一批用户，一个都没走。</span>
-          <span data-lang="en">40 downloads in the first two days on the App Store (peak daily conversion 80%), a 66.67% first-day product-page conversion on Huawei AppGallery, and a 0% uninstall rate on both — every early user stuck around.</span>
-        </li>
-      </ul>
+      <p class="card-tagline">
+        <span data-lang="zh">用 <b>PRD → UX → 技术评审</b> 的 LLM 工作流编排 Claude Code 做出的一个 App，让"没有 GPS 的旅行"也能被记住。</span>
+        <span data-lang="en">Built with a <b>PRD → UX → tech-review</b> LLM workflow orchestrating Claude Code — remembering trips even before GPS.</span>
+      </p>
+      <div class="card-stats">
+        <span class="card-stat"><span class="cs-ic">🌍</span><span data-lang="zh">已上线 App Store &amp; 华为应用市场</span><span data-lang="en">Live on App Store &amp; Huawei AppGallery</span></span>
+        <span class="card-stat"><span class="cs-ic">🤖</span><span data-lang="zh">LLM 工作流编排 · 引导 &amp; 验证 Claude Code 实现</span><span data-lang="en">LLM workflow orchestrating · guides &amp; validates Claude Code</span></span>
+        <span class="card-stat"><span class="cs-ic">⚡</span><span data-lang="zh">上线两天 · 40 iOS 下载 · 卸载率 0%</span><span data-lang="en">40 iOS downloads in 2 days · 0% uninstall</span></span>
+      </div>
     </div>
   </article>
 
@@ -331,9 +326,9 @@
           <img class="carousel-slide" src="assets/photos/nyc-streets.png" alt="NYC top 20 dangerous streets">
           <img class="carousel-slide" src="assets/photos/nyc-hourly.png" alt="NYC 24-hour crash pattern">
         </div>
-        <button class="carousel-prev" aria-label="prev">‹</button>
-        <button class="carousel-next" aria-label="next">›</button>
-        <span class="carousel-counter"><span class="cur">1</span>/<span class="total">4</span></span>
+        <button class="carousel-prev" aria-label="上一张">‹</button>
+        <button class="carousel-next" aria-label="下一张">›</button>
+        <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
       </div>
       <a class="proj-link proj-link-below" href="https://www.youtube.com/watch?v=Wo7qT7D9jEk" target="_blank" rel="noopener">
         ▶ <span data-lang="zh">观看 5 分钟项目视频</span><span data-lang="en">Watch the 5-min video</span> ↗
@@ -344,20 +339,43 @@
         <h3><span data-lang="zh">纽约市交通安全大数据分析</span><span data-lang="en">NYC Traffic Safety · Big Data Analysis</span></h3>
         <span class="proj-date">2025.11 — 2025.12</span>
       </div>
-      <ul class="proj-list">
-        <li><strong><span data-lang="zh">在 200 万条数据里找规律：</span><span data-lang="en">Finding patterns in 2M records: </span></strong>
-          <span data-lang="zh">用 Kepler.gl 给 200 万+ 起交通事故做 3D 空间聚类，那些反复亮起的危险路口和"周五晚高峰"的时刻，一下子就浮出了水面。</span>
-          <span data-lang="en">Using Kepler.gl, I ran 3D spatial clustering on 2M+ traffic accidents, and the repeatedly-flaring danger intersections and the "Friday evening rush" moments quickly surfaced.</span>
-        </li>
-        <li><strong><span data-lang="zh">让数字说人话：</span><span data-lang="en">Making numbers speak: </span></strong>
-          <span data-lang="zh">在 Tableau 里把驾驶行为和伤害程度对上号——摩托车 84.2% 的高伤害率、大卡车工作日独特的事故节律，都被清楚量化出来。</span>
-          <span data-lang="en">In Tableau I matched driving behavior to injury severity — an 84.2% motorcycle injury rate and trucks' distinct weekday rhythm both came out crisp and quantified.</span>
-        </li>
-        <li><strong><span data-lang="zh">剪成一个 5 分钟的故事：</span><span data-lang="en">Cut into a 5-min story: </span></strong>
-          <span data-lang="zh">用 Premiere Pro + 剪映把图表剪成一支有起承转合的汇报视频，让复杂的时空规律变成大家看得懂的决策依据。</span>
-          <span data-lang="en">Edited the charts into a proper narrative video with Premiere Pro + CapCut, turning complex space-time patterns into something a decision-maker can actually follow.</span>
-        </li>
-      </ul>
+      <p class="card-tagline">
+        <span data-lang="zh">从 <b>200 多万</b>条纽约事故数据里，拆出"周五晚高峰"和摩托车 <b>84.2%</b> 的高伤害率。</span>
+        <span data-lang="en">Cracking <b>2M+</b> NYC crashes to surface the "Friday rush" and a <b>84.2%</b> motorcycle-injury rate.</span>
+      </p>
+      <div class="card-stats">
+        <span class="card-stat"><span class="cs-ic">🗺</span><span data-lang="zh">Kepler.gl · 200 万+ 事故 3D 聚类</span><span data-lang="en">Kepler.gl · 3D clustering on 2M+ crashes</span></span>
+        <span class="card-stat"><span class="cs-ic">📊</span><span data-lang="zh">Tableau · 行为 × 伤害相关性</span><span data-lang="en">Tableau · behavior × injury correlation</span></span>
+        <span class="card-stat"><span class="cs-ic">🎬</span><span data-lang="zh">5-min 数据叙事视频 · 4 项数据驱动建议</span><span data-lang="en">5-min data-narrative video · 4 recommendations</span></span>
+      </div>
+    </div>
+  </article>
+
+  <article class="proj-card">
+    <div class="card-photo carousel" data-carousel>
+      <div class="carousel-track">
+        <img class="carousel-slide active" src="assets/photos/airfare-tree.png" alt="Airfare · Decision Tree 决策树">
+        <img class="carousel-slide" src="assets/photos/airfare-scatter.png" alt="Airfare · Actual vs Predicted 训练/测试拟合">
+        <img class="carousel-slide" src="assets/photos/r-code.png" alt="R code for airfare prediction">
+      </div>
+      <button class="carousel-prev" aria-label="上一张">‹</button>
+      <button class="carousel-next" aria-label="下一张">›</button>
+      <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
+    </div>
+    <div class="proj-body">
+      <div class="exp-head">
+        <h3><span data-lang="zh">航空票价预测模型分析</span><span data-lang="en">Airfare Prediction Model Analysis</span></h3>
+        <span class="proj-date">2025.09 — 2025.12</span>
+      </div>
+      <p class="card-tagline">
+        <span data-lang="zh">用<b>最简单又能被解释</b>的模型，把机票价格预测做准。</span>
+        <span data-lang="en">The <b>simplest interpretable</b> model, tuned for airfare prediction.</span>
+      </p>
+      <div class="card-stats">
+        <span class="card-stat"><span class="cs-ic">📈</span><span data-lang="zh">R · 特征工程 + 80/20 训练/测试拆分</span><span data-lang="en">R · feature engineering + 80/20 train-test split</span></span>
+        <span class="card-stat"><span class="cs-ic">🌳</span><span data-lang="zh">剪枝后 CART · 预测误差降 25% 以上 · 拟合度翻倍</span><span data-lang="en">Pruned CART · prediction error down 25%+ · fit doubled</span></span>
+        <span class="card-stat"><span class="cs-ic">📐</span><span data-lang="zh">可解释决策规则 · vs 多元线性回归基线</span><span data-lang="en">Interpretable decision rules · vs multiple linear regression</span></span>
+      </div>
     </div>
   </article>
 </section>
@@ -378,24 +396,29 @@
         <li><span data-lang="zh">粤语（基础）</span><span data-lang="en">Cantonese (Elementary)</span></li>
       </ul>
     </div>
+
     <div class="skill-card">
       <h4>📊 <span data-lang="zh">数据分析 / 可视化</span><span data-lang="en">Data Analysis &amp; Visualization</span></h4>
       <ul class="tool-grid">
         <li class="tool-item">
-          <img class="tool-logo" src="assets/icons/powerbi.svg" alt="Power BI">
-          <span class="tool-name">Power BI</span>
-        </li>
-        <li class="tool-item">
-          <img class="tool-logo" src="assets/icons/tableau.svg" alt="Tableau">
-          <span class="tool-name">Tableau</span>
+          <svg class="tool-logo" viewBox="0 0 48 48" role="img" aria-label="Python"><defs><linearGradient id="lgPyB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5A9FD4"/><stop offset="1" stop-color="#306998"/></linearGradient><linearGradient id="lgPyY" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE873"/><stop offset="1" stop-color="#FFD43B"/></linearGradient></defs><path d="M24 6c-5 0-9 1-9 5v5h9v1H12c-4 0-6 3-6 8s2 8 6 8h4v-6c0-3 3-5 6-5h10c3 0 5-2 5-5V11c0-3-2-5-5-5h-8zm-4 4a2 2 0 110 4 2 2 0 010-4z" fill="url(#lgPyB)"/><path d="M24 42c5 0 9-1 9-5v-5h-9v-1h12c4 0 6-3 6-8s-2-8-6-8h-4v6c0 3-3 5-6 5H16c-3 0-5 2-5 5v10c0 3 2 5 5 5h8zm4-4a2 2 0 110-4 2 2 0 010 4z" fill="url(#lgPyY)"/></svg>
+          <span class="tool-name">Python</span>
         </li>
         <li class="tool-item">
           <img class="tool-logo" src="assets/icons/r.svg" alt="R">
           <span class="tool-name">R</span>
         </li>
         <li class="tool-item">
-          <img class="tool-logo" src="assets/icons/excel.svg" alt="Excel">
-          <span class="tool-name">Excel</span>
+          <img class="tool-logo" src="assets/icons/mysql.png" alt="MySQL">
+          <span class="tool-name">SQL (MySQL)</span>
+        </li>
+        <li class="tool-item">
+          <img class="tool-logo" src="assets/icons/tableau.svg" alt="Tableau">
+          <span class="tool-name">Tableau</span>
+        </li>
+        <li class="tool-item">
+          <img class="tool-logo" src="assets/icons/powerbi.svg" alt="Power BI">
+          <span class="tool-name">Power BI</span>
         </li>
         <li class="tool-item">
           <svg class="tool-logo" viewBox="0 0 48 48" role="img" aria-label="Kepler.gl"><path d="M18 9 33 24 18 39 3 24z" fill="#4E596E"/><path d="M30 9 45 24 30 39 15 24z" fill="#4FB1CE"/></svg>
@@ -403,36 +426,72 @@
         </li>
       </ul>
     </div>
+
     <div class="skill-card">
-      <h4>🎨 <span data-lang="zh">产品设计 / 视频</span><span data-lang="en">Design &amp; Video Tools</span></h4>
+      <h4>🧠 <span data-lang="zh">产品分析与建模</span><span data-lang="en">Product Analytics &amp; Modeling</span></h4>
+      <ul>
+        <li><span data-lang="zh">预测建模（线性 / 逻辑回归、CART 决策树）</span><span data-lang="en">Predictive Modeling (Linear / Logistic Regression, CART)</span></li>
+        <li><span data-lang="zh">A/B 测试</span><span data-lang="en">A/B Testing</span></li>
+        <li><span data-lang="zh">Cohort 分析</span><span data-lang="en">Cohort Analysis</span></li>
+      </ul>
+    </div>
+
+    <div class="skill-card">
+      <h4>🎨 <span data-lang="zh">产品 / 系统设计</span><span data-lang="en">Product &amp; System Design</span></h4>
       <ul class="tool-grid">
-        <li class="tool-item">
-          <svg class="tool-logo" viewBox="0 0 48 48" role="img" aria-label="Draw.io"><rect width="48" height="48" rx="9" fill="#F08705"/><path d="M24 17v5M24 22 13 30M24 22l11 8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/><rect x="18" y="8" width="12" height="10" rx="2.5" fill="#fff"/><rect x="7" y="30" width="12" height="10" rx="2.5" fill="#fff"/><rect x="29" y="30" width="12" height="10" rx="2.5" fill="#fff"/></svg>
-          <span class="tool-name">Draw.io</span>
-        </li>
         <li class="tool-item">
           <img class="tool-logo" src="assets/icons/figma.svg" alt="Figma">
           <span class="tool-name">Figma</span>
         </li>
         <li class="tool-item">
+          <svg class="tool-logo" viewBox="0 0 48 48" role="img" aria-label="Draw.io"><rect width="48" height="48" rx="9" fill="#F08705"/><path d="M24 17v5M24 22 13 30M24 22l11 8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/><rect x="18" y="8" width="12" height="10" rx="2.5" fill="#fff"/><rect x="7" y="30" width="12" height="10" rx="2.5" fill="#fff"/><rect x="29" y="30" width="12" height="10" rx="2.5" fill="#fff"/></svg>
+          <span class="tool-name">Draw.io</span>
+        </li>
+        <li class="tool-item">
+          <svg class="tool-logo" viewBox="0 0 48 48" role="img" aria-label="UML"><rect x="6" y="8" width="16" height="10" rx="1.5" fill="none" stroke="#7B3FCE" stroke-width="2"/><rect x="26" y="8" width="16" height="10" rx="1.5" fill="none" stroke="#7B3FCE" stroke-width="2"/><rect x="16" y="30" width="16" height="10" rx="1.5" fill="none" stroke="#7B3FCE" stroke-width="2"/><path d="M14 18 v6 h20 v6" fill="none" stroke="#7B3FCE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 30 l-3 -4 h6 z" fill="#7B3FCE"/></svg>
+          <span class="tool-name">UML</span>
+        </li>
+        <li class="tool-item">
           <img class="tool-logo" src="assets/icons/marvel.svg" alt="Marvel App">
           <span class="tool-name">Marvel App</span>
         </li>
-        <li class="tool-item">
-          <svg class="tool-logo" viewBox="0 0 48 48" role="img" aria-label="SmartDraw"><defs><linearGradient id="lgSd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#54B8F0"/><stop offset="1" stop-color="#1D5FC2"/></linearGradient></defs><path d="M21 7 7 24l14 17" fill="none" stroke="url(#lgSd)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M27 7l14 17-14 17" fill="none" stroke="url(#lgSd)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="tool-name">SmartDraw</span>
+      </ul>
+    </div>
+
+    <div class="skill-card skill-card-cert">
+      <h4>🏅 <span data-lang="zh">专业认证</span><span data-lang="en">Certifications</span></h4>
+      <ul class="cert-list">
+        <li class="cert-item">
+          <img class="cert-thumb" src="assets/photos/cda-cert.jpg" alt="Certified Data Analyst Level I Certificate">
+          <div class="cert-info">
+            <div class="cert-name">
+              <span data-lang="zh">CDA 数据分析师<span class="nowrap"> · Level I</span></span>
+              <span data-lang="en">Certified Data Analyst (CDA)<span class="nowrap"> · Level I</span></span>
+            </div>
+            <div class="cert-meta">
+              <span class="cert-badge">LEVEL I</span>
+              <span class="cert-issuer">
+                <span data-lang="zh">由 CDA Institute 颁发</span>
+                <span data-lang="en">Issued by CDA Institute</span>
+              </span>
+            </div>
+          </div>
         </li>
-        <li class="tool-item">
-          <svg class="tool-logo" viewBox="0 0 48 48" role="img" aria-label="Canva"><defs><linearGradient id="lgCv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00C4CC"/><stop offset=".5" stop-color="#3E5FDB"/><stop offset="1" stop-color="#7D2AE8"/></linearGradient></defs><rect width="48" height="48" rx="10" fill="url(#lgCv)"/><text x="24" y="29.5" text-anchor="middle" font-family="'Brush Script MT','Snell Roundhand','Segoe Script',cursive" font-size="15" font-style="italic" font-weight="600" fill="#fff">Canva</text></svg>
-          <span class="tool-name">Canva</span>
-        </li>
-        <li class="tool-item">
-          <svg class="tool-logo" viewBox="0 0 48 48" role="img" aria-label="Premiere Pro"><rect width="48" height="48" rx="10" fill="#00005B"/><text x="24" y="33.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#9999FF">Pr</text></svg>
-          <span class="tool-name">Premiere Pro</span>
-        </li>
-        <li class="tool-item">
-          <svg class="tool-logo" viewBox="0 0 48 48" role="img" aria-label="剪映 CapCut"><defs><path id="ccX" d="M14 11 H34 L14 37 H34 Z" fill="none" stroke-width="4.4" stroke-linejoin="round" stroke-linecap="round"/></defs><rect width="48" height="48" rx="10" fill="#0B0B12"/><use href="#ccX" stroke="#26F4EE" transform="translate(-1.7,-1.4)"/><use href="#ccX" stroke="#FE2C55" transform="translate(1.7,1.4)"/><use href="#ccX" stroke="#ffffff"/></svg>
-          <span class="tool-name"><span data-lang="zh">剪映</span><span data-lang="en">CapCut</span></span>
+        <li class="cert-item">
+          <img class="cert-thumb" src="assets/photos/mos-cert.png" alt="Microsoft Office Specialist Expert Certificate">
+          <div class="cert-info">
+            <div class="cert-name">
+              <span data-lang="zh">微软 MOS 认证专家<span class="nowrap">（大师级）</span></span>
+              <span data-lang="en">Microsoft Office Specialist<span class="nowrap"> · Expert (Master)</span></span>
+            </div>
+            <div class="cert-meta">
+              <span class="cert-badge">EXPERT</span>
+              <span class="cert-issuer">
+                <span data-lang="zh">由 Microsoft 颁发</span>
+                <span data-lang="en">Issued by Microsoft</span>
+              </span>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
@@ -452,9 +511,9 @@
         <img class="carousel-slide active" src="assets/photos/mpf-solo.jpg" alt="MPF forum solo">
         <img class="carousel-slide" src="assets/photos/mpf-group.jpg" alt="MPF volunteers group">
       </div>
-      <button class="carousel-prev" aria-label="prev">‹</button>
-      <button class="carousel-next" aria-label="next">›</button>
-      <span class="carousel-counter"><span class="cur">1</span>/<span class="total">2</span></span>
+      <button class="carousel-prev" aria-label="上一张">‹</button>
+      <button class="carousel-next" aria-label="下一张">›</button>
+      <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
     </div>
     <div class="exp-body">
       <div class="exp-head">
@@ -503,8 +562,8 @@
     <h2><span data-lang="zh">工作之外的我 ✦</span><span data-lang="en">Beyond Work ✦</span></h2>
     <svg class="head-squiggle" viewBox="0 0 120 8" preserveAspectRatio="none"><path d="M2 4 Q15 1 30 4 T58 4 T86 4 T118 4" stroke="#F97316" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
     <p class="section-sub">
-      <span data-lang="zh">关掉编辑器之后，我把时间花在这些地方。</span>
-      <span data-lang="en">Work is only part of the story — here's the rest of me.</span>
+      <span data-lang="zh">保持好奇，热爱生活，用丰富的体验滋养创造力。</span>
+      <span data-lang="en">Curiosity, joy, and a life that keeps my creativity fed.</span>
     </p>
   </div>
 
@@ -537,7 +596,7 @@
         </div>
         <button class="carousel-prev" aria-label="上一张">‹</button>
         <button class="carousel-next" aria-label="下一张">›</button>
-        <div class="carousel-dots" aria-hidden="true"></div>
+        <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
       </div>
       <div class="hobby-text">
         <h3>🎤 <span data-lang="zh">脱口秀</span><span data-lang="en">Stand-up Comedy</span></h3>
@@ -576,6 +635,6 @@
   <span class="lb-counter" id="lbCounter"></span>
 </div>
 
-<script src="script.js?v=20260703zb"></script>
+<script src="script.js?v=20260924f"></script>
 </body>
 </html>

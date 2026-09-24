@@ -93,12 +93,12 @@
       qLabel: { zh: '你的教育背景是什么？', en: "What's your education background?" },
       a: {
         think: {
-          zh: '我现在在香港大学读大三，双主修了信息系统与分析和翻译，平时也很喜欢折腾 AI 工具，像 Claude Code、Gemini、ChatGPT 我都玩过一轮。',
-          en: "I'm a junior at the University of Hong Kong, double-majoring in Information Systems & Analytics and Translation. I also love tinkering with AI tools — I've played around with Claude Code, Gemini, and ChatGPT."
+          zh: '我现在在香港大学读大四，双主修了信息系统与分析和翻译，平时也很喜欢折腾 AI 工具，像 Claude Code、Gemini、ChatGPT 我都玩过一轮。',
+          en: "I'm a senior at the University of Hong Kong, double-majoring in Information Systems & Analytics and Translation. I also love tinkering with AI tools — I've played around with Claude Code, Gemini, and ChatGPT."
         },
         search: {
-          zh: '我目前是香港大学的大三在读生，读的是信息系统与分析，同时双主修翻译，预计 2027 年毕业。\n课程上接触比较多的是商业分析、信息系统、统计与经济数据分析这类内容。\n我个人对 AI 也特别感兴趣，Claude Code、Gemini、ChatGPT 这些主流工具我基本都上手试过，平时也会用它们来辅助学习和做项目。',
-          en: "I'm currently a junior at the University of Hong Kong, majoring in Information Systems & Analytics with a double major in Translation, graduating in 2027.\nMy coursework centers on Business Analytics, Information Systems, and Statistical & Economic Data Analysis.\nI'm also really into AI — I've hands-on tried mainstream tools like Claude Code, Gemini, and ChatGPT, and I use them to support my studies and projects."
+          zh: '我目前是香港大学的大四在读生，读的是信息系统与分析，同时双主修翻译，预计 2027 年毕业。\n课程上接触比较多的是商业分析、信息系统、统计与经济数据分析这类内容。\n我个人对 AI 也特别感兴趣，Claude Code、Gemini、ChatGPT 这些主流工具我基本都上手试过，平时也会用它们来辅助学习和做项目。',
+          en: "I'm currently a senior at the University of Hong Kong, majoring in Information Systems & Analytics with a double major in Translation, graduating in 2027.\nMy coursework centers on Business Analytics, Information Systems, and Statistical & Economic Data Analysis.\nI'm also really into AI — I've hands-on tried mainstream tools like Claude Code, Gemini, and ChatGPT, and I use them to support my studies and projects."
         }
       }
     },
@@ -106,12 +106,12 @@
       qLabel: { zh: '介绍一下你的实习经历', en: 'Tell me about your internships' },
       a: {
         think: {
-          zh: '我做过两段实习：现在正在南京网眼做 AI 产品经理，主导一个短剧平台上「AI Studio」模块的从 0 到 1；之前在香港的和记港口集团做产品开发与实施，深入过港口的核心信息系统。一段偏 AI 产品，一段偏 B 端信息系统。',
-          en: "I've done two internships. Right now I'm an AI Product Manager at Nanjing Wangyan, leading an 'AI Studio' module from 0 to 1 on a short-drama platform. Before that I was a Product Development & Implementation Intern at Hutchison Port Holdings in Hong Kong, digging into core port systems. One leans AI-product, the other B2B information systems."
+          zh: '我做过两段实习：第一段是 2025 年暑假在香港和记港口集团做产品开发与实施实习生，深入摸过港口的核心信息系统；第二段是 2026 年 5–7 月在南京环石（网眼）做 AI 产品实习生，主导了短剧平台上 AI Studio 模块从 0 到 1 的产品设计。一段偏 B 端信息系统，一段偏 AI 产品。',
+          en: "I've done two internships. The first was Summer 2025 at Hutchison Port Holdings in Hong Kong as a Product Development & Implementation Intern, digging into core port systems. The second was May–July 2026 at Nanjing Huanshi (WEBEYE) as an AI Product Intern, leading the 0-to-1 design of an \"AI Studio\" module on a short-drama platform. One leans B2B systems, the other AI product."
         },
         search: {
-          zh: '我目前有两段实习，一段偏 AI 产品，一段偏 B 端信息系统。\n最近、也是正在进行的一段，是 2026 年 5 月起在南京网眼做 AI 产品经理实习生。我主导了公司「剧多多」短剧平台上全新 AI Studio 模块的端到端设计，从一张白纸开始，独立交付了 3 份高保真 Demo 和 1 份 PRD，还和技术团队一起把 4 类核心「短剧创作 Skill」封装成了工具。现在方案已经进了导演/编剧的灰度测试，通过后会面向全公司上线。\n再往前是 2025 年暑假在香港的和记港口集团，在信息技术部做产品开发与实施实习生：参与了第 91–93 次系统迭代，摸透了 nGen、OMS 这些港口核心系统，写过 API 请求做堆场数据自动更新，也用 Draw.io 画工作流图帮团队梳理业务。\n两段下来，我既练了「从 0 到 1 定义一个 AI 产品」，也学会了「复杂 B 端系统」这一课。',
-          en: "I've had two internships — one AI-product, one B2B systems.\nThe most recent (and ongoing) one started in May 2026 as an AI Product Manager Intern at Nanjing Wangyan. I led the end-to-end design of a brand-new AI Studio module on the company's 'Juduoduo' short-drama platform — starting from a blank page, solo-delivering 3 hi-fi demos and a PRD, and working with engineering to package 4 core 'short-drama creation Skills' into tools. It's now in gated testing with directors and screenwriters, and rolls out company-wide once it passes.\nBefore that, Summer 2025 at Hutchison Port Holdings in Hong Kong, I was a Product Development & Implementation Intern in the IT department: I joined Sprints 91–93, got fluent in core port systems like nGen and OMS, wrote API requests to automate yard-data updates, and used Draw.io to map workflows that aligned the team.\nAcross both, I trained the '0-to-1 defining an AI product' muscle and learned the 'complex B2B systems' lesson."
+          zh: '我有两段实习经历，一段偏 B 端信息系统，一段偏 AI 产品。\n第一段是 2025 年 6 到 8 月，在香港和记港口集团的信息技术部做产品开发与实施实习生。三个月里我跟着团队参与了 nGen 和 OMS 两套港口核心系统的第 91–93 次迭代，把船舶创建到装卸货的全流程摸得七七八八，也开始学着把业务需求翻译成系统规格。技术上，我用 Verification Tool 写 API 请求，帮堆场数据从"人手维护"变成"自动更新"；也用 Draw.io 把 Gate Grounding 这套复杂流程画成一张清晰的图，让跨部门开会时大家终于能"看着同一张图说话"。\n第二段是 2026 年 5 到 7 月，在南京环石网络技术有限公司（网眼）做 AI 产品实习生。三个月里我在公司的「剧多多」短剧制作平台上从零主导了 AI Studio 模块——把原本散落在项目管理和 AI 生成两条线的工作流合并到同一个入口，独立完成 PRD 和 3 份高保真原型，把 4 个已有的核心创作 Skill 一个个接进来，现在这个模块已经推给 10 位导演和 10 位编剧做小范围灰度。我也顺手做了一个「一键导出提示词」的小功能，能给每位导演每天省下大约半小时；后来还和团队一起搭了一张跨分镜的多维度表格，把 16 个导演团队的历史数据都迁了进去，让跨团队的生产力报告能自动跑出来。\n两段下来，我既补上了"复杂 B 端系统"这一课，也练出了"从 0 到 1 定义一个 AI 产品"的能力。',
+          en: "I have two internships — one B2B systems, one AI product.\nJune–August 2025 at Hutchison Port Holdings in Hong Kong as a Product Development & Implementation Intern (IT Dept.). I joined Sprints 91–93 of the nGen and OMS core port systems, getting fluent in the full flow from vessel creation to cargo handling; wrote API requests in Verification Tool to automate yard-data updates; and used Draw.io to map the Gate Grounding process into one clear diagram so cross-functional teams could \"talk while looking at the same picture.\"\nMay–July 2026 at Nanjing Huanshi Network Technology Co., Ltd. (WEBEYE) as an AI Product Intern. Over three months on the company's \"Juduoduo\" short-drama platform, I led the 0-to-1 design of the \"AI Studio\" module — consolidating fragmented project-management and AI-generation workflows into one entry point, solo-delivering PRDs and 3 high-fidelity prototypes, and integrating 4 existing creation Skills. It's now in a small pilot with 10 directors and 10 screenwriters. I also built a one-click prompt-export feature that saves each director about half an hour a day, and later co-designed a standardized multidimensional table that migrated historical data across 16 director teams to enable automated cross-team productivity reporting.\nAcross both, I learned the \"complex B2B systems\" lesson and trained the \"0-to-1 defining an AI product\" muscle."
         }
       }
     },
@@ -132,12 +132,12 @@
       qLabel: { zh: '你做过什么项目？', en: 'What projects have you done?' },
       a: {
         think: {
-          zh: '我最近做了两个项目：一个是已经上线 App Store 和华为应用市场的「去过」旅行记录 App，从产品到代码都是我一个人完成的；另一个是用 Kepler.gl + Tableau 做的纽约交通安全大数据分析。一个偏产品落地，一个偏数据分析。',
-          en: "Two recent projects: the 'Been There' travel-log app — now live on the App Store and Huawei AppGallery, built solo from product to code; and an NYC traffic-safety big-data analysis with Kepler.gl + Tableau. One leans product-shipping, the other data analytics."
+          zh: '我最近做了三个项目：一个是已经上线 App Store 和华为应用市场的「去过」旅行记录 App，从产品到代码都是我一个人完成的；一个是用 Kepler.gl + Tableau 做的纽约交通安全大数据分析；还有一个是用 R 做的航空票价预测建模。一个偏产品落地，两个偏数据分析。',
+          en: "Three recent projects: 'Been There' — a travel-log app I built and shipped solo, now live on the App Store and Huawei AppGallery; NYC traffic-safety big-data analysis with Kepler.gl + Tableau; and airfare prediction modeling in R. One leans product-shipping, two lean data analytics."
         },
         search: {
-          zh: '我最近的项目一个偏「独立做产品」，一个偏「数据分析」，能看出我不只会分析，也能真的把东西做出来、推上线。\n第一个是「去过」旅行记录 App（2026.06），已经上线 App Store 和华为应用市场。我一个人扛下了产品、UX、前端和原生壳：用 Vite + Tailwind + Leaflet 搭 PWA 内核，Capacitor 跨端封装，再用 Swift / Kotlin 双端原生桥打通触觉反馈和相册保存。它主打「无需定位、手动标记」，还用 11 枚成就印章把探索世界游戏化；上线后 App Store 两天 40 次下载、单日转化率最高 80%，华为首日详情页转化 66.67%，两端卸载率都是 0%。\n第二个是纽约市交通安全大数据分析（2025.11–12）。我和组员用 Kepler.gl 对 200 多万条事故数据做 3D 空间聚类，再用 Tableau 分析驾驶行为与伤害的关系（比如摩托车 84.2% 的高伤害率），最后用 PR + 剪映剪成一支数据叙事视频，并提出了 4 项数据驱动建议。\n这两个项目让我把「想清楚 → 做出来 → 推上线 → 看数据」这条链路完整跑了一遍。',
-          en: "My recent projects split between 'shipping a product solo' and 'data analysis' — proof that I don't just analyze, I actually build and ship.\nFirst is the 'Been There' travel-log app (Jun 2026), now live on the App Store and Huawei AppGallery. I carried the product, UX, front-end, and native shell alone: a PWA core with Vite + Tailwind + Leaflet, Capacitor for cross-platform packaging, and Swift / Kotlin native bridges for haptics and photo-library saving. Its hook is 'no GPS needed, mark places by hand,' with 11 achievement stamps gamifying exploration. After launch: 40 downloads in 2 days on the App Store, peak daily conversion 80%, 66.67% first-day page conversion on Huawei, and a 0% uninstall rate on both stores.\nSecond is the NYC Traffic Safety Big Data Analysis (Nov–Dec 2025). My team and I used Kepler.gl to 3D-cluster 2M+ crash records, analyzed the link between driving behavior and injury in Tableau (e.g. an 84.2% motorcycle injury rate), cut it into a data-narrative video with Premiere Pro + CapCut, and delivered 4 data-driven recommendations.\nTogether they ran me through the full loop: think it through → build it → ship it → read the data."
+          zh: '我最近的项目大致分成两条线：一条是"我一个人从零把产品做出来"，另一条是"和团队一起从数据里找规律"。\n第一个是「去过」旅行记录 App。2026 年 4 月启动、6 月上架 App Store 和华为应用市场。产品、UX、前端到原生壳全是我一个人扛下来的——我把工作流拆成 PRD → UX 设计 → 技术评审三个角色，用多角色 LLM 工作流去引导和验证 Claude Code 的实现，通过 Vite + Capacitor 做跨端共享的代码库，再用 Swift 和 Kotlin 写双端原生桥打通触觉反馈和相册保存。它的核心定位是"无需定位、手动标记"，让人能把一辈子的旅行都收进同一张地图；上线两天在 App Store 就有了 40 次下载。\n第二个是我和我的队友们在 2025 年 11 到 12 月做的纽约市交通安全大数据分析。我们从 200 多万条纽约市交通事故数据出发，一层是用 Kepler.gl 做 3D 空间聚类，把反复出事故的危险路口和"周五晚高峰"的时空规律呈现出来；另一层是在 Tableau 里做驾驶行为与伤害程度的相关性分析，量化了摩托车 84.2% 的高伤害率、大卡车工作日独特的事故节律。最后我们用 Premiere Pro 和剪映把这些图表剪成一支 5 分钟的叙事视频，也一起提出了 4 项数据驱动的改善建议。\n第三个是航空票价预测模型分析，也是我和我的队友们一起完成的项目。我们要解决的问题很朴素：怎么用尽量简单、又能被解释的模型，把机票价格预测做准？我们在 R 里做特征工程，用 80/20 训练/测试集划分，把 CART 和多元线性回归两种模型对比着跑；最后选出一版剪枝后的 CART——它在经济舱预测上把平均绝对误差比线性基线降低了 25% 以上，测试集 R² 也翻了一倍多，同时还保留了很清晰的可解释决策规则，能一眼看出航司、舱位、航线对定价的贡献。\n这三个项目一起下来，让我把"想清楚 → 做出来 → 推上线 → 看数据"这条链路完整跑了一遍。',
+          en: "My recent projects fall into two tracks: 'shipping a product solo' and 'reading patterns out of data with a team.'\nFirst is the 'Been There' travel-log app. Started April 2026, live on the App Store and Huawei AppGallery by June. Product, UX, front-end, and native shells were all mine — I split the work into three roles (PRD, UX, tech review) and used multi-role LLM workflows to guide and validate Claude Code's implementation, shared a single codebase across web / iOS / Android via Vite + Capacitor, and wrote Swift / Kotlin native bridges for haptics and photo-library saving. Its hook: no GPS needed, mark places by hand — a lifetime of trips on one map. It hit 40 iOS downloads in the first 2 days.\nSecond is the NYC Traffic Safety Big Data Analysis, which my teammates and I put together over Nov–Dec 2025. Starting from 2M+ NYC crash records, I contributed to 3D spatial clustering in Kepler.gl (surfacing high-risk intersections and the 'Friday evening rush') and correlation analysis between driving behavior and injury severity in Tableau (an 84.2% motorcycle injury rate, trucks' distinct weekday rhythm). We then cut a 5-minute data-narrative video in Premiere Pro + CapCut and co-proposed 4 data-driven recommendations.\nThird is the Airfare Prediction Model Analysis — another project my teammates and I built together. The question was simple: how do we get accurate airfare prediction from the simplest interpretable model? We engineered features in R and benchmarked CART against multiple linear regression on an 80/20 train-test split; we ended up picking a pruned CART that cut mean absolute error on economy-class fare prediction by over 25% versus the linear baseline and more than doubled test R², while keeping the decision rules clear enough to show how airline, cabin class, and route drive price.\nTogether they took me through the full loop: think it through → build it → ship it → read the data."
         }
       }
     },
@@ -145,12 +145,12 @@
       qLabel: { zh: '你的核心优势是什么？', en: "What's your core strength?" },
       a: {
         think: {
-          zh: '我最大的优势是"语言 + 数据 + 产品 + AI"的复合能力：既是翻译与信息分析双主修（雅思 7.0），能做数据建模和跨文化沟通；又能用 AI 工具从 0 到 1 把产品真的做出来、推上线——我已经独立上线过一个 App 和这个网站。',
-          en: "My biggest strength is a 'language + data + product + AI' blend: a Translation × Information-Analytics double major (IELTS 7.0) who can do data modeling and cross-cultural communication, and who can also use AI tools to take a product 0-to-1 and actually ship it — I've already solo-launched an app and this website."
+          zh: '我最大的优势是"语言 + 数据 + 产品 + AI"的复合能力：既是翻译与信息分析双主修，能做数据建模和跨文化沟通；又能用 AI 工具从 0 到 1 把产品真的做出来、推上线——我已经独立上线过一个 App 和这个网站。',
+          en: "My biggest strength is a 'language + data + product + AI' blend: a Translation × Information-Analytics double major who can do data modeling and cross-cultural communication, and who can also use AI tools to take a product 0-to-1 and actually ship it — I've already solo-launched an app and this website."
         },
         search: {
-          zh: '我的核心优势，是"语言 + 数据 + 产品 + AI 落地"的复合背景——最关键的是，我不只会想和会说，我能真的把东西做出来。\n语言上，我是翻译主修、雅思 7.0，能胜任跨文化场景下的笔译、口译和商务沟通；数据上，我熟练用 R、Tableau、Kepler.gl、Excel、Power BI，能跑通从清洗、建模到可视化叙事的完整链路；产品上，我现在在做 AI 产品经理，主导过一个 AI 模块从 0 到 1（PRD、Demo、Skill 封装），之前在和记港口也"补过"B 端信息系统这一课；最能打的一点，是 AI 落地能力：我用 Claude Code 独立做出并上线了「去过」App（App Store + 华为）和这个网站，是那种"自己就能把想法变成上线产品"的人。\n合起来，我是团队里"能听懂技术、能讲清业务、还能自己动手做出来"的那类人。',
-          en: "My core strength is a 'language + data + product + AI-execution' composite background — and crucially, I don't just think and talk, I can actually build.\nOn language, I'm a Translation major with IELTS 7.0, at home with translation, interpretation, and business communication across cultures. On data, I'm fluent in R, Tableau, Kepler.gl, Excel and Power BI, able to run the full pipeline from cleaning to modeling to visual storytelling. On product, I'm now an AI Product Manager who drove an AI module from 0 to 1 (PRD, Demo, Skill packaging), after 'catching up on' B2B information systems at Hutchison Ports. My sharpest edge is AI execution: with Claude Code I solo-built and shipped the 'Been There' app (App Store + Huawei) and this website — the kind of person who can turn an idea into a live product herself.\nPut together, I'm the teammate who understands the engineers, can explain to the business, and can also just go build the thing."
+          zh: '我的核心优势，是"语言 + 数据 + 产品 + AI 落地"的复合背景——最关键的是，我不只会想和会说，我能真的把东西做出来。\n语言上，我是翻译主修，能胜任跨文化场景下的笔译、口译和商务沟通；数据上，我熟练用 Python、R、SQL、Tableau、Power BI、Kepler.gl，能跑通从清洗、建模到可视化叙事的完整链路，也做过预测建模、A/B 测试和 Cohort 分析；产品上，我今年暑假去做了 AI 产品的实习生，主导过一个 AI 模块从 0 到 1（PRD、Demo、Skill 封装），之前在和记港口也"补过"B 端信息系统这一课；最能打的一点，是 AI 落地能力：我用 Claude Code 独立做出并上线了「去过」App（App Store + 华为）和这个网站，是那种"自己就能把想法变成上线产品"的人。\n合起来，我是团队里"能听懂技术、能讲清业务、还能自己动手做出来"的那类人。',
+          en: "My core strength is a 'language + data + product + AI-execution' composite background — and crucially, I don't just think and talk, I can actually build.\nOn language, I'm a Translation major, at home with translation, interpretation, and business communication across cultures. On data, I'm fluent in Python, R, SQL, Tableau, Power BI and Kepler.gl, able to run the full pipeline from cleaning to modeling to visual storytelling, and have hands-on experience with predictive modeling, A/B testing, and cohort analysis. On product, this past summer I interned as an AI Product Intern, driving an AI module from 0 to 1 (PRD, Demo, Skill packaging), after 'catching up on' B2B information systems at Hutchison Ports. My sharpest edge is AI execution: with Claude Code I solo-built and shipped the 'Been There' app (App Store + Huawei) and this website — the kind of person who can turn an idea into a live product herself.\nPut together, I'm the teammate who understands the engineers, can explain to the business, and can also just go build the thing."
         }
       }
     },
@@ -179,6 +179,7 @@
   const depthLabel = document.getElementById('aiDepthLabel');
   const depthOpts = depthMenu ? Array.from(depthMenu.querySelectorAll('.ai-depth-opt')) : [];
   let isStreaming = false;
+  let isPaused = false;
   let abortStream = false;
   let selectedKey = null;
   let selectedMode = null; // 'search' | 'think' | null
@@ -193,10 +194,60 @@
 
   function refreshSendState() {
     if (!aiSend) return;
-    const ready = !!selectedKey && !!selectedMode && !isStreaming;
-    aiSend.disabled = !ready;
-    aiSend.style.opacity = ready ? '' : '0.4';
-    aiSend.style.cursor = ready ? '' : 'not-allowed';
+    // 清除所有状态类，再按当前状态添加
+    aiSend.classList.remove('state-streaming', 'state-paused');
+    if (isStreaming) {
+      // 生成中或已暂停：按钮始终可点击
+      aiSend.disabled = false;
+      aiSend.style.opacity = '';
+      aiSend.style.cursor = '';
+      if (isPaused) {
+        aiSend.classList.add('state-paused');
+        aiSend.setAttribute('aria-label', getLang() === 'en' ? 'resume' : '继续生成');
+      } else {
+        aiSend.classList.add('state-streaming');
+        aiSend.setAttribute('aria-label', getLang() === 'en' ? 'pause' : '暂停生成');
+      }
+    } else {
+      const ready = !!selectedKey && !!selectedMode;
+      aiSend.disabled = !ready;
+      aiSend.style.opacity = ready ? '' : '0.4';
+      aiSend.style.cursor = ready ? '' : 'not-allowed';
+      aiSend.setAttribute('aria-label', 'send');
+    }
+  }
+
+  // 插入 / 移除"会话已停止"提示条
+  function showPausedHint() {
+    if (!aiOutput || aiOutput.querySelector('.ai-paused-hint')) return;
+    const hint = document.createElement('div');
+    hint.className = 'ai-paused-hint';
+    const zh = document.createElement('span');
+    zh.setAttribute('data-lang', 'zh');
+    zh.textContent = '⏸ 会话已停止 · 点击继续按钮恢复生成';
+    const en = document.createElement('span');
+    en.setAttribute('data-lang', 'en');
+    en.textContent = '⏸ Generation paused · click the resume button to continue';
+    hint.appendChild(zh);
+    hint.appendChild(en);
+    aiOutput.appendChild(hint);
+    aiOutput.scrollTop = aiOutput.scrollHeight;
+  }
+  function removePausedHint() {
+    aiOutput?.querySelector('.ai-paused-hint')?.remove();
+  }
+
+  function pauseStream() {
+    isPaused = true;
+    aiOutput?.querySelector('.ai-a')?.classList.remove('ai-cursor');
+    showPausedHint();
+    refreshSendState();
+  }
+  function resumeStream() {
+    isPaused = false;
+    removePausedHint();
+    aiOutput?.querySelector('.ai-a')?.classList.add('ai-cursor');
+    refreshSendState();
   }
 
   function syncChipInput() {
@@ -261,7 +312,7 @@
 
   async function streamAnswer(key, mode) {
     if (isStreaming) { abortStream = true; await sleep(50); }
-    isStreaming = true; abortStream = false;
+    isStreaming = true; abortStream = false; isPaused = false;
     chips.forEach(c => c.disabled = true);
     refreshSendState();
 
@@ -269,7 +320,8 @@
     const data = ANSWERS[key];
     if (!data || !data.a[mode]) return finishStream();
     const qText = data.qLabel[lang];
-    const aText = data.a[mode][lang];
+    // 段落之间用 \n\n 拉开空行（增加视觉呼吸感）
+    const aText = data.a[mode][lang].replace(/\n/g, '\n\n');
 
     // 清屏并显示问题
     aiOutput.innerHTML = '';
@@ -299,6 +351,11 @@
     const speed = lang === 'en' ? 12 : 26;
     for (let i = 0; i < aText.length; i++) {
       if (abortStream) break;
+      // 暂停时等待恢复；每 80ms 检查一次
+      while (isPaused && !abortStream) {
+        await sleep(80);
+      }
+      if (abortStream) break;
       aEl.textContent += aText[i];
       if (i % 6 === 0) aiOutput.scrollTop = aiOutput.scrollHeight;
       const ch = aText[i];
@@ -314,12 +371,20 @@
       const cur = aiOutput.querySelector('.ai-cursor');
       cur?.classList.remove('ai-cursor');
       isStreaming = false;
+      isPaused = false;
+      removePausedHint();
       chips.forEach(c => c.disabled = false);
       refreshSendState();
     }
   }
 
   function handleSend() {
+    // 生成中：切换 暂停 / 继续
+    if (isStreaming) {
+      if (isPaused) resumeStream();
+      else pauseStream();
+      return;
+    }
     if (!selectedKey || !selectedMode) {
       if (aiInput) {
         const lang = getLang();
@@ -451,7 +516,7 @@
   function lbStep(delta) { if (lbGroup.length > 1) { lbIndex += delta; renderLb(); } }
 
   // 单图（实习/学术顾问/兴趣拼豆乐高等）：点开就是一张
-  document.querySelectorAll('.card-photo > img, .edu-img, .cert-img, .hobby-photo > img').forEach(img => {
+  document.querySelectorAll('.card-photo > img, .edu-img, .cert-img, .cert-thumb, .hobby-photo > img').forEach(img => {
     img.style.cursor = 'zoom-in';
     img.addEventListener('click', () => openLB([img.src], 0));
   });

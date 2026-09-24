@@ -359,7 +359,7 @@ html[data-lang="zh"] .hero-name {
   border: 1px dashed #D5D5D5;
   border-radius: 12px;
   font-size: 15.5px;
-  line-height: 1.85;
+  line-height: 2.05;
   margin-bottom: 18px;
   white-space: pre-wrap;
   position: relative;
@@ -519,6 +519,32 @@ html[data-lang="zh"] .hero-name {
 }
 .ai-send:hover { background: var(--orange); transform: scale(1.06); }
 .ai-send:disabled { opacity: 0.4; cursor: not-allowed; }
+/* 三种状态图标：默认只显示箭头 */
+.ai-send .ai-send-pause,
+.ai-send .ai-send-play { display: none; }
+/* 生成中：红色圆按钮 + 暂停竖条 */
+.ai-send.state-streaming { background: #DC2626; }
+.ai-send.state-streaming:hover { background: #B91C1C; }
+.ai-send.state-streaming .ai-send-arrow { display: none; }
+.ai-send.state-streaming .ai-send-pause { display: block; }
+/* 已暂停：绿色圆按钮 + 继续三角 */
+.ai-send.state-paused { background: #059669; }
+.ai-send.state-paused:hover { background: #047857; }
+.ai-send.state-paused .ai-send-arrow { display: none; }
+.ai-send.state-paused .ai-send-play { display: block; }
+
+/* "会话已停止"的提示 */
+.ai-paused-hint {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-left: 3px solid var(--orange);
+  background: rgba(249, 115, 22, 0.09);
+  color: var(--ink-soft);
+  font-size: 13.5px;
+  font-style: italic;
+  border-radius: 6px;
+  line-height: 1.5;
+}
 .ai-disclaimer {
   font-size: 12px; color: #999;
   margin-top: 10px; text-align: center;
@@ -584,6 +610,16 @@ html[data-lang="zh"] .hero-name {
   border-radius: 10px;
   border: 1.5px solid var(--ink);
   cursor: zoom-in;
+}
+/* 教育卡片轮播：填满第一列，高度与原 edu-img 一致 */
+.edu-card .edu-carousel { width: 100%; }
+.edu-card .edu-carousel .carousel-track {
+  aspect-ratio: unset;
+  height: 220px;
+  border: 1.5px solid var(--ink);
+  border-radius: 10px;
+  box-shadow: none;
+  background: transparent;
 }
 .edu-head {
   display: flex; align-items: center; flex-wrap: wrap; gap: 12px;
@@ -1080,14 +1116,53 @@ html[data-lang="en"] .ec-en { display: none; }
 #activities .exp-card { align-items: center; }
 #activities .exp-card .exp-list li { font-size: 15px; }
 
+/* ---------- Tagline + Stat badges (exp / proj cards · 方案 B) ---------- */
+.card-tagline {
+  font-size: 15.5px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.65;
+  margin: 6px 0 16px;
+  letter-spacing: 0.01em;
+}
+.card-tagline b, .card-tagline strong { color: var(--orange); font-weight: 700; }
+
+.card-stats {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 2px;
+}
+.card-stat {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 13px;
+  background: rgba(249, 115, 22, 0.09);
+  border: 1.4px solid rgba(249, 115, 22, 0.45);
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--orange);
+  line-height: 1.4;
+  transition: background 0.18s, border-color 0.18s, transform 0.18s;
+}
+.card-stat:hover {
+  background: rgba(249, 115, 22, 0.16);
+  border-color: rgba(249, 115, 22, 0.8);
+  transform: translateY(-1px);
+}
+.card-stat .cs-ic { font-size: 14px; line-height: 1; }
+@media (max-width: 720px) {
+  .card-tagline { font-size: 14.5px; margin: 4px 0 12px; }
+  .card-stat { font-size: 12px; padding: 6px 11px; gap: 5px; }
+  .card-stats { gap: 6px; }
+}
+
 /* Projects */
 .proj-card {
-  grid-template-columns: 320px 1fr;
-  gap: 32px;
+  grid-template-columns: 420px 1fr;
+  gap: 36px;
   align-items: flex-start;
 }
 .proj-card .card-photo,
-.proj-card .carousel { width: 320px; }
+.proj-card .carousel { width: 420px; }
 .proj-card .proj-media .card-photo,
 .proj-card .proj-media .carousel { width: 100%; }
 .proj-body h3 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
@@ -1300,6 +1375,48 @@ html[data-lang="en"] .ec-en { display: none; }
   font-weight: 600;
 }
 .cert-sub { font-size: 12.5px; color: var(--ink-soft); border-bottom: none !important; }
+
+/* 证书列表：两张证书横排（撑满一行）*/
+.skill-card-cert { grid-column: 1 / -1; }
+.skill-card ul.cert-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.skill-card ul.cert-list li.cert-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px;
+  background: #FAFAF7;
+  border: 1.5px dashed var(--line);
+  border-bottom: 1.5px dashed var(--line);
+  border-radius: 12px;
+  font-size: inherit;
+  transition: border-color .2s, background .2s;
+}
+.skill-card ul.cert-list li.cert-item:hover { border-color: var(--orange); background: rgba(249, 115, 22, 0.04); }
+.cert-thumb {
+  width: 220px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  cursor: zoom-in;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform .2s, box-shadow .2s;
+  flex-shrink: 0;
+}
+.cert-thumb:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--ink); }
+/* 整块不换行（如「Level I」「大师级」「Expert (Master)」） */
+.cert-name .nowrap { white-space: nowrap; }
+/* 窄屏：横排放不下时改成竖排堆叠，图更大 */
+@media (max-width: 960px) {
+  .skill-card ul.cert-list { grid-template-columns: 1fr; }
+  .cert-thumb { width: 280px; }
+}
+@media (max-width: 720px) {
+  .skill-card ul.cert-list li.cert-item { flex-direction: column; align-items: stretch; text-align: center; gap: 12px; }
+  .cert-thumb { width: 100%; max-width: 420px; aspect-ratio: 4 / 3; margin: 0 auto; }
+}
 @media (max-width: 720px) {
   .skills-grid { grid-template-columns: 1fr; }
   .skill-card-cert .cert-row { flex-direction: column; align-items: stretch; }
@@ -1513,8 +1630,8 @@ html[data-lang="zh"] .hero-name { margin-bottom: 22px; }
 .edu-card, .exp-card, .proj-card { padding: 22px; margin-bottom: 18px; }
 .exp-card { grid-template-columns: 230px 1fr; gap: 26px; }
 .exp-card .card-photo, .exp-card .carousel { width: 230px; }
-.proj-card { grid-template-columns: 260px 1fr; gap: 26px; }
-.proj-card .card-photo, .proj-card .carousel, .proj-card .proj-media { width: 260px; }
+.proj-card { grid-template-columns: 420px 1fr; gap: 32px; }
+.proj-card .card-photo, .proj-card .carousel, .proj-card .proj-media { width: 420px; }
 .exp-list li, .proj-list li { font-size: 14px; line-height: 1.7; }
 .exp-list, .proj-list { gap: 8px; }
 .proj-tags { margin-bottom: 12px; }
@@ -2053,7 +2170,9 @@ html[data-lang="zh"] .hero-name { margin-bottom: 22px; }
   border-radius: 999px;
 }
 #skills .tool-item:hover { transform: translateY(-2px); border-color: var(--ink); box-shadow: var(--shadow-sm); }
-#skills .tool-logo { width: 24px; height: 24px; padding: 0; border-radius: 6px; }
+#skills .tool-logo { width: 24px; height: 24px; padding: 0; border-radius: 6px; object-fit: contain; }
+/* MySQL 是横向 Logo，单独加宽 */
+#skills .tool-item .tool-logo[alt="MySQL"] { width: 44px; height: 28px; border-radius: 4px; }
 #skills .tool-name { flex: none; font-size: 13.5px; font-weight: 600; }
 
 /* 语言胶囊：与工具胶囊同款尺寸 */
