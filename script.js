@@ -119,7 +119,7 @@
       }
     },
     intern: {
-      qLabel: { zh: '介绍一下你的实习经历', en: 'Tell me about your internships.' },
+      qLabel: { zh: '介绍一下你的实习经历', en: 'Tell me about your internships' },
       a: {
         think: {
           zh: '我做过两段实习：第一段是 2025 年暑假在香港和记港口集团做产品开发与实施实习生，深入摸过港口的核心信息系统；第二段是 2026 年 5–7 月在南京环石（网眼）做 AI 产品实习生，主导了短剧平台上 AI Studio 模块从 0 到 1 的产品设计。一段偏 B 端信息系统，一段偏 AI 产品。',
@@ -132,7 +132,7 @@
       }
     },
     activity: {
-      qLabel: { zh: '你有什么课外活动吗？', en: 'What extracurricular activities have you been involved in?' },
+      qLabel: { zh: '你有什么课外活动吗？', en: 'What extracurricular activities have you done?' },
       a: {
         think: {
           zh: '我课外主要做过两件事：一个是在海丝港口合作论坛做志愿者，负责中英笔译和口译；另一个是在港大文学院做学生学术顾问，帮大一新生适应大学生活。',
@@ -158,7 +158,7 @@
       }
     },
     strength: {
-      qLabel: { zh: '你的核心优势是什么？', en: "What would you say is your core strength?" },
+      qLabel: { zh: '你的核心优势是什么？', en: "What is your core strength?" },
       a: {
         think: {
           zh: '我最大的优势是"语言 + 数据 + 产品 + AI"的复合能力：既是翻译与信息分析双主修，能做数据建模和跨文化沟通；又能用 AI 工具从 0 到 1 把产品真的做出来、推上线——我已经独立上线过一个 App 和这个网站。',
@@ -351,7 +351,7 @@
     modeBar.className = mode === 'search' ? 'ai-search-block' : 'ai-think-block';
     modeBar.innerHTML = '<div class="' + (mode === 'search' ? 'asb-head' : 'atb-head') + '">'
       + (mode === 'search'
-          ? '🧠 ' + (lang === 'en' ? 'Deep dive · more detail, fuller answer' : '穷究 · 超高强度推理 · 完整详细回答')
+          ? '🧠 ' + (lang === 'en' ? 'In depth · more detail, fuller answer' : '穷究 · 超高强度推理 · 完整详细回答')
           : '💡 ' + (lang === 'en' ? 'Default · concise answer' : '默认 · 简洁回答'))
       + '</div>';
     aiOutput.appendChild(modeBar);
