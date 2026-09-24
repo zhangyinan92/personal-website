@@ -2433,3 +2433,39 @@ html[data-lang="en"] .scroll-down { left: 54.5%; }
 
 /* v6.6：Scroll 提示离底部太近，被浏览器底部 UI 挡住 → 抬高，确保「Scroll / 往下看」始终可见 */
 .scroll-down { bottom: 40px; }
+
+/* ================================================================
+   v6.7：响应式修复
+   ================================================================ */
+
+/* 1) 手机端项目卡：所有 #projects 覆盖强制回归单列 */
+@media (max-width: 720px) {
+  #projects .proj-card,
+  #projects .proj-card:nth-of-type(1) {
+    grid-template-columns: 1fr !important;
+    align-items: stretch !important;
+    justify-items: center;
+  }
+  #projects .proj-card .card-photo,
+  #projects .proj-card .carousel,
+  #projects .proj-card .proj-media {
+    width: 100% !important;
+    max-width: 340px !important;
+    margin: 0 auto !important;
+    align-self: center !important;
+  }
+  #projects .proj-card:nth-of-type(1) .quguo-carousel {
+    width: 200px !important;
+    max-width: 200px !important;
+    margin: 0 auto !important;
+  }
+  #projects .proj-body { width: 100%; }
+}
+
+/* 2) 中等屏幕 (721–980px)：英文导航栏收紧，避免溢出 */
+@media (min-width: 721px) and (max-width: 980px) {
+  .topbar { padding: 12px 20px; }
+  .logo-spacer { width: 16px; }
+  .nav { gap: 12px; font-size: 13px; }
+  .lang-toggle { padding: 5px 12px; font-size: 13px; }
+}
