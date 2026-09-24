@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260924j">
+<link rel="stylesheet" href="style.css?v=20260924k">
 </head>
 <body>
 
@@ -79,14 +79,14 @@
     <div class="hero-right">
       <figure class="hero-photo hero-carousel carousel" data-carousel>
         <div class="carousel-track">
-          <img class="carousel-slide active" src="assets/photos/hero-1.jpg?v=2" alt="张依楠 · 海边">
-          <img class="carousel-slide" src="assets/photos/hero-2.jpg?v=2" alt="张依楠 · 展览">
-          <img class="carousel-slide" src="assets/photos/hero-3.jpg?v=2" alt="张依楠 · 老城门前">
-          <img class="carousel-slide" src="assets/photos/hero-4.jpg?v=2" alt="张依楠 · 香港街头">
-          <img class="carousel-slide" src="assets/photos/hero-5.jpg?v=2" alt="张依楠 · 大头贴">
+          <img class="carousel-slide active" src="assets/photos/hero-1.jpg?v=2" alt="张依楠 · 海边" data-alt-en="Zhang Yinan · At the seaside">
+          <img class="carousel-slide" src="assets/photos/hero-2.jpg?v=2" alt="张依楠 · 展览" data-alt-en="Zhang Yinan · At an exhibition">
+          <img class="carousel-slide" src="assets/photos/hero-3.jpg?v=2" alt="张依楠 · 老城门前" data-alt-en="Zhang Yinan · By an old city gate">
+          <img class="carousel-slide" src="assets/photos/hero-4.jpg?v=2" alt="张依楠 · 香港街头" data-alt-en="Zhang Yinan · Streets of Hong Kong">
+          <img class="carousel-slide" src="assets/photos/hero-5.jpg?v=2" alt="张依楠 · 大头贴" data-alt-en="Zhang Yinan · Photo booth">
         </div>
-        <button class="carousel-prev" aria-label="上一张">‹</button>
-        <button class="carousel-next" aria-label="下一张">›</button>
+        <button class="carousel-prev" aria-label="上一张" data-aria-en="Previous slide">‹</button>
+        <button class="carousel-next" aria-label="下一张" data-aria-en="Next slide">›</button>
         <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
       </figure>
     </div>
@@ -104,31 +104,31 @@
     <h2><span data-lang="zh">问问我 🤖</span><span data-lang="en">Ask me anything 🤖</span></h2>
     <p class="section-sub">
       <span data-lang="zh">这是一个模拟 AI 对话框 —— 快来问我问题吧，我在这儿等你 👇</span>
-      <span data-lang="en">A mock AI chat — go ahead, ask me anything, I'm all ears 👇</span>
+      <span data-lang="en">This is a simulated AI chat. Choose a question below — I'm all ears 👇</span>
     </p>
   </div>
 
   <div class="ai-box">
     <div class="ai-output" id="aiOutput">
       <p class="ai-placeholder" data-lang="zh">👋 嗨，先点下面任一关键词，再点 💡 思维链长度 选一个档位，最后按右边的发送按钮 →</p>
-      <p class="ai-placeholder" data-lang="en">👋 Pick a chip below, tap 💡 Thinking depth to choose a level, then hit send →</p>
+      <p class="ai-placeholder" data-lang="en">👋 Choose a question below, select a response depth, then hit send →</p>
     </div>
 
     <div class="ai-chips">
       <button class="chip" data-q="edu">
-        <span data-lang="zh">你的教育背景是什么</span><span data-lang="en">What's your education background?</span>
+        <span data-lang="zh">你的教育背景是什么</span><span data-lang="en">What's your educational background?</span>
       </button>
       <button class="chip" data-q="intern">
-        <span data-lang="zh">介绍一下你的实习经历</span><span data-lang="en">Tell me about your internships</span>
+        <span data-lang="zh">介绍一下你的实习经历</span><span data-lang="en">Can you walk me through your internships?</span>
       </button>
       <button class="chip" data-q="activity">
-        <span data-lang="zh">你有什么课外活动吗</span><span data-lang="en">Any extracurricular activities?</span>
+        <span data-lang="zh">你有什么课外活动吗</span><span data-lang="en">What extracurricular activities have you been involved in?</span>
       </button>
       <button class="chip" data-q="project">
-        <span data-lang="zh">你做过什么项目</span><span data-lang="en">What projects have you done?</span>
+        <span data-lang="zh">你做过什么项目</span><span data-lang="en">What projects have you worked on?</span>
       </button>
       <button class="chip" data-q="strength">
-        <span data-lang="zh">你的核心优势是什么</span><span data-lang="en">What's your core strength?</span>
+        <span data-lang="zh">你的核心优势是什么</span><span data-lang="en">What would you say is your biggest strength?</span>
       </button>
     </div>
 
@@ -142,12 +142,12 @@
         <div class="ai-depth-menu" id="aiDepthMenu" role="menu" hidden>
           <button class="ai-depth-opt" data-mode="think" type="button" role="menuitemradio">
             <span class="ado-name">💡 <span data-lang="zh">默认</span><span data-lang="en">Default</span></span>
-            <span class="ado-desc"><span data-lang="zh">依赖模型默认行为 · 简洁回答</span><span data-lang="en">Model default · brief reply</span></span>
+            <span class="ado-desc"><span data-lang="zh">依赖模型默认行为 · 简洁回答</span><span data-lang="en">Standard depth · concise answer</span></span>
             <span class="ado-check">✓</span>
           </button>
           <button class="ai-depth-opt" data-mode="search" type="button" role="menuitemradio">
-            <span class="ado-name">🧠 <span data-lang="zh">穷究</span><span data-lang="en">Ultrathink</span></span>
-            <span class="ado-desc"><span data-lang="zh">超高强度推理 · 完整详细回答</span><span data-lang="en">Deepest reasoning · full reply</span></span>
+            <span class="ado-name">🧠 <span data-lang="zh">穷究</span><span data-lang="en">Deep dive</span></span>
+            <span class="ado-desc"><span data-lang="zh">超高强度推理 · 完整详细回答</span><span data-lang="en">More detail · fuller answer</span></span>
             <span class="ado-check">✓</span>
           </button>
         </div>
@@ -161,7 +161,7 @@
     </div>
     <p class="ai-disclaimer">
       <span data-lang="zh">* 这是基于固定提示词的本地模拟，不会真的调用大模型 API。点关键词填入，再按发送按钮即可。</span>
-      <span data-lang="en">* Local simulation with predefined answers — no real LLM API call. Pick a chip, then click send.</span>
+      <span data-lang="en">* This is a local simulation with predefined answers, so it does not call a live LLM. Choose a question and click send.</span>
     </p>
   </div>
 </section>
@@ -174,7 +174,7 @@
   </div>
 
   <article class="edu-card">
-    <img class="edu-img" src="assets/photos/hku-2.jpg" alt="张依楠 · 香港大学校门前">
+    <img class="edu-img" src="assets/photos/hku-2.jpg" alt="张依楠 · 香港大学校门前" data-alt-en="Zhang Yinan · At HKU main entrance">
     <div class="edu-body">
       <div class="edu-head">
         <h3>
@@ -221,11 +221,11 @@
   <article class="exp-card">
     <div class="card-photo carousel" data-carousel>
       <div class="carousel-track">
-        <img class="carousel-slide active" src="assets/photos/nanjing-wangyan.jpg" alt="南京环石 · WEBEYE 办公室">
-        <img class="carousel-slide" src="assets/photos/nanjing-wangyan-2.jpg" alt="南京环石 · WEBEYE 数据艺术装置前">
+        <img class="carousel-slide active" src="assets/photos/nanjing-wangyan.jpg" alt="南京环石 · WEBEYE 办公室" data-alt-en="Nanjing Huanshi · WEBEYE office">
+        <img class="carousel-slide" src="assets/photos/nanjing-wangyan-2.jpg" alt="南京环石 · WEBEYE 数据艺术装置前" data-alt-en="Nanjing Huanshi · WEBEYE · in front of a data-art LEGO installation">
       </div>
-      <button class="carousel-prev" aria-label="上一张">‹</button>
-      <button class="carousel-next" aria-label="下一张">›</button>
+      <button class="carousel-prev" aria-label="上一张" data-aria-en="Previous slide">‹</button>
+      <button class="carousel-next" aria-label="下一张" data-aria-en="Next slide">›</button>
       <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
     </div>
     <div class="exp-body">
@@ -253,10 +253,10 @@
     <div class="card-photo carousel" data-carousel>
       <div class="carousel-track">
         <img class="carousel-slide active" src="assets/photos/hp-badge.jpg" alt="Hutchison Ports staff badge">
-        <img class="carousel-slide" src="assets/photos/hp-office.jpg" alt="Hutchison Ports IT 部门">
+        <img class="carousel-slide" src="assets/photos/hp-office.jpg" alt="Hutchison Ports IT 部门" data-alt-en="Hutchison Ports · IT Department">
       </div>
-      <button class="carousel-prev" aria-label="上一张">‹</button>
-      <button class="carousel-next" aria-label="下一张">›</button>
+      <button class="carousel-prev" aria-label="上一张" data-aria-en="Previous slide">‹</button>
+      <button class="carousel-next" aria-label="下一张" data-aria-en="Next slide">›</button>
       <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
     </div>
     <div class="exp-body">
@@ -291,17 +291,17 @@
   <article class="proj-card">
     <div class="card-photo carousel quguo-carousel" data-carousel>
       <div class="carousel-track">
-        <img class="carousel-slide active" src="assets/photos/quguo-1.jpg?v=hi" alt="去过 · App Store 上架">
-        <img class="carousel-slide" src="assets/photos/quguo-2.jpg?v=hi" alt="去过 · 世界地图">
-        <img class="carousel-slide" src="assets/photos/quguo-5.jpg?v=hi" alt="去过 · 淮安 · 江苏省 城市详情">
-        <img class="carousel-slide" src="assets/photos/quguo-6.jpg?v=hi" alt="去过 · 蒙古国 国家详情">
-        <img class="carousel-slide" src="assets/photos/quguo-3.jpg?v=hi" alt="去过 · 我的足迹统计">
-        <img class="carousel-slide" src="assets/photos/quguo-7.jpg?v=hi" alt="去过 · 分享图预览 · 保存到相册">
-        <img class="carousel-slide" src="assets/photos/quguo-4.jpg?v=hi" alt="去过 · 成就印章">
-        <img class="carousel-slide" src="assets/photos/quguo-8.jpg?v=hi" alt="去过 · 我的 · 旅行者设置">
+        <img class="carousel-slide active" src="assets/photos/quguo-1.jpg?v=hi" alt="去过 · App Store 上架" data-alt-en="QuGuo · Live on the App Store">
+        <img class="carousel-slide" src="assets/photos/quguo-2.jpg?v=hi" alt="去过 · 世界地图" data-alt-en="QuGuo · World map">
+        <img class="carousel-slide" src="assets/photos/quguo-5.jpg?v=hi" alt="去过 · 淮安 · 江苏省 城市详情" data-alt-en="QuGuo · Huai'an, Jiangsu · city detail">
+        <img class="carousel-slide" src="assets/photos/quguo-6.jpg?v=hi" alt="去过 · 蒙古国 国家详情" data-alt-en="QuGuo · Mongolia · country detail">
+        <img class="carousel-slide" src="assets/photos/quguo-3.jpg?v=hi" alt="去过 · 我的足迹统计" data-alt-en="QuGuo · Travel stats">
+        <img class="carousel-slide" src="assets/photos/quguo-7.jpg?v=hi" alt="去过 · 分享图预览 · 保存到相册" data-alt-en="QuGuo · Shareable card preview · save to album">
+        <img class="carousel-slide" src="assets/photos/quguo-4.jpg?v=hi" alt="去过 · 成就印章" data-alt-en="QuGuo · Achievement stamps">
+        <img class="carousel-slide" src="assets/photos/quguo-8.jpg?v=hi" alt="去过 · 我的 · 旅行者设置" data-alt-en="QuGuo · Me · Traveler settings">
       </div>
-      <button class="carousel-prev" aria-label="上一张">‹</button>
-      <button class="carousel-next" aria-label="下一张">›</button>
+      <button class="carousel-prev" aria-label="上一张" data-aria-en="Previous slide">‹</button>
+      <button class="carousel-next" aria-label="下一张" data-aria-en="Next slide">›</button>
       <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
     </div>
     <div class="proj-body">
@@ -330,8 +330,8 @@
           <img class="carousel-slide" src="assets/photos/nyc-streets.png" alt="NYC top 20 dangerous streets">
           <img class="carousel-slide" src="assets/photos/nyc-hourly.png" alt="NYC 24-hour crash pattern">
         </div>
-        <button class="carousel-prev" aria-label="上一张">‹</button>
-        <button class="carousel-next" aria-label="下一张">›</button>
+        <button class="carousel-prev" aria-label="上一张" data-aria-en="Previous slide">‹</button>
+        <button class="carousel-next" aria-label="下一张" data-aria-en="Next slide">›</button>
         <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
       </div>
       <a class="proj-link proj-link-below" href="https://www.youtube.com/watch?v=Wo7qT7D9jEk" target="_blank" rel="noopener">
@@ -358,12 +358,12 @@
   <article class="proj-card">
     <div class="card-photo carousel" data-carousel>
       <div class="carousel-track">
-        <img class="carousel-slide active" src="assets/photos/airfare-tree.png" alt="Airfare · Decision Tree 决策树">
-        <img class="carousel-slide" src="assets/photos/airfare-scatter.png" alt="Airfare · Actual vs Predicted 训练/测试拟合">
+        <img class="carousel-slide active" src="assets/photos/airfare-tree.png" alt="Airfare · Decision Tree 决策树" data-alt-en="Airfare · Decision Tree">
+        <img class="carousel-slide" src="assets/photos/airfare-scatter.png" alt="Airfare · Actual vs Predicted 训练/测试拟合" data-alt-en="Airfare · Actual vs Predicted (training / testing set)">
         <img class="carousel-slide" src="assets/photos/r-code.png" alt="R code for airfare prediction">
       </div>
-      <button class="carousel-prev" aria-label="上一张">‹</button>
-      <button class="carousel-next" aria-label="下一张">›</button>
+      <button class="carousel-prev" aria-label="上一张" data-aria-en="Previous slide">‹</button>
+      <button class="carousel-next" aria-label="下一张" data-aria-en="Next slide">›</button>
       <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
     </div>
     <div class="proj-body">
@@ -515,8 +515,8 @@
         <img class="carousel-slide active" src="assets/photos/mpf-solo.jpg" alt="MPF forum solo">
         <img class="carousel-slide" src="assets/photos/mpf-group.jpg" alt="MPF volunteers group">
       </div>
-      <button class="carousel-prev" aria-label="上一张">‹</button>
-      <button class="carousel-next" aria-label="下一张">›</button>
+      <button class="carousel-prev" aria-label="上一张" data-aria-en="Previous slide">‹</button>
+      <button class="carousel-next" aria-label="下一张" data-aria-en="Next slide">›</button>
       <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
     </div>
     <div class="exp-body">
@@ -539,7 +539,7 @@
 
   <article class="exp-card">
     <div class="card-photo">
-      <img src="assets/photos/saa-email.jpg" alt="港大文学院 SAA 学术顾问委任邮件">
+      <img src="assets/photos/saa-email.jpg" alt="港大文学院 SAA 学术顾问委任邮件" data-alt-en="HKU Faculty of Arts · SAA advisor appointment email">
     </div>
     <div class="exp-body">
       <div class="exp-head">
@@ -574,7 +574,7 @@
   <div class="hobby-grid">
     <article class="hobby-card">
       <div class="hobby-photo">
-        <img src="assets/photos/hobby-pindou.jpg" alt="拼豆作品 · 像素小布丁挂件">
+        <img src="assets/photos/hobby-pindou.jpg" alt="拼豆作品 · 像素小布丁挂件" data-alt-en="Perler bead art · pixel pudding charm">
       </div>
       <div class="hobby-text">
         <h3>🧩 <span data-lang="zh">拼豆</span><span data-lang="en">Perler Beads</span></h3>
@@ -584,7 +584,7 @@
 
     <article class="hobby-card">
       <div class="hobby-photo">
-        <img src="assets/photos/hobby-lego.jpg" alt="乐高作品 · 浅蓝色 Vespa 摩托车">
+        <img src="assets/photos/hobby-lego.jpg" alt="乐高作品 · 浅蓝色 Vespa 摩托车" data-alt-en="LEGO · pale-blue Vespa scooter">
       </div>
       <div class="hobby-text">
         <h3>🧱 <span data-lang="zh">乐高</span><span data-lang="en">LEGO</span></h3>
@@ -595,11 +595,11 @@
     <article class="hobby-card">
       <div class="hobby-photo carousel hobby-carousel" data-carousel>
         <div class="carousel-track">
-          <img class="carousel-slide active" src="assets/photos/hobby-standup-1.jpg" alt="脱口秀现场 · 小剧场">
-          <img class="carousel-slide" src="assets/photos/hobby-standup-2.jpg" alt="脱口秀现场 · 剧院专场">
+          <img class="carousel-slide active" src="assets/photos/hobby-standup-1.jpg" alt="脱口秀现场 · 小剧场" data-alt-en="Stand-up comedy · at a small club">
+          <img class="carousel-slide" src="assets/photos/hobby-standup-2.jpg" alt="脱口秀现场 · 剧院专场" data-alt-en="Stand-up comedy · theater special">
         </div>
-        <button class="carousel-prev" aria-label="上一张">‹</button>
-        <button class="carousel-next" aria-label="下一张">›</button>
+        <button class="carousel-prev" aria-label="上一张" data-aria-en="Previous slide">‹</button>
+        <button class="carousel-next" aria-label="下一张" data-aria-en="Next slide">›</button>
         <span class="carousel-counter"><span class="cur">1</span>/<span class="total">1</span></span>
       </div>
       <div class="hobby-text">
@@ -633,12 +633,12 @@
 <!-- 灯箱 -->
 <div id="lightbox" class="lightbox" aria-hidden="true">
   <button class="lb-close" id="lbClose" aria-label="close">✕</button>
-  <button class="lb-nav lb-prev" id="lbPrev" aria-label="上一张">‹</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="上一张" data-aria-en="Previous slide">‹</button>
   <img id="lbImg" src="" alt="">
-  <button class="lb-nav lb-next" id="lbNext" aria-label="下一张">›</button>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="下一张" data-aria-en="Next slide">›</button>
   <span class="lb-counter" id="lbCounter"></span>
 </div>
 
-<script src="script.js?v=20260924f"></script>
+<script src="script.js?v=20260924k"></script>
 </body>
 </html>

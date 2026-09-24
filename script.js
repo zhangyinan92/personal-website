@@ -75,6 +75,21 @@
 
   function getLang() { return html.getAttribute('data-lang') === 'en' ? 'en' : 'zh'; }
 
+  // 语言切换时同步 aria-label / alt 到对应语言
+  function syncI18nAttrs() {
+    const lang = getLang();
+    document.querySelectorAll('[data-aria-en]').forEach(el => {
+      if (!el.dataset.ariaZh) el.dataset.ariaZh = el.getAttribute('aria-label') || '';
+      el.setAttribute('aria-label', lang === 'en' ? el.dataset.ariaEn : el.dataset.ariaZh);
+    });
+    document.querySelectorAll('[data-alt-en]').forEach(el => {
+      if (!el.dataset.altZh) el.dataset.altZh = el.getAttribute('alt') || '';
+      el.setAttribute('alt', lang === 'en' ? el.dataset.altEn : el.dataset.altZh);
+    });
+  }
+  // 页面加载：先根据当前 (可能是保存的) 语言同步一次
+  syncI18nAttrs();
+
   if (langToggle) {
     langToggle.addEventListener('click', () => {
       const cur = getLang() === 'en' ? 'zh' : 'en';
@@ -82,6 +97,7 @@
       html.setAttribute('lang', cur === 'en' ? 'en' : 'zh-CN');
       localStorage.setItem('yinan-lang', cur);
       updateAIPlaceholder();
+      syncI18nAttrs();
       // 切换语言时同步当前选中 chip 的输入框文本
       syncChipInput();
     });
@@ -90,67 +106,67 @@
   /* ---------- 3. 预设答复 (Search 详细版 / Think 简短版 · 中英) ---------- */
   const ANSWERS = {
     edu: {
-      qLabel: { zh: '你的教育背景是什么？', en: "What's your education background?" },
+      qLabel: { zh: '你的教育背景是什么？', en: "What's your educational background?" },
       a: {
         think: {
           zh: '我现在在香港大学读大四，双主修了信息系统与分析和翻译，平时也很喜欢折腾 AI 工具，像 Claude Code、Gemini、ChatGPT 我都玩过一轮。',
-          en: "I'm a senior at the University of Hong Kong, double-majoring in Information Systems & Analytics and Translation. I also love tinkering with AI tools — I've played around with Claude Code, Gemini, and ChatGPT."
+          en: "I'm a final-year student at the University of Hong Kong, pursuing a double major in Information Systems & Analytics and Translation. Outside class, I enjoy experimenting with AI tools such as Claude Code, Gemini, and ChatGPT, especially when they can help me learn or build more effectively."
         },
         search: {
           zh: '我目前是香港大学的大四在读生，读的是信息系统与分析，同时双主修翻译，预计 2027 年毕业。\n课程上接触比较多的是商业分析、信息系统、统计与经济数据分析这类内容。\n我个人对 AI 也特别感兴趣，Claude Code、Gemini、ChatGPT 这些主流工具我基本都上手试过，平时也会用它们来辅助学习和做项目。',
-          en: "I'm currently a senior at the University of Hong Kong, majoring in Information Systems & Analytics with a double major in Translation, graduating in 2027.\nMy coursework centers on Business Analytics, Information Systems, and Statistical & Economic Data Analysis.\nI'm also really into AI — I've hands-on tried mainstream tools like Claude Code, Gemini, and ChatGPT, and I use them to support my studies and projects."
+          en: "I'm currently a final-year student at the University of Hong Kong, where I'm pursuing a double major in Information Systems & Analytics and Translation. I expect to graduate in 2027.\nMy coursework has focused on business analytics, information systems, statistics, and economic data analysis.\nI'm also genuinely interested in AI tools. I've worked with Claude Code, Gemini, and ChatGPT, and I regularly use them to support my studies and projects."
         }
       }
     },
     intern: {
-      qLabel: { zh: '介绍一下你的实习经历', en: 'Tell me about your internships' },
+      qLabel: { zh: '介绍一下你的实习经历', en: 'Can you walk me through your internships?' },
       a: {
         think: {
           zh: '我做过两段实习：第一段是 2025 年暑假在香港和记港口集团做产品开发与实施实习生，深入摸过港口的核心信息系统；第二段是 2026 年 5–7 月在南京环石（网眼）做 AI 产品实习生，主导了短剧平台上 AI Studio 模块从 0 到 1 的产品设计。一段偏 B 端信息系统，一段偏 AI 产品。',
-          en: "I've done two internships. The first was Summer 2025 at Hutchison Port Holdings in Hong Kong as a Product Development & Implementation Intern, digging into core port systems. The second was May–July 2026 at Nanjing Huanshi (WEBEYE) as an AI Product Intern, leading the 0-to-1 design of an \"AI Studio\" module on a short-drama platform. One leans B2B systems, the other AI product."
+          en: "I've completed two internships that gave me complementary perspectives. In summer 2025, I worked in Hutchison Port Holdings' IT department on product development and implementation, where I learned how core port systems support day-to-day operations. From May to July 2026, I worked as an AI Product Intern at WEBEYE, leading the 0-to-1 design of an AI Studio module for a short-drama production platform. One role focused on complex B2B systems; the other focused on building an AI product from scratch."
         },
         search: {
           zh: '我有两段实习经历，一段偏 B 端信息系统，一段偏 AI 产品。\n第一段是 2025 年 6 到 8 月，在香港和记港口集团的信息技术部做产品开发与实施实习生。三个月里我跟着团队参与了 nGen 和 OMS 两套港口核心系统的第 91–93 次迭代，把船舶创建到装卸货的全流程摸得七七八八，也开始学着把业务需求翻译成系统规格。技术上，我用 Verification Tool 写 API 请求，帮堆场数据从"人手维护"变成"自动更新"；也用 Draw.io 把 Gate Grounding 这套复杂流程画成一张清晰的图，让跨部门开会时大家终于能"看着同一张图说话"。\n第二段是 2026 年 5 到 7 月，在南京环石网络技术有限公司（网眼）做 AI 产品实习生。三个月里我在公司的「剧多多」短剧制作平台上从零主导了 AI Studio 模块——把原本散落在项目管理和 AI 生成两条线的工作流合并到同一个入口，独立完成 PRD 和 3 份高保真原型，把 4 个已有的核心创作 Skill 一个个接进来，现在这个模块已经推给 10 位导演和 10 位编剧做小范围灰度。我也顺手做了一个「一键导出提示词」的小功能，能给每位导演每天省下大约半小时；后来还和团队一起搭了一张跨分镜的多维度表格，把 16 个导演团队的历史数据都迁了进去，让跨团队的生产力报告能自动跑出来。\n两段下来，我既补上了"复杂 B 端系统"这一课，也练出了"从 0 到 1 定义一个 AI 产品"的能力。',
-          en: "I have two internships — one B2B systems, one AI product.\nJune–August 2025 at Hutchison Port Holdings in Hong Kong as a Product Development & Implementation Intern (IT Dept.). I joined Sprints 91–93 of the nGen and OMS core port systems, getting fluent in the full flow from vessel creation to cargo handling; wrote API requests in Verification Tool to automate yard-data updates; and used Draw.io to map the Gate Grounding process into one clear diagram so cross-functional teams could \"talk while looking at the same picture.\"\nMay–July 2026 at Nanjing Huanshi Network Technology Co., Ltd. (WEBEYE) as an AI Product Intern. Over three months on the company's \"Juduoduo\" short-drama platform, I led the 0-to-1 design of the \"AI Studio\" module — consolidating fragmented project-management and AI-generation workflows into one entry point, solo-delivering PRDs and 3 high-fidelity prototypes, and integrating 4 existing creation Skills. It's now in a small pilot with 10 directors and 10 screenwriters. I also built a one-click prompt-export feature that saves each director about half an hour a day, and later co-designed a standardized multidimensional table that migrated historical data across 16 director teams to enable automated cross-team productivity reporting.\nAcross both, I learned the \"complex B2B systems\" lesson and trained the \"0-to-1 defining an AI product\" muscle."
+          en: "I've had two internships: one focused on B2B information systems and the other on AI product development.\nFrom June to August 2025, I was a Product Development & Implementation Intern in the IT department at Hutchison Port Holdings in Hong Kong. I contributed to Sprints 91–93 for the nGen and OMS systems and learned the end-to-end workflow from vessel creation to cargo handling. I also wrote API requests in Verification Tool to automate yard-data updates and mapped the Gate Grounding process in Draw.io, giving cross-functional teams a shared view of a complex workflow.\nFrom May to July 2026, I was an AI Product Intern at Nanjing Huanshi Network Technology Co., Ltd. (WEBEYE). On the company's Juduoduo short-drama production platform, I led the design of the AI Studio module from concept to pilot. I consolidated fragmented project-management and AI-generation workflows into a single entry point, independently produced the PRD and three high-fidelity prototypes, and integrated four existing creative tools. The module then entered a limited pilot with 10 directors and 10 screenwriters. I also designed a one-click prompt-export feature that saved each director about 30 minutes a day. Later, I co-designed a standardized multidimensional table and helped migrate historical data for 16 director teams, enabling automated cross-team productivity reporting.\nTogether, these roles taught me how to understand complex operational systems and turn user needs into practical product solutions."
         }
       }
     },
     activity: {
-      qLabel: { zh: '你有什么课外活动吗？', en: 'Any extracurricular activities?' },
+      qLabel: { zh: '你有什么课外活动吗？', en: 'What extracurricular activities have you been involved in?' },
       a: {
         think: {
           zh: '我课外主要做过两件事：一个是在海丝港口合作论坛做志愿者，负责中英笔译和口译；另一个是在港大文学院做学生学术顾问，帮大一新生适应大学生活。',
-          en: "Two main extracurriculars: one was volunteering at the Maritime Silk Road Port Cooperation Forum doing CN-EN translation and interpretation; the other was being a Student Academic Advisor at HKU's Faculty of Arts, helping freshmen adapt to university life."
+          en: "Two experiences stand out. I volunteered at the Maritime Silk Road Port International Cooperation Forum, where I translated materials and interpreted for international guests. I also served as a Student Academic Advisor at HKU's Faculty of Arts, helping first-year students adjust to university life."
         },
         search: {
           zh: '我的课外活动有两段比较有代表性的经历。\n一段是 2025 年 5 月在宁波参加第九届海丝港口合作论坛做志愿者，负责活动标牌和港口参观稿件的英文笔译，也为外宾提供口译支持，还在宁波北仑第三集装箱码头的参观环节做了英文现场讲解和实时答疑。\n另一段是我在港大文学院担任学生学术顾问长达一年：一对一带教 5 名文学院大一新生，从选课规划、师生沟通到学习方法和生活适应，做他们大一那年的「第一联系人」；还参与港大对外开放项目，独立带着约 30 名香港本地中学生参观校园、讲解学院设置和申请路径。',
-          en: "My extracurriculars have two representative experiences.\nThe first was May 2025 in Ningbo, volunteering at the 9th Maritime Silk Road Port Cooperation Forum — CN-EN translation for event signage and tour scripts, interpretation for international guests, plus live English briefings and Q&A during the Beilun No.3 Container Terminal tour.\nThe second is a year-long role as a Student Academic Advisor at HKU's Faculty of Arts: mentoring 5 first-year Arts students one-on-one — course planning, talking to professors, study habits, settling in — as their 'first contact' through freshman year; and, for HKU's outreach program, solo-guiding about 30 local secondary-school students around campus, walking them through faculties and admissions paths."
+          en: "Two extracurricular experiences have been especially meaningful to me.\nIn May 2025, I volunteered at the 9th Maritime Silk Road Port International Cooperation Forum in Ningbo. I translated event signage and port-visit materials into English, interpreted for international guests, and delivered English briefings and live Q&A during a visit to Beilun No. 3 Container Terminal.\nI also spent a year as a Student Academic Advisor in HKU's Faculty of Arts. I mentored five first-year students one-on-one, supporting them with course planning, communication with professors, study strategies, and adjustment to university life. I also independently led around 30 local secondary-school students on a campus tour, explaining the Faculty's programs, admissions pathways, and student life."
         }
       }
     },
     project: {
-      qLabel: { zh: '你做过什么项目？', en: 'What projects have you done?' },
+      qLabel: { zh: '你做过什么项目？', en: 'What projects have you worked on?' },
       a: {
         think: {
           zh: '我最近做了三个项目：一个是已经上线 App Store 和华为应用市场的「去过」旅行记录 App，从产品到代码都是我一个人完成的；一个是用 Kepler.gl + Tableau 做的纽约交通安全大数据分析；还有一个是用 R 做的航空票价预测建模。一个偏产品落地，两个偏数据分析。',
-          en: "Three recent projects: 'Been There' — a travel-log app I built and shipped solo, now live on the App Store and Huawei AppGallery; NYC traffic-safety big-data analysis with Kepler.gl + Tableau; and airfare prediction modeling in R. One leans product-shipping, two lean data analytics."
+          en: "Three recent projects capture the range of my interests. I independently built and launched Quguo (去过), a travel journal app now available on the App Store and Huawei AppGallery. I also worked with teammates on an NYC traffic-safety analysis using Kepler.gl and Tableau, and on an airfare-prediction project in R. The first focused on shipping a product; the other two focused on turning data into useful insights."
         },
         search: {
           zh: '我最近的项目大致分成两条线：一条是"我一个人从零把产品做出来"，另一条是"和团队一起从数据里找规律"。\n第一个是「去过」旅行记录 App。2026 年 4 月启动、6 月上架 App Store 和华为应用市场。产品、UX、前端到原生壳全是我一个人扛下来的——我把工作流拆成 PRD → UX 设计 → 技术评审三个角色，用多角色 LLM 工作流去引导和验证 Claude Code 的实现，通过 Vite + Capacitor 做跨端共享的代码库，再用 Swift 和 Kotlin 写双端原生桥打通触觉反馈和相册保存。它的核心定位是"无需定位、手动标记"，让人能把一辈子的旅行都收进同一张地图；上线两天在 App Store 就有了 40 次下载。\n第二个是我和我的队友们在 2025 年 11 到 12 月做的纽约市交通安全大数据分析。我们从 200 多万条纽约市交通事故数据出发，一层是用 Kepler.gl 做 3D 空间聚类，把反复出事故的危险路口和"周五晚高峰"的时空规律呈现出来；另一层是在 Tableau 里做驾驶行为与伤害程度的相关性分析，量化了摩托车 84.2% 的高伤害率、大卡车工作日独特的事故节律。最后我们用 Premiere Pro 和剪映把这些图表剪成一支 5 分钟的叙事视频，也一起提出了 4 项数据驱动的改善建议。\n第三个是航空票价预测模型分析，也是我和我的队友们一起完成的项目。我们要解决的问题很朴素：怎么用尽量简单、又能被解释的模型，把机票价格预测做准？我们在 R 里做特征工程，用 80/20 训练/测试集划分，把 CART 和多元线性回归两种模型对比着跑；最后选出一版剪枝后的 CART——它在经济舱预测上把平均绝对误差比线性基线降低了 25% 以上，测试集 R² 也翻了一倍多，同时还保留了很清晰的可解释决策规则，能一眼看出航司、舱位、航线对定价的贡献。\n这三个项目一起下来，让我把"想清楚 → 做出来 → 推上线 → 看数据"这条链路完整跑了一遍。',
-          en: "My recent projects fall into two tracks: 'shipping a product solo' and 'reading patterns out of data with a team.'\nFirst is the 'Been There' travel-log app. Started April 2026, live on the App Store and Huawei AppGallery by June. Product, UX, front-end, and native shells were all mine — I split the work into three roles (PRD, UX, tech review) and used multi-role LLM workflows to guide and validate Claude Code's implementation, shared a single codebase across web / iOS / Android via Vite + Capacitor, and wrote Swift / Kotlin native bridges for haptics and photo-library saving. Its hook: no GPS needed, mark places by hand — a lifetime of trips on one map. It hit 40 iOS downloads in the first 2 days.\nSecond is the NYC Traffic Safety Big Data Analysis, which my teammates and I put together over Nov–Dec 2025. Starting from 2M+ NYC crash records, I contributed to 3D spatial clustering in Kepler.gl (surfacing high-risk intersections and the 'Friday evening rush') and correlation analysis between driving behavior and injury severity in Tableau (an 84.2% motorcycle injury rate, trucks' distinct weekday rhythm). We then cut a 5-minute data-narrative video in Premiere Pro + CapCut and co-proposed 4 data-driven recommendations.\nThird is the Airfare Prediction Model Analysis — another project my teammates and I built together. The question was simple: how do we get accurate airfare prediction from the simplest interpretable model? We engineered features in R and benchmarked CART against multiple linear regression on an 80/20 train-test split; we ended up picking a pruned CART that cut mean absolute error on economy-class fare prediction by over 25% versus the linear baseline and more than doubled test R², while keeping the decision rules clear enough to show how airline, cabin class, and route drive price.\nTogether they took me through the full loop: think it through → build it → ship it → read the data."
+          en: "My recent projects fall into two areas: independently shipping a product and using data to solve problems with a team.\nThe first is Quguo (去过), a travel journal app that I started in April 2026 and launched on the App Store and Huawei AppGallery in June. I handled the product design, UX, front end, and native wrappers myself. I structured the process around three roles — PRD, UX design, and technical review — and used a multi-role LLM workflow to guide and validate Claude Code's implementation. I used Vite and Capacitor to share one codebase across web, iOS, and Android, then added Swift and Kotlin bridges for haptic feedback and saving images to the photo library. The app is designed for people who want to record a lifetime of travel manually, without relying on GPS history. It received 40 iOS downloads in its first two days.\nThe second was an NYC Traffic Safety Big Data Analysis project, completed with my teammates from November to December 2025. Using more than 2 million NYC crash records, I contributed to 3D geospatial clustering in Kepler.gl to identify high-risk intersections and Friday-evening peaks. In Tableau, I helped analyze the relationship between driving behavior and injury severity, including an 84.2% injury rate in motorcycle-involved crashes and a distinctive weekday pattern for truck-related crashes. We then produced a five-minute data-storytelling video in Premiere Pro and CapCut and developed four data-driven recommendations.\nThe third was an Airfare Prediction Model Analysis project. My teammates and I engineered features in R and compared CART with multiple linear regression using an 80/20 train-test split. We selected a pruned CART that reduced mean absolute error for economy-class fares by more than 25% and more than doubled test R² relative to the linear baseline, while still producing clear, interpretable decision rules.\nTogether, these projects gave me experience across the full process: framing a problem, building a solution, shipping it, and evaluating the results."
         }
       }
     },
     strength: {
-      qLabel: { zh: '你的核心优势是什么？', en: "What's your core strength?" },
+      qLabel: { zh: '你的核心优势是什么？', en: "What would you say is your biggest strength?" },
       a: {
         think: {
           zh: '我最大的优势是"语言 + 数据 + 产品 + AI"的复合能力：既是翻译与信息分析双主修，能做数据建模和跨文化沟通；又能用 AI 工具从 0 到 1 把产品真的做出来、推上线——我已经独立上线过一个 App 和这个网站。',
-          en: "My biggest strength is a 'language + data + product + AI' blend: a Translation × Information-Analytics double major who can do data modeling and cross-cultural communication, and who can also use AI tools to take a product 0-to-1 and actually ship it — I've already solo-launched an app and this website."
+          en: "My biggest strength is the combination of language, data, product thinking, and practical AI experience. My studies give me a foundation in both analytics and cross-cultural communication, and I can use AI tools to turn ideas into working products. I've already independently launched an app and built this website."
         },
         search: {
           zh: '我的核心优势，是"语言 + 数据 + 产品 + AI 落地"的复合背景——最关键的是，我不只会想和会说，我能真的把东西做出来。\n语言上，我是翻译主修，能胜任跨文化场景下的笔译、口译和商务沟通；数据上，我熟练用 Python、R、SQL、Tableau、Power BI、Kepler.gl，能跑通从清洗、建模到可视化叙事的完整链路，也做过预测建模、A/B 测试和 Cohort 分析；产品上，我今年暑假去做了 AI 产品的实习生，主导过一个 AI 模块从 0 到 1（PRD、Demo、Skill 封装），之前在和记港口也"补过"B 端信息系统这一课；最能打的一点，是 AI 落地能力：我用 Claude Code 独立做出并上线了「去过」App（App Store + 华为）和这个网站，是那种"自己就能把想法变成上线产品"的人。\n合起来，我是团队里"能听懂技术、能讲清业务、还能自己动手做出来"的那类人。',
-          en: "My core strength is a 'language + data + product + AI-execution' composite background — and crucially, I don't just think and talk, I can actually build.\nOn language, I'm a Translation major, at home with translation, interpretation, and business communication across cultures. On data, I'm fluent in Python, R, SQL, Tableau, Power BI and Kepler.gl, able to run the full pipeline from cleaning to modeling to visual storytelling, and have hands-on experience with predictive modeling, A/B testing, and cohort analysis. On product, this past summer I interned as an AI Product Intern, driving an AI module from 0 to 1 (PRD, Demo, Skill packaging), after 'catching up on' B2B information systems at Hutchison Ports. My sharpest edge is AI execution: with Claude Code I solo-built and shipped the 'Been There' app (App Store + Huawei) and this website — the kind of person who can turn an idea into a live product herself.\nPut together, I'm the teammate who understands the engineers, can explain to the business, and can also just go build the thing."
+          en: "My biggest strength is that I can connect language, data, product thinking, and practical AI delivery — and then turn an idea into something people can actually use.\nMy Translation studies have trained me to communicate clearly across languages and cultures. On the data side, I work with Python, R, SQL, Tableau, Power BI, and Kepler.gl, and I have experience with data cleaning, modeling, visualization, predictive modeling, A/B testing, and cohort analysis. On the product side, I have led an AI module from concept to pilot and gained experience with complex B2B information systems at Hutchison Ports.\nWhat sets me apart most is my ability to build. Using Claude Code, I independently developed and launched the Quguo app on the App Store and Huawei AppGallery, as well as this website. In a team, I can understand technical discussions, translate them into business terms, and still contribute directly to the work."
         }
       }
     },
@@ -159,11 +175,11 @@
       a: {
         think: {
           zh: '我的快乐很具体：拼乐高、玩拼豆、看线下脱口秀。手作让我安静下来，脱口秀让我笑出声——再加上旅行，顺手还做了个记录足迹的「去过」App。',
-          en: "My joys are very concrete: building LEGO, making fuse-bead art, and live stand-up comedy. Crafting calms me down, comedy makes me laugh out loud — plus travel, which even turned into my 'Been There' app."
+          en: "Outside work, I enjoy building LEGO sets, making fuse-bead art, and going to live stand-up shows. Craft projects help me slow down, while comedy helps me reset. I also love traveling — so much that I built Quguo to keep track of the places I've visited."
         },
         search: {
           zh: '工作之外的我，有三件小事能立刻回血：\n🧱 乐高：最享受跟着说明书一块块搭起来的过程，书桌上就停着一辆我拼的浅蓝色 Vespa，随时准备出发去罗马。\n🧩 拼豆：一颗颗小珠子拼成像素小物，烫平定型的那一刻特别治愈——我最得意的作品是一只举着蜡烛的小布丁。\n🎤 脱口秀：从小剧场开放麦到大剧院专场都爱看，笑着笑着，一周的疲惫就没了。\n另外我也爱旅行——爱到把「想记住去过的每个地方」这件事做成了一个真的 App（去过）。网站结尾的「工作之外的我」板块有照片～',
-          en: "Outside of work, three small things recharge me instantly:\n🧱 LEGO — I love following the manual brick by brick; a pale-blue Vespa I built is parked on my desk, ready to ride to Rome.\n🧩 Fuse beads — melting tiny beads into pixel art is pure therapy; my proudest piece is a little pudding holding a candle.\n🎤 Stand-up comedy — from tiny-club open mics to theater specials, a night of laughing wipes out a week's fatigue.\nAnd I love traveling — so much that 'remembering every place I've been' became a real app (Been There). Check the 'Beyond Work' section at the end of this site for photos!"
+          en: "Outside of work, three things help me recharge:\n🧱 LEGO — I enjoy the quiet, step-by-step process of building a set. There's a pale-blue Vespa on my desk that I put together myself.\n🧩 Fuse beads — I like turning tiny beads into pixel art. My favorite piece is a little pudding character holding a candle.\n🎤 Stand-up comedy — I go to everything from small-club open mics to theater shows. A good night of comedy is one of my favorite ways to reset after a busy week.\nI also love traveling. That interest eventually became Quguo, the travel journal app I built to record the places I've visited. You can see some photos in the Beyond Work section at the end of the site."
         }
       }
     }
@@ -187,7 +203,7 @@
   function updateAIPlaceholder() {
     if (!aiInput) return;
     aiInput.placeholder = getLang() === 'en'
-      ? 'Click a chip above to fill →'
+      ? 'Choose a question above →'
       : '点上方任一关键词填入 →';
   }
   updateAIPlaceholder();
@@ -335,8 +351,8 @@
     modeBar.className = mode === 'search' ? 'ai-search-block' : 'ai-think-block';
     modeBar.innerHTML = '<div class="' + (mode === 'search' ? 'asb-head' : 'atb-head') + '">'
       + (mode === 'search'
-          ? '🧠 ' + (lang === 'en' ? 'Ultrathink · deepest reasoning, full reply' : '穷究 · 超高强度推理 · 完整详细回答')
-          : '💡 ' + (lang === 'en' ? 'Default · brief reply' : '默认 · 简洁回答'))
+          ? '🧠 ' + (lang === 'en' ? 'Deep dive · more detail, fuller answer' : '穷究 · 超高强度推理 · 完整详细回答')
+          : '💡 ' + (lang === 'en' ? 'Default · concise answer' : '默认 · 简洁回答'))
       + '</div>';
     aiOutput.appendChild(modeBar);
     aiOutput.scrollTop = aiOutput.scrollHeight;
@@ -390,11 +406,11 @@
         const lang = getLang();
         let msg;
         if (!selectedKey && !selectedMode) {
-          msg = lang === 'en' ? '⚠ Pick a chip + a thinking depth first!' : '⚠ 先选关键词，再选思维链长度！';
+          msg = lang === 'en' ? '⚠ Choose a question and response depth first!' : '⚠ 先选关键词，再选思维链长度！';
         } else if (!selectedKey) {
-          msg = lang === 'en' ? '⚠ Pick a chip first!' : '⚠ 先点一个关键词哦！';
+          msg = lang === 'en' ? '⚠ Choose a question first!' : '⚠ 先点一个关键词哦！';
         } else {
-          msg = lang === 'en' ? '⚠ Tap 💡 to choose a thinking depth!' : '⚠ 请先点 💡 选择思维链长度！';
+          msg = lang === 'en' ? '⚠ Select a response depth first!' : '⚠ 请先点 💡 选择思维链长度！';
         }
         aiInput.placeholder = msg;
         setTimeout(updateAIPlaceholder, 1800);
