@@ -365,6 +365,7 @@ html[data-lang="zh"] .hero-name {
   position: relative;
   max-height: 360px;
   overflow-y: auto;
+  text-align: left;
 }
 .ai-output .ai-placeholder { color: var(--ink-soft); font-style: italic; }
 .ai-output .ai-q {
@@ -373,8 +374,9 @@ html[data-lang="zh"] .hero-name {
   margin-bottom: 6px;
   font-size: 13.5px;
   letter-spacing: 0.04em;
+  text-align: left;
 }
-.ai-output .ai-a { color: var(--ink); }
+.ai-output .ai-a { color: var(--ink); text-align: left; }
 .ai-output .ai-cursor::after {
   content: "▍";
   display: inline-block;
